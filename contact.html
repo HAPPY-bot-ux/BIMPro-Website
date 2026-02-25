@@ -1,29 +1,1087 @@
-<section class="py-32 px-8 flex justify-center">
-    <div class="w-full max-w-4xl glass p-16 rounded-[4rem] relative">
-        <div class="absolute top-10 right-10 flex items-center gap-2">
-            <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
-            <span class="text-[9px] font-bold text-emerald-500 uppercase tracking-widest">Systems Online</span>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | BIMPro Enterprises - Transmission Portal</title>
+    
+    <!-- Tailwind & Fonts -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        body {
+            background: #030304;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Language switching */
+        .lang-fr { display: none; }
+        .is-french .lang-en { display: none; }
+        .is-french .lang-fr { display: block; }
+        .is-french .lang-inline-en { display: none; }
+        .is-french .lang-inline-fr { display: inline; }
+        .lang-inline-fr { display: none; }
+
+        /* Custom cursor */
+        .cursor {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #2563eb;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: transform 0.2s;
+        }
+
+        .cursor-follower {
+            width: 8px;
+            height: 8px;
+            background: #2563eb;
+            border-radius: 50%;
+            position: fixed;
+            pointer-events: none;
+            z-index: 9999;
+            transition: 0.1s;
+        }
+
+        /* Glass morphism */
+        .glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .glass-card {
+            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        /* Animated gradient */
+        .gradient-text {
+            background: linear-gradient(135deg, #fff 0%, #94a3b8 50%, #2563eb 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% 200%;
+            animation: gradient 8s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Grid background */
+        .grid-bg {
+            background-image: 
+                linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* Form steps */
+        .form-step {
+            display: none;
+            animation: slideIn 0.5s ease forwards;
+        }
+
+        .form-step.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            to {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+        }
+
+        /* Progress bar */
+        .progress-step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .progress-step.completed {
+            background: #2563eb;
+            border-color: #2563eb;
+        }
+
+        .progress-step.active {
+            border-color: #2563eb;
+            box-shadow: 0 0 20px #2563eb;
+        }
+
+        .progress-line {
+            flex: 1;
+            height: 2px;
+            background: rgba(255,255,255,0.1);
+            position: relative;
+        }
+
+        .progress-line::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0%;
+            background: #2563eb;
+            transition: width 0.3s;
+        }
+
+        .progress-line.completed::after {
+            width: 100%;
+        }
+
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: #2563eb;
+            color: white;
+            padding: 1.5rem 2.5rem;
+            border-radius: 100px;
+            font-weight: bold;
+            transform: translateX(400px);
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 9999;
+            box-shadow: 0 10px 40px rgba(37, 99, 235, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .notification.show {
+            transform: translateX(0);
+        }
+
+        .notification.success {
+            background: #10b981;
+        }
+
+        .notification.error {
+            background: #ef4444;
+        }
+
+        /* Loading spinner */
+        .spinner {
+            width: 24px;
+            height: 24px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Floating animation */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        /* Loading screen */
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #030304;
+            z-index: 10000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1s, visibility 1s;
+        }
+
+        .loader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        input, select, textarea {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #2563eb;
+            background: rgba(37, 99, 235, 0.1);
+            outline: none;
+        }
+
+        input::placeholder, textarea::placeholder {
+            color: rgba(255,255,255,0.2);
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+        }
+    </style>
+</head>
+<body>
+   
+
+    <!-- Custom Cursor -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Background Pattern -->
+    <div class="fixed inset-0 grid-bg opacity-30 pointer-events-none"></div>
+
+    <!-- Notification -->
+    <div id="notification" class="notification">
+        <i class="fas fa-check-circle text-2xl"></i>
+        <div>
+            <div class="font-bold text-lg" id="notification-title">Success!</div>
+            <div class="text-sm opacity-90" id="notification-message">Your message has been transmitted</div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 py-6 px-8 flex justify-between items-center" id="navbar">
+        <div class="glass px-8 py-4 rounded-full flex items-center gap-4">
+            <div class="text-2xl font-black tracking-tighter">
+                <span class="gradient-text">BIM</span><span class="text-white">Pro</span>
+            </div>
+            <div class="w-px h-8 bg-white/10"></div>
+            <div class="text-xs font-medium text-gray-400">
+                <span class="lang-en">Transmission Portal</span>
+                <span class="lang-fr">Portail de Transmission</span>
+            </div>
         </div>
         
-        <h2 class="text-5xl font-black italic uppercase mb-12">Initialize <br><span class="text-blue-600">Communication</span></h2>
+        <div class="hidden lg:flex items-center gap-12">
+            <div class="flex gap-8 text-sm font-medium">
+                <a href="index.html" class="nav-link relative group">
+                    <span class="lang-en">Home</span>
+                    <span class="lang-fr">Accueil</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="about.html" class="nav-link relative group">
+                    <span class="lang-en">About</span>
+                    <span class="lang-fr">À propos</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="security.html" class="nav-link relative group">
+                    <span class="lang-en">Security</span>
+                    <span class="lang-fr">Sécurité</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="apparel.html" class="nav-link relative group">
+                    <span class="lang-en">Apparel</span>
+                    <span class="lang-fr">Vêtements</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="portfolio.html" class="nav-link relative group">
+                    <span class="lang-en">Portfolio</span>
+                    <span class="lang-fr">Portfolio</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                </a>
+                <a href="contact.html" class="nav-link relative group">
+                    <span class="lang-en">Contact</span>
+                    <span class="lang-fr">Contact</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 w-full"></span>
+                </a>
+            </div>
+            
+            <button onclick="toggleLang()" class="glass px-6 py-3 rounded-full text-xs font-bold hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 flex items-center gap-2">
+                <i class="fas fa-globe text-blue-500"></i>
+                <span class="lang-en">FR</span>
+                <span class="lang-fr">EN</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[40vh] flex items-center justify-center overflow-hidden pt-20">
+        <!-- Floating Elements -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl float"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl float" style="animation-delay: -3s;"></div>
+
+        <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+            <div class="mb-8">
+                <span class="text-blue-500 font-mono tracking-[0.5em] text-xs animate-pulse">
+                    <span class="lang-en">✦ TRANSMISSION PORTAL ✦</span>
+                    <span class="lang-fr">✦ PORTAIL DE TRANSMISSION ✦</span>
+                </span>
+            </div>
+            
+            <h1 class="text-7xl md:text-9xl font-black leading-[0.85] mb-8">
+                <div class="overflow-hidden">
+                    <span class="inline-block gradient-text animate-slideUp">
+                        <span class="lang-en">GET IN</span>
+                        <span class="lang-fr">CONTACTEZ</span>
+                    </span>
+                </div>
+                <div class="overflow-hidden">
+                    <span class="inline-block text-white animate-slideUp" style="animation-delay: 0.1s;">
+                        <span class="lang-en">TOUCH</span>
+                        <span class="lang-fr">NOUS</span>
+                    </span>
+                </div>
+            </h1>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="pb-32 px-8 flex flex-col items-center">
+        <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- Contact Info -->
+            <div class="lg:col-span-1 space-y-6">
+                <div class="glass p-8 rounded-[2rem] border-white/5 hover:border-blue-600/30 transition-all">
+                    <h4 class="text-[10px] font-black text-blue-500 uppercase tracking-[0.3em] mb-6">
+                        <span class="lang-en">HQ Operations</span>
+                        <span class="lang-fr">Opérations Centrales</span>
+                    </h4>
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-10 h-10 glass rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">
+                                    <span class="lang-en">Phone / WhatsApp</span>
+                                    <span class="lang-fr">Téléphone / WhatsApp</span>
+                                </p>
+                                <p class="text-sm font-bold italic tracking-tighter mt-1">+27 69 350 3889</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-10 h-10 glass rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <p class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">Email</p>
+                                <p class="text-sm font-bold italic tracking-tighter mt-1">info@bimpro.co.za</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-10 h-10 glass rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">
+                                    <span class="lang-en">Business Hours</span>
+                                    <span class="lang-fr">Heures d'Ouverture</span>
+                                </p>
+                                <p class="text-sm font-bold italic tracking-tighter mt-1">MON — FRI: 08:00 - 17:00</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-10 h-10 glass rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <p class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">
+                                    <span class="lang-en">Location</span>
+                                    <span class="lang-fr">Emplacement</span>
+                                </p>
+                                <p class="text-sm font-bold italic tracking-tighter mt-1">Cape Town, South Africa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Social Links -->
+                <div class="glass p-8 rounded-[2rem] border-white/5">
+                    <h4 class="text-[10px] font-black text-blue-500 uppercase tracking-[0.3em] mb-6">
+                        <span class="lang-en">Connect</span>
+                        <span class="lang-fr">Connexion</span>
+                    </h4>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-blue-600 transition-all group">
+                            <i class="fab fa-linkedin-in text-blue-500 group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-blue-600 transition-all group">
+                            <i class="fab fa-instagram text-blue-500 group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-blue-600 transition-all group">
+                            <i class="fab fa-facebook-f text-blue-500 group-hover:text-white transition-colors"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 glass rounded-xl flex items-center justify-center hover:bg-blue-600 transition-all group">
+                            <i class="fab fa-whatsapp text-blue-500 group-hover:text-white transition-colors"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Multi-Step Form -->
+            <div class="lg:col-span-2 glass p-12 md:p-16 rounded-[3rem] relative overflow-hidden border-white/10">
+                <!-- Status Indicator -->
+                <div class="absolute top-10 right-10 flex items-center gap-2">
+                    <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                    <span class="text-[9px] font-bold text-emerald-500 uppercase tracking-widest">
+                        <span class="lang-en">Uplink Active</span>
+                        <span class="lang-fr">Liaison Active</span>
+                    </span>
+                </div>
+                
+                <h2 class="text-4xl font-black italic uppercase mb-12">
+                    <span class="lang-en">Initialize <span class="text-blue-600">Inquiry</span></span>
+                    <span class="lang-fr">Initialiser <span class="text-blue-600">Demande</span></span>
+                </h2>
+
+                <!-- Progress Indicator -->
+                <div class="flex items-center justify-between mb-12 px-4">
+                    <div class="flex items-center flex-1">
+                        <div class="progress-step active" id="step1-indicator">1</div>
+                        <div class="progress-line" id="line1"></div>
+                    </div>
+                    <div class="flex items-center flex-1">
+                        <div class="progress-step" id="step2-indicator">2</div>
+                        <div class="progress-line" id="line2"></div>
+                    </div>
+                    <div class="flex items-center flex-1">
+                        <div class="progress-step" id="step3-indicator">3</div>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <form id="multiStepForm">
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-step active" id="step1">
+                        <div class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">
+                                        <span class="lang-en">Full Name *</span>
+                                        <span class="lang-fr">Nom Complet *</span>
+                                    </label>
+                                    <input type="text" required id="fullName" placeholder="JOHN DOE" class="w-full p-5 rounded-2xl text-white font-bold text-xs">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">
+                                        <span class="lang-en">Company Name</span>
+                                        <span class="lang-fr">Nom de l'Entreprise</span>
+                                    </label>
+                                    <input type="text" id="company" placeholder="OPTIONAL" class="w-full p-5 rounded-2xl text-white font-bold text-xs">
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">
+                                        <span class="lang-en">Email Address *</span>
+                                        <span class="lang-fr">Adresse Email *</span>
+                                    </label>
+                                    <input type="email" required id="email" placeholder="CONTACT@EXAMPLE.COM" class="w-full p-5 rounded-2xl text-white font-bold text-xs">
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">
+                                        <span class="lang-en">Phone Number *</span>
+                                        <span class="lang-fr">Numéro de Téléphone *</span>
+                                    </label>
+                                    <input type="tel" required id="phone" placeholder="+27 00 000 0000" class="w-full p-5 rounded-2xl text-white font-bold text-xs">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Project Details -->
+                    <div class="form-step" id="step2">
+                        <div class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">
+                                        <span class="lang-en">Division *</span>
+                                        <span class="lang-fr">Division *</span>
+                                    </label>
+                                    <select required id="division" class="w-full p-5 rounded-2xl text-white font-bold text-xs">
+                                        <option value="" disabled selected>
+                                            <span class="lang-en">SELECT DIVISION</span>
+                                            <span class="lang-fr">SÉLECTIONNER DIVISION</span>
+                                        </option>
+                                        <option value="security">SECURITY & SMART PROTECTION</option>
+                                        <option value="apparel">INK & APPAREL</option>
+                                        <option value="both">BOTH DIVISIONS</option>
+                                    </select>
+                                </div>
+                                <div class="space-y-2">
+                                    <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">
+                                        <span class="lang-en">Project Type *</span>
+                                        <span class="lang-fr">Type de Projet *</span>
+                                    </label>
+                                    <select required id="projectType" class="w-full p-5 rounded-2xl text-white font-bold text-xs">
+                                        <option value="" disabled selected>
+                                            <span class="lang-en">SELECT TYPE</span>
+                                            <span class="lang-fr">SÉLECTIONNER TYPE</span>
+                                        </option>
+                                        <option value="cctv">CCTV Installation</option>
+                                        <option value="alarm">Alarm System</option>
+                                        <option value="access">Access Control</option>
+                                        <option value="printing">T-Shirt Printing</option>
+                                        <option value="uniform">Corporate Uniforms</option>
+                                        <option value="branding">Branding Package</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">
+                                    <span class="lang-en">Budget Range</span>
+                                    <span class="lang-fr">Fourchette de Prix</span>
+                                </label>
+                                <select id="budget" class="w-full p-5 rounded-2xl text-white font-bold text-xs">
+                                    <option value="" disabled selected>
+                                        <span class="lang-en">SELECT BUDGET</span>
+                                        <span class="lang-fr">SÉLECTIONNER BUDGET</span>
+                                    </option>
+                                    <option value="under-10k">Under R10,000</option>
+                                    <option value="10k-50k">R10,000 - R50,000</option>
+                                    <option value="50k-100k">R50,000 - R100,000</option>
+                                    <option value="over-100k">Over R100,000</option>
+                                </select>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">
+                                    <span class="lang-en">Timeline</span>
+                                    <span class="lang-fr">Calendrier</span>
+                                </label>
+                                <select id="timeline" class="w-full p-5 rounded-2xl text-white font-bold text-xs">
+                                    <option value="" disabled selected>
+                                        <span class="lang-en">SELECT TIMELINE</span>
+                                        <span class="lang-fr">SÉLECTIONNER CALENDRIER</span>
+                                    </option>
+                                    <option value="urgent">Urgent (Within 1 week)</option>
+                                    <option value="standard">Standard (1-4 weeks)</option>
+                                    <option value="flexible">Flexible (1-3 months)</option>
+                                    <option value="planning">Planning Phase</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Message -->
+                    <div class="form-step" id="step3">
+                        <div class="space-y-6">
+                            <div class="space-y-2">
+                                <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">
+                                    <span class="lang-en">Project Description *</span>
+                                    <span class="lang-fr">Description du Projet *</span>
+                                </label>
+                                <textarea required id="message" rows="6" placeholder="DESCRIBE YOUR PROJECT REQUIREMENTS IN DETAIL..." class="w-full p-6 rounded-[2rem] text-white font-bold text-xs resize-none"></textarea>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">
+                                    <span class="lang-en">Additional Notes</span>
+                                    <span class="lang-fr">Notes Supplémentaires</span>
+                                </label>
+                                <input type="text" id="notes" placeholder="ANY SPECIAL REQUIREMENTS?" class="w-full p-5 rounded-2xl text-white font-bold text-xs">
+                            </div>
+
+                            <div class="flex items-center gap-4 mt-4">
+                                <input type="checkbox" id="newsletter" class="w-5 h-5 bg-white/5 border border-white/10 rounded checked:bg-blue-600">
+                                <label for="newsletter" class="text-xs text-gray-400">
+                                    <span class="lang-en">Subscribe to our newsletter for updates</span>
+                                    <span class="lang-fr">S'abonner à notre newsletter pour les mises à jour</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Buttons -->
+                    <div class="flex gap-4 mt-8">
+                        <button type="button" id="prevBtn" class="flex-1 glass p-5 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-white/10 transition-all opacity-50 pointer-events-none" style="transition: all 0.3s;">
+                            <span class="lang-en">← Previous</span>
+                            <span class="lang-fr">← Précédent</span>
+                        </button>
+                        
+                        <button type="button" id="nextBtn" class="flex-1 bg-white text-black p-5 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-blue-600 hover:text-white transition-all">
+                            <span class="lang-en">Next →</span>
+                            <span class="lang-fr">Suivant →</span>
+                        </button>
+                        
+                        <button type="submit" id="submitBtn" class="flex-1 bg-blue-600 text-white p-5 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-blue-700 transition-all hidden">
+                            <span class="lang-en">Transmit Message</span>
+                            <span class="lang-fr">Transmettre Message</span>
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Form Security Note -->
+                <div class="mt-8 text-center">
+                    <p class="text-[8px] text-zinc-600 uppercase tracking-widest">
+                        <i class="fas fa-lock mr-2"></i>
+                        <span class="lang-en">All transmissions are encrypted and secure</span>
+                        <span class="lang-fr">Toutes les transmissions sont cryptées et sécurisées</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-16 px-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="glass p-4 rounded-[3rem] overflow-hidden">
+                <div class="aspect-[21/9] bg-gradient-to-br from-blue-900/50 to-purple-900/50 flex items-center justify-center">
+                    <div class="text-center">
+                        <i class="fas fa-map-marker-alt text-5xl text-blue-500 mb-4"></i>
+                        <h3 class="text-2xl font-bold mb-2">Cape Town, South Africa</h3>
+                        <p class="text-gray-400">Serving clients across Western Cape and beyond</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-blue-500 font-mono tracking-[0.3em] text-xs">
+                    <span class="lang-en">✦ FAQ</span>
+                    <span class="lang-fr">✦ FAQ</span>
+                </span>
+                <h2 class="text-4xl md:text-5xl font-black mt-8">
+                    <span class="gradient-text">
+                        <span class="lang-en">Frequently Asked</span>
+                        <span class="lang-fr">Questions Fréquentes</span>
+                    </span>
+                </h2>
+            </div>
+
+            <div class="space-y-4">
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="font-bold mb-2">
+                        <span class="lang-en">How quickly do you respond to inquiries?</span>
+                        <span class="lang-fr">Dans quel délai répondez-vous aux demandes ?</span>
+                    </h3>
+                    <p class="text-sm text-gray-400">
+                        <span class="lang-en">We respond to all inquiries within 2-4 business hours.</span>
+                        <span class="lang-fr">Nous répondons à toutes les demandes dans un délai de 2 à 4 heures ouvrables.</span>
+                    </p>
+                </div>
+                
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="font-bold mb-2">
+                        <span class="lang-en">Do you offer free consultations?</span>
+                        <span class="lang-fr">Offrez-vous des consultations gratuites ?</span>
+                    </h3>
+                    <p class="text-sm text-gray-400">
+                        <span class="lang-en">Yes, we provide free initial consultations for all projects.</span>
+                        <span class="lang-fr">Oui, nous offrons des consultations initiales gratuites pour tous les projets.</span>
+                    </p>
+                </div>
+                
+                <div class="glass p-6 rounded-2xl">
+                    <h3 class="font-bold mb-2">
+                        <span class="lang-en">What areas do you service?</span>
+                        <span class="lang-fr">Quelles zones desservez-vous ?</span>
+                    </h3>
+                    <p class="text-sm text-gray-400">
+                        <span class="lang-en">We primarily serve the Western Cape region, with select projects nationwide.</span>
+                        <span class="lang-fr">Nous desservons principalement la région du Western Cape, avec des projets sélectionnés à l'échelle nationale.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-20 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-12">
+                <div>
+                    <div class="text-3xl font-black mb-6">
+                        <span class="gradient-text">BIM</span>Pro
+                    </div>
+                    <p class="text-gray-500 text-sm">
+                        <span class="lang-en">Integrated Security & Branding Solutions</span>
+                        <span class="lang-fr">Solutions Intégrées de Sécurité et Branding</span>
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-6">
+                        <span class="lang-en">Quick Links</span>
+                        <span class="lang-fr">Liens Rapides</span>
+                    </h4>
+                    <ul class="space-y-3 text-gray-500">
+                        <li><a href="about.html" class="hover:text-blue-500 transition-colors">About</a></li>
+                        <li><a href="security.html" class="hover:text-blue-500 transition-colors">Security</a></li>
+                        <li><a href="apparel.html" class="hover:text-blue-500 transition-colors">Apparel</a></li>
+                        <li><a href="portfolio.html" class="hover:text-blue-500 transition-colors">Portfolio</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-6">
+                        <span class="lang-en">Legal</span>
+                        <span class="lang-fr">Légal</span>
+                    </h4>
+                    <ul class="space-y-3 text-gray-500">
+                        <li>Privacy Policy</li>
+                        <li>Terms of Service</li>
+                        <li>Cookie Policy</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-bold mb-6">
+                        <span class="lang-en">Contact</span>
+                        <span class="lang-fr">Contact</span>
+                    </h4>
+                    <ul class="space-y-3 text-gray-500">
+                        <li>info@bimpro.co.za</li>
+                        <li>+27 69 350 3889</li>
+                        <li>Cape Town, SA</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-sm">
+                <span class="lang-en">© 2026 BIMPro Enterprises. All rights reserved.</span>
+                <span class="lang-fr">© 2026 BIMPro Enterprises. Tous droits réservés.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Language Toggle
+        function toggleLang() {
+            document.body.classList.toggle('is-french');
+            localStorage.setItem('pref-lang', document.body.classList.contains('is-french') ? 'fr' : 'en');
+            
+            // Update form labels and placeholders
+            updateFormLanguage();
+        }
         
-        <form class="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="space-y-2">
-                <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">Identity</label>
-                <input type="text" placeholder="FULL NAME" class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-blue-500 transition-all font-bold text-xs text-white">
-            </div>
-            <div class="space-y-2">
-                <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">Target Division</label>
-                <select class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-blue-500 transition-all font-bold text-xs text-white/50">
-                    <option>SECURITY & SMART PROTECTION</option>
-                    <option>INK & APPAREL</option>
-                </select>
-            </div>
-            <div class="md:col-span-2 space-y-2">
-                <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">Message Payload</label>
-                <textarea rows="6" placeholder="PROJECT DETAILS..." class="w-full bg-white/5 border border-white/10 p-6 rounded-[2rem] outline-none focus:border-blue-500 transition-all font-bold text-xs text-white"></textarea>
-            </div>
-            <button class="md:col-span-2 bg-white text-black font-black uppercase py-7 rounded-2xl hover:bg-blue-600 hover:text-white transition-all tracking-[0.4em] text-xs">Transmit Inquiry</button>
-        </form>
-    </div>
-</section>
+        if(localStorage.getItem('pref-lang') === 'fr') {
+            document.body.classList.add('is-french');
+        }
+
+        // Custom Cursor
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+            follower.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
+
+        // Loading Screen
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.getElementById('loader').classList.add('hidden');
+            }, 1500);
+        });
+
+        // Multi-Step Form
+        const form = document.getElementById('multiStepForm');
+        const steps = document.querySelectorAll('.form-step');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        const step1Indicator = document.getElementById('step1-indicator');
+        const step2Indicator = document.getElementById('step2-indicator');
+        const step3Indicator = document.getElementById('step3-indicator');
+        const line1 = document.getElementById('line1');
+        const line2 = document.getElementById('line2');
+
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        function updateFormLanguage() {
+            // This function can be expanded to update dynamic content
+        }
+
+        function updateStepIndicators() {
+            // Update step indicators
+            [step1Indicator, step2Indicator, step3Indicator].forEach((indicator, index) => {
+                const stepNum = index + 1;
+                indicator.classList.remove('active', 'completed');
+                
+                if (stepNum === currentStep) {
+                    indicator.classList.add('active');
+                } else if (stepNum < currentStep) {
+                    indicator.classList.add('completed');
+                }
+            });
+
+            // Update progress lines
+            if (currentStep > 1) {
+                line1.classList.add('completed');
+            } else {
+                line1.classList.remove('completed');
+            }
+            
+            if (currentStep > 2) {
+                line2.classList.add('completed');
+            } else {
+                line2.classList.remove('completed');
+            }
+        }
+
+        function showStep(step) {
+            steps.forEach((stepElement, index) => {
+                if (index + 1 === step) {
+                    stepElement.classList.add('active');
+                } else {
+                    stepElement.classList.remove('active');
+                }
+            });
+
+            // Update buttons
+            if (step === 1) {
+                prevBtn.classList.add('opacity-50', 'pointer-events-none');
+            } else {
+                prevBtn.classList.remove('opacity-50', 'pointer-events-none');
+            }
+
+            if (step === totalSteps) {
+                nextBtn.classList.add('hidden');
+                submitBtn.classList.remove('hidden');
+            } else {
+                nextBtn.classList.remove('hidden');
+                submitBtn.classList.add('hidden');
+            }
+
+            updateStepIndicators();
+        }
+
+        function validateStep(step) {
+            const currentStepElement = document.getElementById(`step${step}`);
+            const requiredFields = currentStepElement.querySelectorAll('[required]');
+            let isValid = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value.trim()) {
+                    field.style.borderColor = '#ef4444';
+                    isValid = false;
+                    
+                    // Reset border on input
+                    field.addEventListener('input', function() {
+                        this.style.borderColor = '';
+                    }, { once: true });
+                }
+            });
+
+            return isValid;
+        }
+
+        // Next button click
+        nextBtn.addEventListener('click', () => {
+            if (validateStep(currentStep)) {
+                if (currentStep < totalSteps) {
+                    currentStep++;
+                    showStep(currentStep);
+                }
+            }
+        });
+
+        // Previous button click
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 1) {
+                currentStep--;
+                showStep(currentStep);
+            }
+        });
+
+        // Form submission
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if (!validateStep(currentStep)) {
+                return;
+            }
+
+            // Show loading state on submit button
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<div class="spinner mx-auto"></div>';
+            submitBtn.disabled = true;
+
+            // Collect form data
+            const formData = {
+                fullName: document.getElementById('fullName').value,
+                company: document.getElementById('company').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                division: document.getElementById('division').value,
+                projectType: document.getElementById('projectType').value,
+                budget: document.getElementById('budget').value,
+                timeline: document.getElementById('timeline').value,
+                message: document.getElementById('message').value,
+                notes: document.getElementById('notes').value,
+                newsletter: document.getElementById('newsletter').checked,
+                timestamp: new Date().toISOString()
+            };
+
+            console.log('Form submitted:', formData);
+
+            // Simulate API call
+            setTimeout(() => {
+                // Show success notification
+                showNotification('success', 'Message Transmitted!', 'We will contact you within 2-4 hours.');
+                
+                // Reset form
+                form.reset();
+                currentStep = 1;
+                showStep(1);
+                
+                // Reset button
+                submitBtn.innerHTML = originalText;
+                submitBtn.disabled = false;
+            }, 2000);
+        });
+
+        // Notification function
+        function showNotification(type, title, message) {
+            const notification = document.getElementById('notification');
+            const notificationTitle = document.getElementById('notification-title');
+            const notificationMessage = document.getElementById('notification-message');
+            
+            // Set notification type
+            notification.className = 'notification';
+            notification.classList.add(type);
+            
+            // Set content based on language
+            const isFrench = document.body.classList.contains('is-french');
+            
+            if (type === 'success') {
+                if (isFrench) {
+                    notificationTitle.textContent = 'Succès!';
+                    notificationMessage.textContent = 'Votre message a été transmis';
+                } else {
+                    notificationTitle.textContent = title;
+                    notificationMessage.textContent = message;
+                }
+            }
+            
+            // Show notification
+            notification.classList.add('show');
+            
+            // Hide after 5 seconds
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 5000);
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('glass');
+                navbar.style.padding = '1rem 2rem';
+            } else {
+                navbar.classList.remove('glass');
+                navbar.style.padding = '1.5rem 2rem';
+            }
+        });
+
+        // Initialize
+        showStep(1);
+    </script>
+
+    <style>
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .animate-slideUp {
+            animation: slideUp 1s forwards;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #030304;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #2563eb20;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2563eb40;
+        }
+
+        /* Selection */
+        ::selection {
+            background: #2563eb30;
+            color: #fff;
+        }
+
+        /* Form input autofill styles */
+        input:-webkit-autofill,
+        input:-webkit-autofill:hover,
+        input:-webkit-autofill:focus,
+        textarea:-webkit-autofill,
+        textarea:-webkit-autofill:hover,
+        textarea:-webkit-autofill:focus,
+        select:-webkit-autofill,
+        select:-webkit-autofill:hover,
+        select:-webkit-autofill:focus {
+            -webkit-text-fill-color: white;
+            -webkit-box-shadow: 0 0 0px 1000px #030304 inset;
+            transition: background-color 5000s ease-in-out 0s;
+        }
+    </style>
+</body>
+</html>
