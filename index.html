@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIMPro Enterprises | Integrated Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .lang-fr { display: none; }
+        .is-french .lang-en { display: none; }
+        .is-french .lang-fr { display: block; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .hero-gradient { background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 70%); }
+    </style>
+</head>
+<body class="bg-[#0a0a0a] text-white selection:bg-blue-500/30 overflow-x-hidden">
+    <nav class="fixed w-full z-50 glass py-5 px-8 flex justify-between items-center">
+        <div class="text-2xl font-black italic tracking-tighter uppercase">BIM<span class="text-blue-600">PRO</span></div>
+        <div class="hidden lg:flex gap-10 text-[10px] font-black uppercase tracking-[0.2em]">
+            <a href="index.html" class="text-blue-500">Home</a>
+            <a href="about.html" class="hover:text-blue-400 transition">About</a>
+            <a href="security.html" class="hover:text-blue-400 transition">Security</a>
+            <a href="apparel.html" class="hover:text-blue-400 transition">Apparel</a>
+            <a href="portfolio.html" class="hover:text-blue-400 transition">Portfolio</a>
+            <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
+        </div>
+        <button onclick="toggleLang()" class="bg-white/5 border border-white/10 px-5 py-2 rounded-full text-[10px] font-bold hover:bg-white hover:text-black transition-all">
+            <span class="lang-en">FRANÇAIS</span><span class="lang-fr">ENGLISH</span>
+        </button>
+    </nav>
+
+    <section class="min-h-screen flex items-center justify-center relative hero-gradient">
+        <div class="text-center px-6 max-w-6xl">
+            <span class="text-blue-500 font-mono tracking-[0.6em] uppercase text-[10px] mb-6 block">Dual Division Multi-Service Group</span>
+            <h1 class="text-6xl md:text-9xl font-black italic uppercase leading-[0.85] mb-10">
+                <span class="lang-en">Professional <br><span class="text-blue-600">Workmanship.</span></span>
+                <span class="lang-fr">Travail <br><span class="text-blue-600">Professionnel.</span></span>
+            </h1>
+            <div class="flex flex-col md:flex-row gap-5 justify-center">
+                <a href="security.html" class="bg-blue-600 px-12 py-6 rounded-2xl font-black text-xs uppercase tracking-widest hover:scale-105 transition-transform">
+                    <span class="lang-en">Security Solutions</span><span class="lang-fr">Solutions de Sécurité</span>
+                </a>
+                <a href="apparel.html" class="glass px-12 py-6 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+                    <span class="lang-en">Branding & Apparel</span><span class="lang-fr">Branding & Vêtements</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleLang() {
+            document.body.classList.toggle('is-french');
+            localStorage.setItem('pref-lang', document.body.classList.contains('is-french') ? 'fr' : 'en');
+        }
+        if(localStorage.getItem('pref-lang') === 'fr') document.body.classList.add('is-french');
+    </script>
+</body>
+</html>

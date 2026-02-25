@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ink & Apparel | BIMPro Enterprises</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .lang-fr { display: none; }
+        .is-french .lang-en { display: none; }
+        .is-french .lang-fr { display: block; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        /* Amber gradient for the Apparel division */
+        .hero-gradient { background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.08) 0%, transparent 70%); }
+        .text-outline { -webkit-text-stroke: 1px rgba(245, 158, 11, 0.5); color: transparent; }
+    </style>
+</head>
+<body class="bg-[#0a0a0a] text-white selection:bg-amber-500/30 overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 glass py-5 px-8 flex justify-between items-center">
+        <div class="text-2xl font-black italic tracking-tighter uppercase">BIM<span class="text-amber-500">PRO</span></div>
+        <div class="hidden lg:flex gap-10 text-[10px] font-black uppercase tracking-[0.2em]">
+            <a href="index.html" class="hover:text-amber-400 transition">Home</a>
+            <a href="about.html" class="hover:text-amber-400 transition">About</a>
+            <a href="security.html" class="hover:text-amber-400 transition">Security</a>
+            <a href="apparel.html" class="text-amber-500">Apparel</a>
+            <a href="portfolio.html" class="hover:text-amber-400 transition">Portfolio</a>
+            <a href="contact.html" class="hover:text-amber-400 transition">Contact</a>
+        </div>
+        <button onclick="toggleLang()" class="bg-white/5 border border-white/10 px-5 py-2 rounded-full text-[10px] font-bold hover:bg-white hover:text-black transition-all">
+            <span class="lang-en">FRANÇAIS</span><span class="lang-fr">ENGLISH</span>
+        </button>
+    </nav>
+
+    <section class="min-h-[60vh] flex items-center justify-center relative hero-gradient px-6">
+        <div class="text-center max-w-4xl mt-20">
+            <span class="text-amber-500 font-mono tracking-[0.6em] uppercase text-[10px] mb-6 block">Branding Division</span>
+            <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-[0.85] mb-10">
+                <span class="lang-en">BIMPRO <br><span class="text-amber-500">INK & APPAREL.</span></span>
+                <span class="lang-fr">BIMPRO <br><span class="text-amber-500">ENCRE & VÊTEMENTS.</span></span>
+            </h1>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 text-left">
+                
+                <div class="glass p-12 rounded-[3rem] relative overflow-hidden group border-white/5 hover:border-amber-500/30 transition-all">
+                    <div class="absolute top-0 right-0 p-8 opacity-10 text-8xl font-black group-hover:scale-110 transition-transform italic text-amber-500">INK</div>
+                    <h3 class="text-3xl font-black uppercase mb-6">
+                        <span class="lang-en">T-Shirt & <span class="text-amber-500">Apparel</span></span>
+                        <span class="lang-fr">T-Shirt & <span class="text-amber-500">Vêtements</span></span>
+                    </h3>
+                    <p class="text-zinc-400 mb-10 text-lg font-light leading-relaxed">
+                        <span class="lang-en">High-grade custom apparel printing for corporate identity, school uniforms, and professional workwear using durable, vibrant materials.</span>
+                        <span class="lang-fr">Impression de vêtements personnalisés de haute qualité pour l'identité d'entreprise, les uniformes scolaires et les vêtements de travail professionnels.</span>
+                    </p>
+                    <div class="flex flex-wrap gap-3 mb-10">
+                        <span class="bg-white/5 border border-white/10 px-4 py-1 rounded-full text-[9px] font-black tracking-widest uppercase">Vinyl</span>
+                        <span class="bg-white/5 border border-white/10 px-4 py-1 rounded-full text-[9px] font-black tracking-widest uppercase">Screen Print</span>
+                        <span class="bg-white/5 border border-white/10 px-4 py-1 rounded-full text-[9px] font-black tracking-widest uppercase">Heat Press</span>
+                    </div>
+                    <a href="contact.html" class="inline-block text-amber-500 font-black text-[10px] tracking-[0.3em] uppercase border-b-2 border-amber-500 pb-2 hover:text-white hover:border-white transition-all">
+                        <span class="lang-en">Start Branding →</span>
+                        <span class="lang-fr">Lancer le Branding →</span>
+                    </a>
+                </div>
+
+                <div class="glass p-12 rounded-[3rem] border-white/5 hover:border-amber-500/30 transition-all">
+                    <h3 class="text-3xl font-black uppercase mb-6">
+                        <span class="lang-en">Promotional <span class="text-amber-500">Assets</span></span>
+                        <span class="lang-fr">Supports <span class="text-amber-500">Promotionnels</span></span>
+                    </h3>
+                    <p class="text-zinc-400 mb-10 text-lg font-light leading-relaxed">
+                        <span class="lang-en">Custom merchandise and branding materials designed to elevate your market presence and ensure professional visibility.</span>
+                        <span class="lang-fr">Marchandises personnalisées et supports de marque conçus pour renforcer votre présence sur le marché et assurer une visibilité professionnelle.</span>
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="bg-white/5 p-6 rounded-2xl border border-white/5 group hover:bg-amber-500/10 transition-all">
+                            <span class="text-amber-500 font-black text-xs block mb-2">01.</span>
+                            <span class="text-[10px] font-black uppercase tracking-widest">Stickers & Labels</span>
+                        </div>
+                        <div class="bg-white/5 p-6 rounded-2xl border border-white/5 group hover:bg-amber-500/10 transition-all">
+                            <span class="text-amber-500 font-black text-xs block mb-2">02.</span>
+                            <span class="text-[10px] font-black uppercase tracking-widest">Business Branding</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 bg-amber-500/5">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl font-black italic uppercase mb-12">
+                <span class="lang-en">Quality <span class="text-amber-500">Guaranteed</span></span>
+                <span class="lang-fr">Qualité <span class="text-amber-500">Garantie</span></span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="space-y-4">
+                    <i class="fas fa-tint text-amber-500 text-2xl"></i>
+                    <h4 class="font-black uppercase tracking-widest text-xs">Premium Inks</h4>
+                </div>
+                <div class="space-y-4">
+                    <i class="fas fa-tshirt text-amber-500 text-2xl"></i>
+                    <h4 class="font-black uppercase tracking-widest text-xs">Durable Fabric</h4>
+                </div>
+                <div class="space-y-4">
+                    <i class="fas fa-check-circle text-amber-500 text-2xl"></i>
+                    <h4 class="font-black uppercase tracking-widest text-xs">Precision Finish</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-white/5">
+        <p class="text-[9px] font-mono uppercase tracking-[0.5em] text-zinc-600">© 2026 BIMPro Enterprises | Multi-Service Group</p>
+    </footer>
+
+    <script>
+        function toggleLang() {
+            document.body.classList.toggle('is-french');
+            localStorage.setItem('pref-lang', document.body.classList.contains('is-french') ? 'fr' : 'en');
+        }
+        if(localStorage.getItem('pref-lang') === 'fr') document.body.classList.add('is-french');
+    </script>
+</body>
+</html>

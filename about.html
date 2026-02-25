@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | BIMPro Enterprises</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .lang-fr { display: none; }
+        .is-french .lang-en { display: none; }
+        .is-french .lang-fr { display: block; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
+        .hero-gradient { background: radial-gradient(circle at 50% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 70%); }
+    </style>
+</head>
+<body class="bg-[#0a0a0a] text-white selection:bg-blue-500/30 overflow-x-hidden">
+
+    <nav class="fixed w-full z-50 glass py-5 px-8 flex justify-between items-center">
+        <div class="text-2xl font-black italic tracking-tighter uppercase">BIM<span class="text-blue-600">PRO</span></div>
+        <div class="hidden lg:flex gap-10 text-[10px] font-black uppercase tracking-[0.2em]">
+            <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+            <a href="about.html" class="text-blue-500">About</a>
+            <a href="security.html" class="hover:text-blue-400 transition">Security</a>
+            <a href="apparel.html" class="hover:text-blue-400 transition">Apparel</a>
+            <a href="portfolio.html" class="hover:text-blue-400 transition">Portfolio</a>
+            <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
+        </div>
+        <button onclick="toggleLang()" class="bg-white/5 border border-white/10 px-5 py-2 rounded-full text-[10px] font-bold hover:bg-white hover:text-black transition-all">
+            <span class="lang-en">FRANÇAIS</span><span class="lang-fr">ENGLISH</span>
+        </button>
+    </nav>
+
+    <section class="min-h-[60vh] flex items-center justify-center relative hero-gradient px-6">
+        <div class="text-center max-w-4xl mt-20">
+            <span class="text-blue-500 font-mono tracking-[0.6em] uppercase text-[10px] mb-6 block">Company Profile</span>
+            <h1 class="text-6xl md:text-8xl font-black italic uppercase leading-[0.85] mb-10">
+                <span class="lang-en">The <span class="text-blue-600">BIMPRO</span> <br>Standard.</span>
+                <span class="lang-fr">Le Standard <br><span class="text-blue-600">BIMPRO.</span></span>
+            </h1>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-8">
+                    <div>
+                        <h2 class="text-5xl font-black italic uppercase mb-10">
+                            <span class="lang-en">Our <span class="text-blue-600">Identity</span></span>
+                            <span class="lang-fr">Notre <span class="text-blue-600">Identité</span></span>
+                        </h2>
+                        <p class="text-zinc-400 text-xl font-light leading-relaxed">
+                            <span class="lang-en">BIMPro Enterprises is a multi-service group built on the pillars of reliability and modern innovation. We integrate complex security technology with creative branding excellence.</span>
+                            <span class="lang-fr">BIMPro Enterprises est un groupe multi-services fondé sur les piliers de la fiabilité et de l'innovation moderne. Nous intégrons une technologie de sécurité complexe avec une excellence créative en branding.</span>
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-12 h-[1px] bg-blue-600 group-hover:w-20 transition-all"></div>
+                            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white italic">01. Technical Precision</span>
+                        </div>
+                        <div class="flex items-center gap-4 group">
+                            <div class="w-12 h-[1px] bg-blue-600 group-hover:w-20 transition-all"></div>
+                            <span class="text-[10px] font-black uppercase tracking-[0.3em] text-white italic">02. Creative Excellence</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass p-10 rounded-[2.5rem] border-white/5 hover:border-blue-600/30 transition-all group">
+                        <h4 class="text-blue-500 font-black italic text-4xl mb-4 group-hover:scale-110 transition-transform origin-left">01</h4>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-white mb-2">Integrity</p>
+                        <p class="text-[9px] text-zinc-500 leading-relaxed uppercase font-mono">Uncompromising workmanship in every installation and stitch.</p>
+                    </div>
+                    <div class="glass p-10 rounded-[2.5rem] border-white/5 hover:border-blue-600/30 transition-all group">
+                        <h4 class="text-blue-500 font-black italic text-4xl mb-4 group-hover:scale-110 transition-transform origin-left">02</h4>
+                        <p class="text-[10px] font-bold uppercase tracking-widest text-white mb-2">Precision</p>
+                        <p class="text-[9px] text-zinc-500 leading-relaxed uppercase font-mono">Meticulous attention to technical detail and brand consistency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-8 bg-blue-600/5">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10">
+            <div class="glass p-12 rounded-[3rem]">
+                <h3 class="text-2xl font-black italic uppercase mb-6 text-blue-500 italic">Vision</h3>
+                <p class="text-zinc-400 font-light">
+                    <span class="lang-en">To become a recognized multi-service provider known for quality, trust, and innovation across security and branding sectors.</span>
+                    <span class="lang-fr">Devenir un fournisseur multi-services reconnu pour sa qualité, sa confiance et son innovation dans les secteurs de la sécurité et du marquage.</span>
+                </p>
+            </div>
+            <div class="glass p-12 rounded-[3rem]">
+                <h3 class="text-2xl font-black italic uppercase mb-6 text-blue-500 italic">Core Mission</h3>
+                <p class="text-zinc-400 font-light">
+                    <span class="lang-en">Providing reliable security systems and professional branding solutions that empower businesses and protect communities.</span>
+                    <span class="lang-fr">Fournir des systèmes de sécurité fiables et des solutions de branding professionnelles qui renforcent les entreprises et protègent les communautés.</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-white/5">
+        <p class="text-[9px] font-mono uppercase tracking-[0.5em] text-zinc-600">© 2026 BIMPro Enterprises | Multi-Service Group</p>
+    </footer>
+
+    <script>
+        function toggleLang() {
+            document.body.classList.toggle('is-french');
+            localStorage.setItem('pref-lang', document.body.classList.contains('is-french') ? 'fr' : 'en');
+        }
+        // Persist language across pages
+        if(localStorage.getItem('pref-lang') === 'fr') document.body.classList.add('is-french');
+    </script>
+
+</body>
+</html>

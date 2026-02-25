@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Security | BIMPro Enterprises</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .lang-fr { display: none; }
+        .is-french .lang-en { display: none; }
+        .is-french .lang-fr { display: block; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.08); }
+    </style>
+</head>
+<body class="bg-[#0a0a0a] text-white">
+    <nav class="fixed w-full z-50 glass py-5 px-8 flex justify-between items-center">
+        <div class="text-2xl font-black italic tracking-tighter uppercase">BIM<span class="text-blue-600">PRO</span></div>
+        <div class="hidden lg:flex gap-10 text-[10px] font-black uppercase tracking-[0.2em]">
+            <a href="index.html" class="hover:text-blue-400 transition">Home</a>
+            <a href="about.html" class="hover:text-blue-400 transition">About</a>
+            <a href="security.html" class="text-blue-500">Security</a>
+            <a href="apparel.html" class="hover:text-blue-400 transition">Apparel</a>
+            <a href="portfolio.html" class="hover:text-blue-400 transition">Portfolio</a>
+            <a href="contact.html" class="hover:text-blue-400 transition">Contact</a>
+        </div>
+        <button onclick="toggleLang()" class="bg-white/5 border border-white/10 px-5 py-2 rounded-full text-[10px] font-bold">
+            <span class="lang-en">FRANÇAIS</span><span class="lang-fr">ENGLISH</span>
+        </button>
+    </nav>
+
+    <section class="py-40 px-8 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass p-10 rounded-3xl">
+                <i class="fas fa-shield-alt text-blue-600 text-3xl mb-6"></i>
+                <h3 class="font-black italic uppercase mb-4">CCTV Systems</h3>
+                <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold">DVR/NVR Installation & Remote Viewing.</p>
+            </div>
+            <div class="glass p-10 rounded-3xl border-blue-500/20">
+                <i class="fas fa-rss text-blue-600 text-3xl mb-6"></i>
+                <h3 class="font-black italic uppercase mb-4">Wireless Alarms</h3>
+                <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold">GSM & Wi-Fi Sensors for 24/7 alerts.</p>
+            </div>
+            <div class="glass p-10 rounded-3xl">
+                <i class="fas fa-mobile-alt text-blue-600 text-3xl mb-6"></i>
+                <h3 class="font-black italic uppercase mb-4">Smart Integration</h3>
+                <p class="text-xs text-zinc-500 uppercase tracking-widest font-bold">Home & Business Security Automation.</p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleLang() {
+            document.body.classList.toggle('is-french');
+            localStorage.setItem('pref-lang', document.body.classList.contains('is-french') ? 'fr' : 'en');
+        }
+        if(localStorage.getItem('pref-lang') === 'fr') document.body.classList.add('is-french');
+    </script>
+</body>
+</html>

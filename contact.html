@@ -1,0 +1,29 @@
+<section class="py-32 px-8 flex justify-center">
+    <div class="w-full max-w-4xl glass p-16 rounded-[4rem] relative">
+        <div class="absolute top-10 right-10 flex items-center gap-2">
+            <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+            <span class="text-[9px] font-bold text-emerald-500 uppercase tracking-widest">Systems Online</span>
+        </div>
+        
+        <h2 class="text-5xl font-black italic uppercase mb-12">Initialize <br><span class="text-blue-600">Communication</span></h2>
+        
+        <form class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="space-y-2">
+                <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">Identity</label>
+                <input type="text" placeholder="FULL NAME" class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-blue-500 transition-all font-bold text-xs text-white">
+            </div>
+            <div class="space-y-2">
+                <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">Target Division</label>
+                <select class="w-full bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-blue-500 transition-all font-bold text-xs text-white/50">
+                    <option>SECURITY & SMART PROTECTION</option>
+                    <option>INK & APPAREL</option>
+                </select>
+            </div>
+            <div class="md:col-span-2 space-y-2">
+                <label class="text-[9px] font-bold text-zinc-500 uppercase ml-2 tracking-[0.2em]">Message Payload</label>
+                <textarea rows="6" placeholder="PROJECT DETAILS..." class="w-full bg-white/5 border border-white/10 p-6 rounded-[2rem] outline-none focus:border-blue-500 transition-all font-bold text-xs text-white"></textarea>
+            </div>
+            <button class="md:col-span-2 bg-white text-black font-black uppercase py-7 rounded-2xl hover:bg-blue-600 hover:text-white transition-all tracking-[0.4em] text-xs">Transmit Inquiry</button>
+        </form>
+    </div>
+</section>
