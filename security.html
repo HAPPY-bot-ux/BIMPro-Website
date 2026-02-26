@@ -232,57 +232,111 @@
 <body>
    
 
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+   <div class="cursor"></div>
+<div class="cursor-follower"></div>
 
-    <!-- Background Pattern -->
-    <div class="fixed inset-0 grid-bg opacity-20 pointer-events-none"></div>
+<div class="fixed inset-0 grid-bg opacity-20 pointer-events-none"></div>
 
-    <!-- Navigation (consistent with theme) -->
-    <nav class="fixed w-full z-50 py-6 px-8 flex justify-between items-center" id="navbar">
-        <div class="glass px-8 py-4 rounded-full flex items-center gap-4" style="border-color:#FFD70030;">
-            <div class="text-2xl font-black tracking-tighter">
-                <span class="gradient-text">BIM</span><span class="text-white">Pro</span>
-            </div>
-            <div class="w-px h-8 bg-gold/20"></div>
-            <div class="text-xs font-medium text-gray-400">
-                <span class="lang-en">Integrated Services</span>
-                <span class="lang-fr">Services Intégrés</span>
-            </div>
+<nav class="fixed w-full z-50 py-4 px-6 md:py-6 md:px-8 flex justify-between items-center transition-all duration-300" id="navbar">
+    <div class="glass px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center gap-4 border" style="border-color:#FFD70030;">
+        <div class="text-xl md:text-2xl font-black tracking-tighter">
+            <span class="gradient-text">BIM</span><span class="text-white">Pro</span>
+        </div>
+        <div class="hidden sm:block w-px h-6 md:h-8 bg-gold/20"></div>
+        <div class="hidden sm:block text-[10px] md:text-xs font-medium text-gray-400">
+            <span class="lang-en">Integrated Services</span>
+            <span class="lang-fr hidden">Services Intégrés</span>
+        </div>
+    </div>
+    
+    <div class="hidden lg:flex items-center gap-12">
+        <div class="flex gap-8 text-sm font-medium">
+            <a href="index.html" class="nav-link relative group text-white">
+                <span class="lang-en">Home</span><span class="lang-fr hidden">Accueil</span>
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full transition-all"></span>
+            </a>
+            <a href="about.html" class="nav-link relative group text-white">
+                <span class="lang-en">About</span><span class="lang-fr hidden">À propos</span>
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full transition-all"></span>
+            </a>
+            <a href="services.html" class="nav-link relative group text-white">
+                <span class="lang-en">Services</span><span class="lang-fr hidden">Services</span>
+                <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-[#FFD700]"></span>
+            </a>
+            <a href="portfolio.html" class="nav-link relative group text-white">
+                <span class="lang-en">Portfolio</span><span class="lang-fr hidden">Portfolio</span>
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full transition-all"></span>
+            </a>
+            <a href="contact.html" class="nav-link relative group text-white">
+                <span class="lang-en">Contact</span><span class="lang-fr hidden">Contact</span>
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full transition-all"></span>
+            </a>
         </div>
         
-        <div class="hidden lg:flex items-center gap-12">
-            <div class="flex gap-8 text-sm font-medium">
-                <a href="index.html" class="nav-link relative group">
-                    <span class="lang-en">Home</span><span class="lang-fr">Accueil</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full transition-all"></span>
-                </a>
-                <a href="about.html" class="nav-link relative group">
-                    <span class="lang-en">About</span><span class="lang-fr">À propos</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full"></span>
-                </a>
-                <a href="services.html" class="nav-link relative group">
-                    <span class="lang-en">Services</span><span class="lang-fr">Services</span>
-                    <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-[#FFD700]"></span>
-                </a>
-                <a href="portfolio.html" class="nav-link relative group">
-                    <span class="lang-en">Portfolio</span><span class="lang-fr">Portfolio</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full"></span>
-                </a>
-                <a href="contact.html" class="nav-link relative group">
-                    <span class="lang-en">Contact</span><span class="lang-fr">Contact</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full"></span>
-                </a>
-            </div>
-            
-            <button onclick="toggleLang()" class="glass px-6 py-3 rounded-full text-xs font-bold hover:bg-[#B22222] transition-all flex items-center gap-2 border border-[#FFD700]/40">
-                <i class="fas fa-globe text-[#FFD700]"></i>
-                <span class="lang-en">FR</span><span class="lang-fr">EN</span>
-            </button>
-        </div>
-    </nav>
+        <button onclick="toggleLang()" class="glass px-6 py-3 rounded-full text-xs font-bold hover:bg-[#B22222] transition-all flex items-center gap-2 border border-[#FFD700]/40 text-[#FFD700]">
+            <i class="fas fa-globe"></i>
+            <span class="lang-en">FR</span><span class="lang-fr hidden">EN</span>
+        </button>
+    </div>
 
+    <div class="flex lg:hidden items-center gap-3">
+        <button onclick="toggleLang()" class="glass w-11 h-11 rounded-full flex items-center justify-center border border-[#FFD700]/40 text-[#FFD700] text-xs font-bold active:scale-90 transition-transform">
+            <span class="lang-en">FR</span><span class="lang-fr hidden">EN</span>
+        </button>
+        <button id="menuBtn" class="glass w-11 h-11 rounded-full flex items-center justify-center border border-[#FFD700]/40 text-[#FFD700] active:scale-90 transition-transform">
+            <i class="fas fa-bars" id="menuIcon"></i>
+        </button>
+    </div>
+</nav>
+
+<div id="mobileMenu" class="fixed inset-0 z-[45] bg-black/95 backdrop-blur-2xl translate-x-full transition-transform duration-500 ease-in-out lg:hidden flex flex-col items-center justify-center gap-10">
+    <a href="index.html" class="text-3xl font-black text-white hover:text-[#FFD700] transition-colors"><span class="lang-en">Home</span><span class="lang-fr hidden">Accueil</span></a>
+    <a href="about.html" class="text-3xl font-black text-white hover:text-[#FFD700] transition-colors"><span class="lang-en">About</span><span class="lang-fr hidden">À propos</span></a>
+    <a href="services.html" class="text-3xl font-black text-[#FFD700] drop-shadow-[0_0_10px_rgba(255,215,0,0.3)]"><span class="lang-en">Services</span><span class="lang-fr hidden">Services</span></a>
+    <a href="portfolio.html" class="text-3xl font-black text-white hover:text-[#FFD700] transition-colors"><span class="lang-en">Portfolio</span><span class="lang-fr hidden">Portfolio</span></a>
+    <a href="contact.html" class="text-3xl font-black text-white hover:text-[#FFD700] transition-colors"><span class="lang-en">Contact</span><span class="lang-fr hidden">Contact</span></a>
+</div>
+
+<script>
+    // 1. Scroll Effect (Smooth Blur)
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 40) {
+            nav.classList.add('bg-black/80', 'py-3', 'backdrop-blur-md');
+            nav.classList.remove('py-4', 'md:py-6');
+        } else {
+            nav.classList.remove('bg-black/80', 'py-3', 'backdrop-blur-md');
+            nav.classList.add('py-4', 'md:py-6');
+        }
+    });
+
+    // 2. Mobile Menu Logic
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    menuBtn.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('translate-x-full');
+        if (isOpen) {
+            mobileMenu.classList.add('translate-x-full');
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+            document.body.style.overflow = ''; // Enable scroll
+        } else {
+            mobileMenu.classList.remove('translate-x-full');
+            menuIcon.classList.replace('fa-bars', 'fa-times');
+            document.body.style.overflow = 'hidden'; // Disable scroll
+        }
+    });
+
+    // 3. Auto-close on link click
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+            document.body.style.overflow = '';
+        });
+    });
+</script>
     <!-- Hero Section -->
     <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20">
         <div class="absolute inset-0 flex items-center justify-center opacity-5">
@@ -314,127 +368,129 @@
     </section>
 
     <!-- ===== SECURITY DIVISION – EXPANDED WITH DEEP INFORMATION ===== -->
-    <section class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <!-- division header -->
-            <div class="flex items-center gap-4 mb-12">
-                <span class="w-16 h-16 bg-[#B22222] rounded-2xl flex items-center justify-center text-3xl"><i class="fas fa-shield-alt text-[#FFD700]"></i></span>
-                <div>
-                    <span class="text-[#FFD700] font-mono text-sm tracking-[0.3em]">DIVISION 01 — SECURITY & SMART PROTECTION</span>
-                    <h2 class="text-4xl md:text-5xl font-black"><span class="gradient-text">Advanced Security Systems</span></h2>
+   <section class="py-12 md:py-20 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 md:px-6">
+        
+        <div class="flex flex-col md:flex-row items-start md:items-center gap-4 mb-10 md:mb-12">
+            <span class="w-14 h-14 md:w-16 md:h-16 bg-[#B22222] rounded-2xl flex items-center justify-center text-2xl md:text-3xl shrink-0">
+                <i class="fas fa-shield-alt text-[#FFD700]"></i>
+            </span>
+            <div>
+                <span class="text-[#FFD700] font-mono text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] block mb-1">DIVISION 01 — SECURITY & SMART PROTECTION</span>
+                <h2 class="text-3xl sm:text-4xl md:text-5xl font-black leading-tight">
+                    <span class="gradient-text">Advanced Security Systems</span>
+                </h2>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 mb-12 md:mb-16">
+            <div class="glass-card p-5 md:p-6 rounded-2xl border-l-4 border-[#FFD700]">
+                <p class="text-2xl font-black text-[#FFD700] mb-1">500+</p>
+                <p class="text-xs md:text-sm text-gray-400">Installations across residential, commercial & industrial</p>
+            </div>
+            <div class="glass-card p-5 md:p-6 rounded-2xl border-l-4 border-[#B22222]">
+                <p class="text-2xl font-black text-[#B22222] mb-1">99.9%</p>
+                <p class="text-xs md:text-sm text-gray-400">Uptime — we guarantee reliability</p>
+            </div>
+            <div class="glass-card p-5 md:p-6 rounded-2xl border-l-4 border-[#FFD700] sm:col-span-2 md:col-span-1">
+                <p class="text-2xl font-black text-[#FFD700] mb-1">24/7</p>
+                <p class="text-xs md:text-sm text-gray-400">Professional monitoring & rapid response</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12 md:mb-16">
+            
+            <div class="glass-card p-6 md:p-8 rounded-3xl security-pulse group md:col-span-2 lg:col-span-1">
+                <i class="fas fa-video text-3xl md:text-4xl text-[#FFD700] mb-4"></i>
+                <h3 class="text-xl md:text-2xl font-black mb-3">CCTV & Surveillance</h3>
+                <ul class="space-y-3 text-sm text-gray-300 mb-6">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>4K & HD IP cameras with night vision</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>AI‑powered motion detection & alerts</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Remote viewing via smartphone / PC</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Cloud & local storage (NVR/DVR)</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Facial recognition & license plate capture</span></li>
+                </ul>
+                <div class="flex flex-wrap gap-2">
+                    <span class="tech-badge px-3 py-1 bg-white/5 rounded-full text-[10px] uppercase border border-white/10">Hikvision</span>
+                    <span class="tech-badge px-3 py-1 bg-white/5 rounded-full text-[10px] uppercase border border-white/10">Dahua</span>
+                    <span class="tech-badge px-3 py-1 bg-white/5 rounded-full text-[10px] uppercase border border-white/10">Axis</span>
                 </div>
             </div>
 
-            <!-- introductory text block -->
-            <div class="grid md:grid-cols-3 gap-8 mb-16">
-                <div class="glass-card p-6 rounded-2xl border-l-4 border-[#FFD700]">
-                    <p class="text-2xl font-black text-[#FFD700] mb-2">500+</p>
-                    <p class="text-sm text-gray-400">installations across residential, commercial & industrial</p>
-                </div>
-                <div class="glass-card p-6 rounded-2xl border-l-4 border-[#B22222]">
-                    <p class="text-2xl font-black text-[#B22222] mb-2">99.9%</p>
-                    <p class="text-sm text-gray-400">uptime — we guarantee reliability</p>
-                </div>
-                <div class="glass-card p-6 rounded-2xl border-l-4 border-[#FFD700]">
-                    <p class="text-2xl font-black text-[#FFD700] mb-2">24/7</p>
-                    <p class="text-sm text-gray-400">professional monitoring & rapid response</p>
-                </div>
+            <div class="glass-card p-6 md:p-8 rounded-3xl security-pulse group">
+                <i class="fas fa-bell text-3xl md:text-4xl text-[#FFD700] mb-4"></i>
+                <h3 class="text-xl md:text-2xl font-black mb-3">Wireless Alarms</h3>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>GSM / 4G / Wi‑Fi connectivity</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Pet‑immune motion sensors</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Door/window contacts & glass break</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Backup battery & solar siren</span></li>
+                </ul>
             </div>
 
-            <!-- detailed feature grid – lots of information -->
-            <div class="feature-grid mb-16">
-                <!-- CCTV DEEP DIVE -->
-                <div class="glass-card p-8 rounded-3xl security-pulse group col-span-2 md:col-span-1">
-                    <i class="fas fa-video text-4xl text-[#FFD700] mb-4"></i>
-                    <h3 class="text-2xl font-black mb-3">CCTV & Surveillance</h3>
-                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-[#FFD700] mt-1"></i><span>4K & HD IP cameras with night vision</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-[#FFD700] mt-1"></i><span>AI‑powered motion detection & alerts</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-[#FFD700] mt-1"></i><span>Remote viewing via smartphone / PC</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-[#FFD700] mt-1"></i><span>Cloud & local storage (NVR/DVR)</span></li>
-                        <li class="flex items-start gap-2"><i class="fas fa-check text-[#FFD700] mt-1"></i><span>Facial recognition & license plate capture</span></li>
-                    </ul>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-badge">Hikvision</span>
-                        <span class="tech-badge">Dahua</span>
-                        <span class="tech-badge">Axis</span>
+            <div class="glass-card p-6 md:p-8 rounded-3xl security-pulse group">
+                <i class="fas fa-lock text-3xl md:text-4xl text-[#FFD700] mb-4"></i>
+                <h3 class="text-xl md:text-2xl font-black mb-3">Access Control</h3>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Biometric (fingerprint / facial)</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>RFID cards & key fobs</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Intercom & video door entry</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Centralised management software</span></li>
+                </ul>
+            </div>
+
+            <div class="glass-card p-6 md:p-8 rounded-3xl security-pulse group">
+                <i class="fas fa-microchip text-3xl md:text-4xl text-[#FFD700] mb-4"></i>
+                <h3 class="text-xl md:text-2xl font-black mb-3">Smart Integration</h3>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Lights & thermostats automation</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Voice control (Alexa, Google)</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Zigbee / Z‑Wave compatible</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Custom scenes & scheduling</span></li>
+                </ul>
+            </div>
+
+            <div class="glass-card p-6 md:p-8 rounded-3xl security-pulse group">
+                <i class="fas fa-fence text-3xl md:text-4xl text-[#FFD700] mb-4"></i>
+                <h3 class="text-xl md:text-2xl font-black mb-3">Perimeter Protection</h3>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Infrared beams & laser barriers</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Vibration sensors on fences</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Security lighting & sirens</span></li>
+                </ul>
+            </div>
+
+            <div class="glass-card p-6 md:p-8 rounded-3xl security-pulse group">
+                <i class="fas fa-fire-extinguisher text-3xl md:text-4xl text-[#FFD700] mb-4"></i>
+                <h3 class="text-xl md:text-2xl font-black mb-3">Fire & Life Safety</h3>
+                <ul class="space-y-3 text-sm text-gray-300">
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>Smoke & heat detectors</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>CO / gas monitoring</span></li>
+                    <li class="flex items-start gap-3"><i class="fas fa-check text-[#FFD700] mt-1 shrink-0"></i><span>24/7 central station connection</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="glass-card p-6 md:p-10 rounded-3xl border border-[#FFD700]/30 bg-gradient-to-br md:bg-gradient-to-r from-[#B22222]/10 to-transparent">
+            <div class="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
+                <div class="max-w-2xl">
+                    <h4 class="text-xl md:text-2xl font-black mb-3">24/7 Professional Monitoring</h4>
+                    <p class="text-sm md:text-base text-gray-400 leading-relaxed">All security systems can be connected to our UL‑listed monitoring center. Police, medical, or fire dispatch within seconds.</p>
+                </div>
+                <div class="flex gap-8 w-full lg:w-auto border-t lg:border-t-0 border-white/10 pt-6 lg:pt-0">
+                    <div class="text-center flex-1 lg:flex-none">
+                        <span class="text-3xl md:text-4xl font-black text-[#FFD700] block mb-1">3s</span>
+                        <p class="text-[10px] md:text-xs uppercase tracking-widest text-gray-500">Response</p>
                     </div>
-                </div>
-
-                <!-- Wireless Alarms -->
-                <div class="glass-card p-8 rounded-3xl security-pulse group">
-                    <i class="fas fa-bell text-4xl text-[#FFD700] mb-4"></i>
-                    <h3 class="text-2xl font-black mb-3">Wireless Alarms</h3>
-                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>GSM / 4G / Wi‑Fi connectivity</li>
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Pet‑immune motion sensors</li>
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Door/window contacts & glass break</li>
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Backup battery & solar siren</li>
-                    </ul>
-                </div>
-
-                <!-- Access Control -->
-                <div class="glass-card p-8 rounded-3xl security-pulse group">
-                    <i class="fas fa-lock text-4xl text-[#FFD700] mb-4"></i>
-                    <h3 class="text-2xl font-black mb-3">Access Control</h3>
-                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Biometric (fingerprint / facial)</li>
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>RFID cards & key fobs</li>
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Intercom & video door entry</li>
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Centralised management software</li>
-                    </ul>
-                </div>
-
-                <!-- Smart Integration -->
-                <div class="glass-card p-8 rounded-3xl security-pulse group">
-                    <i class="fas fa-microchip text-4xl text-[#FFD700] mb-4"></i>
-                    <h3 class="text-2xl font-black mb-3">Smart Integration</h3>
-                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Home automation (lights, thermostats)</li>
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Voice control (Alexa, Google Home)</li>
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Zigbee / Z‑Wave compatible</li>
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Custom scenes & scheduling</li>
-                    </ul>
-                </div>
-
-                <!-- Perimeter Protection -->
-                <div class="glass-card p-8 rounded-3xl security-pulse group">
-                    <i class="fas fa-fence text-4xl text-[#FFD700] mb-4"></i>
-                    <h3 class="text-2xl font-black mb-3">Perimeter Protection</h3>
-                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Infrared beams & laser barriers</li>
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Vibration sensors on fences</li>
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Security lighting & sirens</li>
-                    </ul>
-                </div>
-
-                <!-- Fire & Life Safety -->
-                <div class="glass-card p-8 rounded-3xl security-pulse group">
-                    <i class="fas fa-fire-extinguisher text-4xl text-[#FFD700] mb-4"></i>
-                    <h3 class="text-2xl font-black mb-3">Fire & Life Safety</h3>
-                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Smoke & heat detectors</li>
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>CO / gas monitoring</li>
-                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>24/7 central station connection</li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- extra information: monitoring & support -->
-            <div class="glass-card p-10 rounded-3xl border border-[#FFD700]/30 bg-gradient-to-r from-[#B22222]/10 to-transparent">
-                <div class="flex flex-wrap items-center justify-between gap-6">
-                    <div>
-                        <h4 class="text-2xl font-black mb-2">24/7 Professional Monitoring</h4>
-                        <p class="text-gray-400 max-w-2xl">All security systems can be connected to our UL‑listed monitoring center. Police, medical, or fire dispatch within seconds.</p>
-                    </div>
-                    <div class="flex gap-4">
-                        <div class="text-center"><span class="text-3xl font-black text-[#FFD700]">3s</span><p class="text-xs">response</p></div>
-                        <div class="text-center"><span class="text-3xl font-black text-[#B22222]">100%</span><p class="text-xs">coverage</p></div>
+                    <div class="text-center flex-1 lg:flex-none">
+                        <span class="text-3xl md:text-4xl font-black text-[#B22222] block mb-1">100%</span>
+                        <p class="text-[10px] md:text-xs uppercase tracking-widest text-gray-500">Coverage</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Divider – appears only after extensive security info -->
     <div class="max-w-7xl mx-auto px-6">

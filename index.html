@@ -342,56 +342,126 @@
     </style>
 </head>
 <body>
-    <!-- LOADING SCREEN (unchanged structure, but theme adapted) -->
-    <div class="loading-screen" id="loadingScreen">
-        <div class="slideshow-container">
-            <div class="slideshow-image active" style="background-image: url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=2070&q=80');"></div>
-            <div class="slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1558001373-7b93ee48ffa0?auto=format&fit=crop&w=2070&q=80');"></div>
-            <div class="slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?auto=format&fit=crop&w=2070&q=80');"></div>
-            <div class="slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=2070&q=80');"></div>
-        </div>
-
-        <div class="loading-content">
-            <div class="loading-logo"><span>BIMPro</span></div>
-            <div class="loading-percent" id="loadingPercent">0%</div>
-            <div class="loading-bar-container"><div class="loading-bar" id="loadingBar"></div></div>
-            <div class="loading-text"><span class="lang-en">LOADING EXPERIENCE</span><span class="lang-fr">CHARGEMENT</span></div>
-        </div>
+  <div class="loading-screen" id="loadingScreen">
+    <div class="slideshow-container">
+        <div class="slideshow-image active" style="background-image: url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=2070&q=80');"></div>
+        <div class="slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1558001373-7b93ee48ffa0?auto=format&fit=crop&w=2070&q=80');"></div>
+        <div class="slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?auto=format&fit=crop&w=2070&q=80');"></div>
+        <div class="slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=2070&q=80');"></div>
     </div>
 
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+    <div class="loading-content">
+        <div class="loading-logo"><span>BIMPro</span></div>
+        <div class="loading-percent" id="loadingPercent">0%</div>
+        <div class="loading-bar-container"><div class="loading-bar" id="loadingBar"></div></div>
+        <div class="loading-text"><span class="lang-en">LOADING EXPERIENCE</span><span class="lang-fr">CHARGEMENT</span></div>
+    </div>
+</div>
 
-    <!-- Scroll Indicator -->
-    <div class="scroll-indicator" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})"><i class="fas fa-arrow-down"></i></div>
+<div class="cursor"></div>
+<div class="cursor-follower"></div>
 
-    <!-- Navigation (glass with gold border) -->
-    <nav class="fixed w-full z-50 py-6 px-8 flex justify-between items-center" id="navbar">
-        <div class="glass px-8 py-4 rounded-full flex items-center gap-4" style="border-color: rgba(255,215,0,0.25);">
-            <div class="text-2xl font-black tracking-tighter">
-                <span class="gradient-text">BIM</span><span class="text-white">Pro</span>
-            </div>
-            <div class="w-px h-8 bg-gold/20"></div>
-            <div class="text-xs font-medium text-gold-300" style="color: #FFD700AA;">Est. 2024</div>
+<div class="scroll-indicator" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})">
+    <i class="fas fa-arrow-down"></i>
+</div>
+
+<nav class="fixed w-full z-50 py-4 px-6 md:py-6 md:px-8 flex justify-between items-center transition-all duration-300" id="navbar">
+    <div class="glass px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center gap-4 border" style="border-color: rgba(255,215,0,0.25);">
+        <div class="text-xl md:text-2xl font-black tracking-tighter">
+            <span class="gradient-text">BIM</span><span class="text-white">Pro</span>
+        </div>
+        <div class="w-px h-6 md:h-8 bg-gold/20"></div>
+        <div class="text-[10px] md:text-xs font-medium text-gold-300" style="color: #FFD700AA;">Est. 2024</div>
+    </div>
+    
+    <div class="hidden lg:flex items-center gap-12">
+        <div class="flex gap-8 text-sm font-medium">
+            <a href="index.html" class="nav-link relative group text-white" onclick="handleHomeClick(event)">
+                <span class="lang-en">Home</span><span class="lang-fr">Accueil</span>
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all duration-300"></span>
+            </a>
+            <a href="about.html" class="nav-link relative group text-white">
+                <span class="lang-en">About</span><span class="lang-fr">À propos</span>
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all"></span>
+            </a>
+            <a href="security.html" class="nav-link relative group text-white">
+                <span class="lang-en">Security</span><span class="lang-fr">Sécurité</span>
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all"></span>
+            </a>                
+            <a href="portfolio.html" class="nav-link relative group text-white">
+                <span class="lang-en">Portfolio</span><span class="lang-fr">Portfolio</span>
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all"></span>
+            </a>
+            <a href="contact.html" class="nav-link relative group text-white">
+                <span class="lang-en">Contact</span><span class="lang-fr">Contact</span>
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all"></span>
+            </a>
         </div>
         
-        <div class="hidden lg:flex items-center gap-12">
-            <div class="flex gap-8 text-sm font-medium">
-                <a href="index.html" class="nav-link relative group" onclick="handleHomeClick(event)"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all duration-300"></span></a>
-                <a href="about.html" class="nav-link relative group"><span class="lang-en">About</span><span class="lang-fr">À propos</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all"></span></a>
-                <a href="security.html" class="nav-link relative group"><span class="lang-en">Security</span><span class="lang-fr">Sécurité</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all"></span></a>                
-                <a href="portfolio.html" class="nav-link relative group"><span class="lang-en">Portfolio</span><span class="lang-fr">Portfolio</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all"></span></a>
-                <a href="contact.html" class="nav-link relative group"><span class="lang-en">Contact</span><span class="lang-fr">Contact</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all"></span></a>
-            </div>
-            
-            <button onclick="toggleLang()" class="glass px-6 py-3 rounded-full text-xs font-bold hover:bg-[#B22222] transition-all duration-300 flex items-center gap-2 border border-gold/30" style="color: #FFD700;">
-                <i class="fas fa-globe text-[#FFD700]"></i>
-                <span class="lang-en">FR</span><span class="lang-fr">EN</span>
-            </button>
-        </div>
-    </nav>
+        <button onclick="toggleLang()" class="glass px-6 py-3 rounded-full text-xs font-bold hover:bg-[#B22222] transition-all duration-300 flex items-center gap-2 border border-gold/30" style="color: #FFD700;">
+            <i class="fas fa-globe text-[#FFD700]"></i>
+            <span class="lang-en">FR</span><span class="lang-fr">EN</span>
+        </button>
+    </div>
 
+    <div class="flex lg:hidden items-center gap-3">
+        <button onclick="toggleLang()" class="glass w-10 h-10 rounded-full flex items-center justify-center border border-gold/30 text-[#FFD700] text-xs font-bold active:scale-90 transition-transform">
+            <span class="lang-en">FR</span><span class="lang-fr">EN</span>
+        </button>
+        <button id="menuBtn" class="glass w-10 h-10 rounded-full flex items-center justify-center border border-gold/30 text-[#FFD700] active:scale-90 transition-transform">
+            <i class="fas fa-bars" id="menuIcon"></i>
+        </button>
+    </div>
+</nav>
+
+<div id="mobileMenu" class="fixed inset-0 z-[45] bg-black/95 backdrop-blur-2xl translate-x-full transition-transform duration-500 ease-in-out lg:hidden flex flex-col items-center justify-center gap-8">
+    <a href="index.html" class="text-3xl font-black text-white hover:text-[#FFD700]"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
+    <a href="about.html" class="text-3xl font-black text-white hover:text-[#FFD700]"><span class="lang-en">About</span><span class="lang-fr">À propos</span></a>
+    <a href="security.html" class="text-3xl font-black text-white hover:text-[#FFD700]"><span class="lang-en">Security</span><span class="lang-fr">Sécurité</span></a>
+    <a href="portfolio.html" class="text-3xl font-black text-white hover:text-[#FFD700]"><span class="lang-en">Portfolio</span><span class="lang-fr">Portfolio</span></a>
+    <a href="contact.html" class="text-3xl font-black text-white hover:text-[#FFD700]"><span class="lang-en">Contact</span><span class="lang-fr">Contact</span></a>
+</div>
+
+<script>
+    // Navbar Background Scroll Logic
+    window.addEventListener('scroll', () => {
+        const nav = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            nav.classList.add('bg-black/80', 'backdrop-blur-lg', 'py-3');
+            nav.classList.remove('py-4', 'md:py-6');
+        } else {
+            nav.classList.remove('bg-black/80', 'backdrop-blur-lg', 'py-3');
+            nav.classList.add('py-4', 'md:py-6');
+        }
+    });
+
+    // Mobile Menu Toggle
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menuIcon');
+
+    menuBtn.addEventListener('click', () => {
+        const isOpen = !mobileMenu.classList.contains('translate-x-full');
+        if (isOpen) {
+            mobileMenu.classList.add('translate-x-full');
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+            document.body.style.overflow = ''; 
+        } else {
+            mobileMenu.classList.remove('translate-x-full');
+            menuIcon.classList.replace('fa-bars', 'fa-times');
+            document.body.style.overflow = 'hidden'; 
+        }
+    });
+
+    // Close menu on link click
+    document.querySelectorAll('#mobileMenu a').forEach(link => {
+        link.addEventListener('click', () => {
+            mobileMenu.classList.add('translate-x-full');
+            menuIcon.classList.replace('fa-times', 'fa-bars');
+            document.body.style.overflow = '';
+        });
+    });
+</script>
     <!-- HERO SECTION – updated front text to "BIMPro multi services group" with black/gold/red -->
     <section id="home" class="min-h-screen relative flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 grid-bg"></div>
