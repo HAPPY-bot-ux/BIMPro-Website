@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIMPro Enterprises | Integrated Security & Branding Solutions</title>
+    <title>BIMPro · multi‑service group</title>
     
     <!-- Tailwind & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    <!-- GSAP for animations -->
+    <!-- GSAP (kept for potential animations) -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
     
     <style>
         * {
@@ -24,9 +23,27 @@
         }
 
         body {
-            background: #030304;
-            color: #fff;
+            background: #0B0B0B; /* deep black background */
+            color: #FAFAFA;
             overflow-x: hidden;
+        }
+
+        /* ===== PROFESSIONAL BLACK/GOLD/RED THEME ===== */
+        :root {
+            --gold: #FFD700;
+            --gold-light: #f5e56b;
+            --deep-red: #B22222;
+            --red-brick: #9e2a2a;
+            --yellow-accent: #eab308;
+            --pure-black: #0B0B0B;
+            --rich-black: #121212;
+            --off-white: #f5f5f5;
+        }
+
+        /* custom selection */
+        ::selection {
+            background: var(--gold);
+            color: black;
         }
 
         /* Language switching */
@@ -37,23 +54,23 @@
         .is-french .lang-inline-fr { display: inline; }
         .lang-inline-fr { display: none; }
 
-        /* Custom cursor */
+        /* Custom cursor – keeps signature but in gold/red */
         .cursor {
             width: 20px;
             height: 20px;
-            border: 2px solid #2563eb;
+            border: 2px solid #FFD700;
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
             z-index: 9999;
             mix-blend-mode: difference;
-            transition: transform 0.2s;
+            transition: transform 0.15s;
         }
 
         .cursor-follower {
             width: 8px;
             height: 8px;
-            background: #2563eb;
+            background: #B22222;
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
@@ -61,64 +78,64 @@
             transition: 0.1s;
         }
 
-        /* Glass morphism */
+        /* Glass morphism – updated with gold/red nuance */
         .glass {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(20, 20, 20, 0.7);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 215, 0, 0.15);
         }
 
         .glass-card {
-            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            background: linear-gradient(145deg, rgba(30,30,30,0.8) 0%, rgba(15,15,15,0.9) 100%);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,215,0,0.1);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px -15px rgba(0,0,0,0.8);
         }
 
         .glass-card:hover {
-            border-color: #2563eb40;
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px -20px #2563eb;
+            border-color: #FFD700;
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px -12px #B22222;
         }
 
-        /* Animated gradient */
+        /* Gradient text – black/gold/red mix */
         .gradient-text {
-            background: linear-gradient(135deg, #fff 0%, #94a3b8 50%, #2563eb 100%);
+            background: linear-gradient(135deg, #FFD700 0%, #B22222 60%, #f5e56b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-size: 200% 200%;
-            animation: gradient 8s ease infinite;
+            animation: gradientShift 7s ease infinite;
         }
 
-        @keyframes gradient {
+        @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* Grid background */
+        /* black & gold grid bg */
         .grid-bg {
             background-image: 
-                linear-gradient(rgba(37, 99, 235, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(255, 215, 0, 0.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 215, 0, 0.04) 1px, transparent 1px);
             background-size: 50px 50px;
         }
 
-        /* Floating animation */
+        /* floating animation */
         .float {
             animation: float 6s ease-in-out infinite;
         }
 
         @keyframes float {
             0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
+            50% { transform: translateY(-15px); }
         }
 
-        /* Glow effect */
+        /* glow – gold/red blend */
         .glow {
             position: relative;
         }
-
         .glow::after {
             content: '';
             position: absolute;
@@ -126,30 +143,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: #2563eb20;
-            filter: blur(30px);
+            background: #B2222240;
+            filter: blur(35px);
             z-index: -1;
             opacity: 0;
             transition: opacity 0.4s;
         }
-
         .glow:hover::after {
             opacity: 1;
         }
 
-        /* Counter */
-        .counter {
-            font-variant-numeric: tabular-nums;
-        }
-
-        /* ===== LOADING SCREEN WITH IMAGE SLIDESHOW ===== */
+        /* ===== LOADING SCREEN – slideshow kept with theme ===== */
         .loading-screen {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: #030304;
+            background: #0B0B0B;
             z-index: 10000;
             display: flex;
             flex-direction: column;
@@ -189,21 +200,19 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: linear-gradient(135deg, #030304 0%, transparent 50%, #030304 100%);
+            background: linear-gradient(135deg, #0B0B0B 0%, transparent 60%, #0B0B0B 100%);
         }
 
         .loading-content {
             position: relative;
             z-index: 10;
             text-align: center;
-            max-width: 600px;
-            padding: 2rem;
             animation: contentPulse 4s ease-in-out infinite;
         }
 
         @keyframes contentPulse {
             0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
+            50% { transform: scale(1.01); }
         }
 
         .loading-logo {
@@ -217,29 +226,20 @@
         }
 
         .loading-logo span {
-            background: linear-gradient(135deg, #fff 0%, #94a3b8 50%, #2563eb 100%);
+            background: linear-gradient(135deg, #FFD700 0%, #B22222 80%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            background-size: 200% 200%;
-            animation: gradient 8s ease infinite;
-        }
-
-        @keyframes fadeUpLoad {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .loading-bar-container {
             width: 350px;
-            height: 3px;
-            background: rgba(255, 255, 255, 0.1);
+            height: 4px;
+            background: rgba(255,215,0,0.1);
             position: relative;
             overflow: hidden;
             margin: 2.5rem auto;
-            border-radius: 3px;
-            box-shadow: 0 0 20px rgba(37, 99, 235, 0.3);
+            border-radius: 4px;
+            box-shadow: 0 0 30px #B22222;
         }
 
         .loading-bar {
@@ -248,35 +248,27 @@
             left: 0;
             height: 100%;
             width: 0%;
-            background: linear-gradient(90deg, #2563eb, #60a5fa);
+            background: linear-gradient(90deg, #FFD700, #B22222);
             transition: width 0.3s linear;
-            box-shadow: 0 0 30px #2563eb;
+            box-shadow: 0 0 30px #ffd700;
         }
 
         .loading-percent {
             font-size: 3rem;
             font-weight: 300;
-            color: #2563eb;
+            color: #FFD700;
             margin-bottom: 1rem;
-            opacity: 0;
-            animation: fadeIn 0.8s forwards 0.8s;
-            text-shadow: 0 0 20px rgba(37, 99, 235, 0.5);
+            text-shadow: 0 0 20px #B22222;
         }
 
         .loading-text {
             font-size: 0.9rem;
             letter-spacing: 0.5em;
             text-transform: uppercase;
-            color: rgba(255, 255, 255, 0.5);
-            opacity: 0;
-            animation: fadeIn 0.8s forwards 1s;
+            color: rgba(255,215,0,0.5);
         }
 
-        @keyframes fadeIn {
-            to { opacity: 1; }
-        }
-
-        /* Scroll indicator */
+        /* scroll indicator gold/red */
         .scroll-indicator {
             position: fixed;
             bottom: 40px;
@@ -284,64 +276,86 @@
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background: rgba(37, 99, 235, 0.1);
+            background: rgba(178,34,34,0.2);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(37, 99, 235, 0.2);
+            border: 1px solid #FFD700;
             display: flex;
             justify-content: center;
             align-items: center;
             cursor: pointer;
             z-index: 100;
             transition: all 0.3s;
+            color: #FFD700;
         }
 
         .scroll-indicator:hover {
-            background: #2563eb;
+            background: #B22222;
+            color: #000;
             transform: scale(1.1);
+            border-color: #B22222;
         }
 
-        /* Section transitions */
+        /* section reveal */
         .section-reveal {
             opacity: 0;
             transform: translateY(50px);
             transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
         .section-reveal.revealed {
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* nav link styling */
+        .nav-link {
+            color: #ddd;
+            font-weight: 500;
+        }
+        .nav-link:hover {
+            color: #FFD700;
+        }
+        .nav-link .absolute {
+            background-color: #B22222;
+        }
+
+        /* Additional animations */
+        @keyframes slideUp {
+            from { transform: translateY(100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slideUp {
+            animation: slideUp 1s forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 1s forwards;
+        }
+
+        /* cube 3D – gold/red tint */
+        .cube-face {
+            background: rgba(178, 34, 34, 0.1);
+            border: 1px solid rgba(255, 215, 0, 0.3);
+        }
     </style>
 </head>
 <body>
-    <!-- LOADING SCREEN WITH IMAGE SLIDESHOW -->
+    <!-- LOADING SCREEN (unchanged structure, but theme adapted) -->
     <div class="loading-screen" id="loadingScreen">
-        <!-- Slideshow Images -->
         <div class="slideshow-container">
-            <div class="slideshow-image active" style="background-image: url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
-            <div class="slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1558001373-7b93ee48ffa0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
-            <div class="slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
-            <div class="slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80');"></div>
-            <div class="slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=2034&q=80');"></div>
-            <div class="slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?ixlib=rb-4.0.3&auto=format&fit=crop&w=2030&q=80');"></div>
+            <div class="slideshow-image active" style="background-image: url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=2070&q=80');"></div>
+            <div class="slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1558001373-7b93ee48ffa0?auto=format&fit=crop&w=2070&q=80');"></div>
+            <div class="slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?auto=format&fit=crop&w=2070&q=80');"></div>
+            <div class="slideshow-image" style="background-image: url('https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=2070&q=80');"></div>
         </div>
 
-        <!-- Loading Content -->
         <div class="loading-content">
-            <div class="loading-logo">
-                <span>BIMPro</span>
-            </div>
-            
+            <div class="loading-logo"><span>BIMPro</span></div>
             <div class="loading-percent" id="loadingPercent">0%</div>
-            
-            <div class="loading-bar-container">
-                <div class="loading-bar" id="loadingBar"></div>
-            </div>
-            
-            <div class="loading-text">
-                <span class="lang-en">LOADING EXPERIENCE</span>
-                <span class="lang-fr">CHARGEMENT DE L'EXPÉRIENCE</span>
-            </div>
+            <div class="loading-bar-container"><div class="loading-bar" id="loadingBar"></div></div>
+            <div class="loading-text"><span class="lang-en">LOADING EXPERIENCE</span><span class="lang-fr">CHARGEMENT</span></div>
         </div>
     </div>
 
@@ -350,672 +364,177 @@
     <div class="cursor-follower"></div>
 
     <!-- Scroll Indicator -->
-    <div class="scroll-indicator" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})">
-        <i class="fas fa-arrow-down"></i>
-    </div>
+    <div class="scroll-indicator" onclick="window.scrollTo({top: window.innerHeight, behavior: 'smooth'})"><i class="fas fa-arrow-down"></i></div>
 
-    <!-- Navigation -->
+    <!-- Navigation (glass with gold border) -->
     <nav class="fixed w-full z-50 py-6 px-8 flex justify-between items-center" id="navbar">
-        <div class="glass px-8 py-4 rounded-full flex items-center gap-4">
+        <div class="glass px-8 py-4 rounded-full flex items-center gap-4" style="border-color: rgba(255,215,0,0.25);">
             <div class="text-2xl font-black tracking-tighter">
                 <span class="gradient-text">BIM</span><span class="text-white">Pro</span>
             </div>
-            <div class="w-px h-8 bg-white/10"></div>
-            <div class="text-xs font-medium text-gray-400">
-                <span class="lang-en">Est. 2024</span>
-                <span class="lang-fr">Établi 2024</span>
-            </div>
+            <div class="w-px h-8 bg-gold/20"></div>
+            <div class="text-xs font-medium text-gold-300" style="color: #FFD700AA;">Est. 2024</div>
         </div>
         
         <div class="hidden lg:flex items-center gap-12">
             <div class="flex gap-8 text-sm font-medium">
-                <a href="index.html" class="nav-link relative group" onclick="return handleHomeClick(event)">
-                    <span class="lang-en">Home</span>
-                    <span class="lang-fr">Accueil</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="about.html" class="nav-link relative group" onclick="return handleNavClick(event)">
-                    <span class="lang-en">About</span>
-                    <span class="lang-fr">À propos</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="security.html" class="nav-link relative group" onclick="return handleNavClick(event)">
-                    <span class="lang-en">Security</span>
-                    <span class="lang-fr">Sécurité</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="apparel.html" class="nav-link relative group" onclick="return handleNavClick(event)">
-                    <span class="lang-en">Apparel</span>
-                    <span class="lang-fr">Vêtements</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="portfolio.html" class="nav-link relative group" onclick="return handleNavClick(event)">
-                    <span class="lang-en">Portfolio</span>
-                    <span class="lang-fr">Portfolio</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="contact.html" class="nav-link relative group" onclick="return handleNavClick(event)">
-                    <span class="lang-en">Contact</span>
-                    <span class="lang-fr">Contact</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
-                </a>
+                <a href="index.html" class="nav-link relative group" onclick="handleHomeClick(event)"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all duration-300"></span></a>
+                <a href="about.html" class="nav-link relative group"><span class="lang-en">About</span><span class="lang-fr">À propos</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all"></span></a>
+                <a href="#" class="nav-link relative group"><span class="lang-en">Security</span><span class="lang-fr">Sécurité</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all"></span></a>                
+                <a href="#" class="nav-link relative group"><span class="lang-en">Portfolio</span><span class="lang-fr">Portfolio</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all"></span></a>
+                <a href="#" class="nav-link relative group"><span class="lang-en">Contact</span><span class="lang-fr">Contact</span><span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-red-700 group-hover:w-full transition-all"></span></a>
             </div>
             
-            <button onclick="toggleLang()" class="glass px-6 py-3 rounded-full text-xs font-bold hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 flex items-center gap-2">
-                <i class="fas fa-globe text-blue-500"></i>
-                <span class="lang-en">FR</span>
-                <span class="lang-fr">EN</span>
+            <button onclick="toggleLang()" class="glass px-6 py-3 rounded-full text-xs font-bold hover:bg-[#B22222] transition-all duration-300 flex items-center gap-2 border border-gold/30" style="color: #FFD700;">
+                <i class="fas fa-globe text-[#FFD700]"></i>
+                <span class="lang-en">FR</span><span class="lang-fr">EN</span>
             </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen relative flex items-center justify-center overflow-hidden" style="background: url('./images/image2.jpg');">
-        <!-- Animated Background -->
+    <!-- HERO SECTION – updated front text to "BIMPro multi services group" with black/gold/red -->
+    <section id="home" class="min-h-screen relative flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 grid-bg"></div>
+        <!-- floating colored orbs -->
+        <div class="absolute top-20 left-10 w-72 h-72 bg-[#B22222] opacity-10 rounded-full blur-3xl float"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700] opacity-10 rounded-full blur-3xl float" style="animation-delay: -3s;"></div>
         
-        <!-- Floating Elements -->
-        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl float"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl float" style="animation-delay: -3s;"></div>
-        
-        <!-- 3D Cube Animation -->
+        <!-- 3D Cube -->
         <div class="absolute inset-0 overflow-hidden opacity-20">
-            <div class="cube-container">
-                <div class="cube">
-                    <div class="cube-face front"></div>
-                    <div class="cube-face back"></div>
-                    <div class="cube-face right"></div>
-                    <div class="cube-face left"></div>
-                    <div class="cube-face top"></div>
-                    <div class="cube-face bottom"></div>
-                </div>
-            </div>
+            <div class="cube-container"><div class="cube"><div class="cube-face front"></div><div class="cube-face back"></div><div class="cube-face right"></div><div class="cube-face left"></div><div class="cube-face top"></div><div class="cube-face bottom"></div></div></div>
         </div>
 
         <div class="relative z-10 text-center px-6 max-w-7xl mx-auto">
             <div class="mb-8 overflow-hidden">
-                <span class="inline-block text-blue-500 font-mono tracking-[0.5em] text-xs mb-8 animate-pulse">
-                    <span class="lang-en">✦ DUAL DIVISION MULTI-SERVICE GROUP ✦</span>
-                    <span class="lang-fr">✦ GROUPE MULTISERVICE À DEUX DIVISIONS ✦</span>
-                </span>
+                <span class="inline-block text-[#FFD700] font-mono tracking-[0.5em] text-xs mb-8 animate-pulse">✦ MULTI‑SERVICE GROUP ✦</span>
             </div>
             
-            <h1 class="text-7xl md:text-9xl font-black leading-[0.85] mb-12">
+            <!-- MAIN HEADLINE: exactly "BIMPro multi services group" in gold/black/red styling -->
+            <h1 class="text-7xl md:text-8xl font-black leading-[0.9] mb-12">
                 <div class="overflow-hidden">
-                    <span class="inline-block gradient-text text-[0.8em] animate-slideUp">
-                        <span class="lang-en">INTEGRATED</span>
-                        <span class="lang-fr">INTÉGRÉES</span>
-                    </span>
+                    <span class="inline-block text-white animate-slideUp text-[1.2em] font-black tracking-tight" style="color: #FAFAFA;">BIMPro</span>
                 </div>
-                <div class="overflow-hidden">
-                    <span class="inline-block text-white animate-slideUp" style="animation-delay: 0.1s;">
-                        <span class="lang-en">SECURITY &</span>
-                        <span class="lang-fr">SÉCURITÉ &</span>
-                    </span>
+                <div class="overflow-hidden mt-2">
+                    <span class="inline-block gradient-text animate-slideUp text-[0.9em]" style="animation-delay: 0.1s;">multi services</span>
                 </div>
-                <div class="overflow-hidden">
-                    <span class="inline-block gradient-text animate-slideUp" style="animation-delay: 0.2s;">
-                        <span class="lang-en">BRANDING</span>
-                        <span class="lang-fr">BRANDING</span>
+                <div class="overflow-hidden mt-2">
+                    <span class="inline-block text-white animate-slideUp relative" style="animation-delay: 0.2s; color: #FAFAFA;">group
+                        <span class="absolute -bottom-4 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-[#FFD700] to-[#B22222] rounded-full"></span>
                     </span>
                 </div>
             </h1>
 
             <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-16 animate-fadeIn" style="animation-delay: 0.5s;">
-                <span class="lang-en">Advanced security systems and professional branding solutions through two specialized divisions</span>
-                <span class="lang-fr">Systèmes de sécurité avancés et solutions de branding professionnel à travers deux divisions spécialisées</span>
+                <span class="lang-en">Security systems · Professional branding · Two specialized divisions</span>
+                <span class="lang-fr">Systèmes de sécurité · Branding pro · Deux divisions spécialisées</span>
             </p>
 
             <div class="flex flex-col md:flex-row gap-6 justify-center animate-fadeIn" style="animation-delay: 0.7s;">
-                <a href="#security" class="group relative px-12 py-6 bg-blue-600 rounded-2xl overflow-hidden">
-                    <span class="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></span>
-                    <span class="relative z-10 font-black text-sm uppercase tracking-widest group-hover:text-blue-600 transition-colors duration-500">
-                        <span class="lang-en">SECURITY SOLUTIONS</span>
-                        <span class="lang-fr">SOLUTIONS DE SÉCURITÉ</span>
-                    </span>
+                <a href="#" class="group relative px-12 py-6 bg-[#B22222] rounded-2xl overflow-hidden border border-[#FFD700]">
+                    <span class="absolute inset-0 bg-[#FFD700] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></span>
+                    <span class="relative z-10 font-black text-sm uppercase tracking-widest group-hover:text-black transition-colors duration-500"><span class="lang-en">SECURITY DIVISION</span><span class="lang-fr">DIVISION SÉCURITÉ</span></span>
                 </a>
-                <a href="#apparel" class="group relative px-12 py-6 glass rounded-2xl overflow-hidden">
-                    <span class="absolute inset-0 bg-blue-600 transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></span>
-                    <span class="relative z-10 font-black text-sm uppercase tracking-widest group-hover:text-white transition-colors duration-500">
-                        <span class="lang-en">BRANDING & APPAREL</span>
-                        <span class="lang-fr">BRANDING & VÊTEMENTS</span>
-                    </span>
+                <a href="#" class="group relative px-12 py-6 glass rounded-2xl overflow-hidden border border-[#B22222]">
+                    <span class="absolute inset-0 bg-[#B22222] transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-500"></span>
+                    <span class="relative z-10 font-black text-sm uppercase tracking-widest group-hover:text-white"><span class="lang-en">APPAREL & BRANDING</span><span class="lang-fr">BRANDING & VÊTEMENTS</span></span>
                 </a>
             </div>
         </div>
 
-        <div class="absolute bottom-10 left-0 right-0 flex justify-center gap-8 text-xs text-gray-600">
-            <div class="flex items-center gap-2">
-                <div class="w-1 h-1 bg-blue-600 rounded-full"></div>
-                <span class="lang-en">CCTV Installation</span>
-                <span class="lang-fr">Installation CCTV</span>
-            </div>
-            <div class="flex items-center gap-2">
-                <div class="w-1 h-1 bg-blue-600 rounded-full"></div>
-                <span class="lang-en">Alarm Systems</span>
-                <span class="lang-fr">Systèmes d'alarme</span>
-            </div>
-            <div class="flex items-center gap-2">
-                <div class="w-1 h-1 bg-blue-600 rounded-full"></div>
-                <span class="lang-en">Custom Apparel</span>
-                <span class="lang-fr">Vêtements personnalisés</span>
-            </div>
+        <!-- bottom tags -->
+        <div class="absolute bottom-10 left-0 right-0 flex justify-center gap-8 text-xs text-[#FFD700]">
+            <div class="flex items-center gap-2"><div class="w-1 h-1 bg-[#B22222] rounded-full"></div>CCTV</div>
+            <div class="flex items-center gap-2"><div class="w-1 h-1 bg-[#B22222] rounded-full"></div>Alarm Systems</div>
+            <div class="flex items-center gap-2"><div class="w-1 h-1 bg-[#B22222] rounded-full"></div>Custom Apparel</div>
         </div>
     </section>
 
-    <!-- Stats Section -->
+    <!-- Stats Section (gold numbers) -->
     <section class="py-32 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="counter text-5xl font-black text-blue-500 mb-2" data-target="500">0</div>
-                    <div class="text-sm uppercase tracking-widest text-gray-500">
-                        <span class="lang-en">Projects Completed</span>
-                        <span class="lang-fr">Projets Réalisés</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <div class="counter text-5xl font-black text-blue-500 mb-2" data-target="50">0</div>
-                    <div class="text-sm uppercase tracking-widest text-gray-500">
-                        <span class="lang-en">Security Experts</span>
-                        <span class="lang-fr">Experts en Sécurité</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <div class="counter text-5xl font-black text-blue-500 mb-2" data-target="100">0</div>
-                    <div class="text-sm uppercase tracking-widest text-gray-500">
-                        <span class="lang-en">Happy Clients</span>
-                        <span class="lang-fr">Clients Satisfaits</span>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <div class="counter text-5xl font-black text-blue-500 mb-2" data-target="24">0</div>
-                    <div class="text-sm uppercase tracking-widest text-gray-500">
-                        <span class="lang-en">Hour Support</span>
-                        <span class="lang-fr">Support 24h</span>
-                    </div>
-                </div>
+                <div class="text-center"><div class="counter text-5xl font-black text-[#FFD700] mb-2" data-target="500">0</div><div class="text-sm uppercase tracking-widest text-gray-400"><span class="lang-en">Projects Completed</span><span class="lang-fr">Projets</span></div></div>
+                <div class="text-center"><div class="counter text-5xl font-black text-[#FFD700] mb-2" data-target="50">0</div><div class="text-sm uppercase tracking-widest text-gray-400"><span class="lang-en">Security Experts</span><span class="lang-fr">Experts</span></div></div>
+                <div class="text-center"><div class="counter text-5xl font-black text-[#FFD700] mb-2" data-target="100">0</div><div class="text-sm uppercase tracking-widest text-gray-400"><span class="lang-en">Happy Clients</span><span class="lang-fr">Clients</span></div></div>
+                <div class="text-center"><div class="counter text-5xl font-black text-[#FFD700] mb-2" data-target="24">0</div><div class="text-sm uppercase tracking-widest text-gray-400"><span class="lang-en">Hour Support</span><span class="lang-fr">Support 24h</span></div></div>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-32 relative overflow-hidden">
-        <div class="absolute inset-0">
-            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-blue-600/5 to-transparent"></div>
-        </div>
-        
-        <div class="max-w-7xl mx-auto px-6 relative">
+    <!-- About / Excellence with gold/red card -->
+    <section class="py-32 relative">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-20 items-center">
                 <div>
-                    <span class="text-blue-500 font-mono tracking-[0.3em] text-xs">
-                        <span class="lang-en">✦ OUR STORY</span>
-                        <span class="lang-fr">✦ NOTRE HISTOIRE</span>
-                    </span>
-                    <h2 class="text-5xl md:text-6xl font-black mt-8 mb-10 leading-tight">
-                        <span class="gradient-text">
-                            <span class="lang-en">Excellence in<br>Every Service</span>
-                            <span class="lang-fr">L'Excellence dans<br>Chaque Service</span>
-                        </span>
-                    </h2>
-                    <p class="text-gray-400 text-lg mb-8">
-                        <span class="lang-en">BIMPro Enterprises is a multi-service group operating through two core divisions. We combine technical expertise, reliable workmanship, and customer-focused service delivery to provide long-term value.</span>
-                        <span class="lang-fr">BIMPro Enterprises est un groupe multiservice opérant à travers deux divisions principales. Nous combinons expertise technique, savoir-faire fiable et service axé sur le client pour offrir une valeur à long terme.</span>
-                    </p>
-                    
+                    <span class="text-[#FFD700] font-mono tracking-[0.3em] text-xs">✦ OUR STORY</span>
+                    <h2 class="text-5xl md:text-6xl font-black mt-8 mb-10 leading-tight"><span class="gradient-text">Excellence in<br>Every Service</span></h2>
+                    <p class="text-gray-400 text-lg mb-8">BIMPro multi services group operates through two core divisions: security & smart protection, and custom apparel & branding. We combine technical rigor with bold creativity.</p>
                     <div class="grid grid-cols-2 gap-6 mt-12">
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="text-3xl font-black text-blue-500 mb-2">01</div>
-                            <h4 class="font-bold mb-2">
-                                <span class="lang-en">Technical Precision</span>
-                                <span class="lang-fr">Précision Technique</span>
-                            </h4>
-                            <p class="text-sm text-gray-500">
-                                <span class="lang-en">Certified experts with advanced training</span>
-                                <span class="lang-fr">Experts certifiés avec formation avancée</span>
-                            </p>
-                        </div>
-                        <div class="glass-card p-6 rounded-2xl">
-                            <div class="text-3xl font-black text-blue-500 mb-2">02</div>
-                            <h4 class="font-bold mb-2">
-                                <span class="lang-en">Quality Assurance</span>
-                                <span class="lang-fr">Assurance Qualité</span>
-                            </h4>
-                            <p class="text-sm text-gray-500">
-                                <span class="lang-en">Rigorous testing and quality control</span>
-                                <span class="lang-fr">Tests rigoureux et contrôle qualité</span>
-                            </p>
-                        </div>
+                        <div class="glass-card p-6 rounded-2xl border-l-4 border-[#FFD700]"><div class="text-3xl font-black text-[#B22222] mb-2">01</div><h4 class="font-bold mb-2">Technical Precision</h4><p class="text-sm text-gray-400">Certified experts</p></div>
+                        <div class="glass-card p-6 rounded-2xl border-l-4 border-[#B22222]"><div class="text-3xl font-black text-[#FFD700] mb-2">02</div><h4 class="font-bold mb-2">Quality Assurance</h4><p class="text-sm text-gray-400">Rigorous control</p></div>
                     </div>
                 </div>
-                
                 <div class="relative">
-                    <div class="absolute inset-0 bg-blue-600/20 blur-3xl"></div>
-                    <div class="relative glass-card p-1 rounded-3xl">
-                        <div class="aspect-square bg-gradient-to-br from-blue-600 to-purple-600 rounded-3xl flex items-center justify-center">
-                            <div class="text-center">
-                                <div class="text-8xl font-black mb-4">15+</div>
-                                <div class="text-xl font-light">
-                                    <span class="lang-en">Years of Excellence</span>
-                                    <span class="lang-fr">Années d'Excellence</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <div class="absolute inset-0 bg-[#B22222] opacity-20 blur-3xl"></div>
+                    <div class="relative glass-card p-1 rounded-3xl"><div class="aspect-square bg-gradient-to-br from-[#B22222] to-[#FFD700] rounded-3xl flex items-center justify-center"><div class="text-center"><div class="text-8xl font-black mb-4 text-white">15+</div><div class="text-xl font-light text-white">Years of Excellence</div></div></div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Security Division -->
-    <section id="security" class="py-32 relative">
+    <!-- Two divisions preview (red/gold) -->
+    <section class="py-20 relative">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <span class="text-blue-500 font-mono tracking-[0.3em] text-xs">
-                    <span class="lang-en">✦ DIVISION 01</span>
-                    <span class="lang-fr">✦ DIVISION 01</span>
-                </span>
-                <h2 class="text-5xl md:text-6xl font-black mt-8">
-                    <span class="gradient-text">
-                        <span class="lang-en">Security & Smart<br>Protection</span>
-                        <span class="lang-fr">Sécurité & Protection<br>Intelligente</span>
-                    </span>
-                </h2>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- CCTV -->
-                <div class="glass-card p-8 rounded-3xl group">
-                    <div class="text-4xl mb-6 text-blue-500 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">
-                        <span class="lang-en">CCTV Installation</span>
-                        <span class="lang-fr">Installation CCTV</span>
-                    </h3>
-                    <ul class="space-y-3 text-gray-400 mb-6">
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>HD & 4K Systems</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>Remote Viewing</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>DVR/NVR Setup</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Alarm Systems -->
-                <div class="glass-card p-8 rounded-3xl group">
-                    <div class="text-4xl mb-6 text-blue-500 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">
-                        <span class="lang-en">Wireless Alarms</span>
-                        <span class="lang-fr">Alarmes Sans Fil</span>
-                    </h3>
-                    <ul class="space-y-3 text-gray-400 mb-6">
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>GSM & Wi-Fi</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>Motion Sensors</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>24/7 Monitoring</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Smart Integration -->
-                <div class="glass-card p-8 rounded-3xl group">
-                    <div class="text-4xl mb-6 text-blue-500 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">
-                        <span class="lang-en">Smart Integration</span>
-                        <span class="lang-fr">Intégration Intelligente</span>
-                    </h3>
-                    <ul class="space-y-3 text-gray-400 mb-6">
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>Mobile Control</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>Home Automation</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>Access Control</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Apparel Division -->
-    <section id="apparel" class="py-32 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <span class="text-blue-500 font-mono tracking-[0.3em] text-xs">
-                    <span class="lang-en">✦ DIVISION 02</span>
-                    <span class="lang-fr">✦ DIVISION 02</span>
-                </span>
-                <h2 class="text-5xl md:text-6xl font-black mt-8">
-                    <span class="gradient-text">
-                        <span class="lang-en">Ink & Apparel</span>
-                        <span class="lang-fr">Imprimerie & Vêtements</span>
-                    </span>
-                </h2>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- T-Shirt Printing -->
-                <div class="glass-card p-8 rounded-3xl group">
-                    <div class="text-4xl mb-6 text-blue-500 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-tshirt"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">
-                        <span class="lang-en">T-Shirt Printing</span>
-                        <span class="lang-fr">Impression T-Shirt</span>
-                    </h3>
-                    <ul class="space-y-3 text-gray-400 mb-6">
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>Screen Printing</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>DTG Printing</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>Bulk Orders</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Custom Apparel -->
-                <div class="glass-card p-8 rounded-3xl group">
-                    <div class="text-4xl mb-6 text-blue-500 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">
-                        <span class="lang-en">Custom Apparel</span>
-                        <span class="lang-fr">Vêtements Personnalisés</span>
-                    </h3>
-                    <ul class="space-y-3 text-gray-400 mb-6">
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>Corporate Uniforms</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>Sportswear</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>Event Merch</span>
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Stickers & Branding -->
-                <div class="glass-card p-8 rounded-3xl group">
-                    <div class="text-4xl mb-6 text-blue-500 group-hover:scale-110 transition-transform">
-                        <i class="fas fa-tag"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">
-                        <span class="lang-en">Stickers & Branding</span>
-                        <span class="lang-fr">Autocollants & Branding</span>
-                    </h3>
-                    <ul class="space-y-3 text-gray-400 mb-6">
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>Vinyl Stickers</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>Product Labels</span>
-                        </li>
-                        <li class="flex items-center gap-2">
-                            <i class="fas fa-check text-blue-500 text-sm"></i>
-                            <span>Promotional Items</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Showcase -->
-    <section id="portfolio" class="py-32 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <span class="text-blue-500 font-mono tracking-[0.3em] text-xs">
-                    <span class="lang-en">✦ OUR WORK</span>
-                    <span class="lang-fr">✦ NOS RÉALISATIONS</span>
-                </span>
-                <h2 class="text-5xl md:text-6xl font-black mt-8">
-                    <span class="gradient-text">
-                        <span class="lang-en">Featured Projects</span>
-                        <span class="lang-fr">Projets en Vedette</span>
-                    </span>
-                </h2>
-            </div>
-
+            <div class="text-center mb-20"><span class="text-[#FFD700] font-mono tracking-[0.3em] text-xs">✦ DIVISIONS</span><h2 class="text-5xl md:text-6xl font-black mt-8"><span class="gradient-text">Security & Apparel</span></h2></div>
             <div class="grid md:grid-cols-2 gap-8">
-                <!-- Security Project -->
-                <div class="group relative overflow-hidden rounded-3xl">
-                    <div class="aspect-video bg-gradient-to-br from-blue-900 to-purple-900 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-all duration-500"></div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-video text-6xl text-white/50"></i>
-                        </div>
-                    </div>
-                    <div class="absolute bottom-0 left-0 right-0 p-8 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-black to-transparent">
-                        <h3 class="text-2xl font-bold mb-2">
-                            <span class="lang-en">Commercial CCTV Installation</span>
-                            <span class="lang-fr">Installation CCTV Commerciale</span>
-                        </h3>
-                        <p class="text-gray-300">
-                            <span class="lang-en">32-camera system with remote monitoring</span>
-                            <span class="lang-fr">Système 32 caméras avec surveillance à distance</span>
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Apparel Project -->
-                <div class="group relative overflow-hidden rounded-3xl">
-                    <div class="aspect-video bg-gradient-to-br from-purple-900 to-pink-900 relative overflow-hidden">
-                        <div class="absolute inset-0 bg-black/50 group-hover:bg-black/20 transition-all duration-500"></div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <i class="fas fa-tshirt text-6xl text-white/50"></i>
-                        </div>
-                    </div>
-                    <div class="absolute bottom-0 left-0 right-0 p-8 transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 bg-gradient-to-t from-black to-transparent">
-                        <h3 class="text-2xl font-bold mb-2">
-                            <span class="lang-en">Corporate Uniform Collection</span>
-                            <span class="lang-fr">Collection d'Uniformes d'Entreprise</span>
-                        </h3>
-                        <p class="text-gray-300">
-                            <span class="lang-en">500+ pieces for national retail chain</span>
-                            <span class="lang-fr">500+ pièces pour chaîne nationale</span>
-                        </p>
-                    </div>
-                </div>
+                <div class="glass-card p-10 rounded-3xl group border-t-4 border-[#B22222]"><i class="fas fa-shield-alt text-5xl text-[#FFD700] mb-6"></i><h3 class="text-3xl font-bold mb-4">Security Division</h3><p class="text-gray-300">CCTV, wireless alarms, smart access — 360° protection.</p></div>
+                <div class="glass-card p-10 rounded-3xl group border-t-4 border-[#FFD700]"><i class="fas fa-print text-5xl text-[#B22222] mb-6"></i><h3 class="text-3xl font-bold mb-4">Apparel & Ink</h3><p class="text-gray-300">Screen printing, custom uniforms, stickers & branding.</p></div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="py-20 border-t border-white/5">
+    <!-- Footer matching theme -->
+    <footer class="py-20 border-t border-[#FFD700]/20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-12">
-                <div>
-                    <div class="text-3xl font-black mb-6">
-                        <span class="gradient-text">BIM</span>Pro
-                    </div>
-                    <p class="text-gray-500 text-sm">
-                        <span class="lang-en">Integrated Security & Branding Solutions</span>
-                        <span class="lang-fr">Solutions Intégrées de Sécurité et Branding</span>
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-6">
-                        <span class="lang-en">Quick Links</span>
-                        <span class="lang-fr">Liens Rapides</span>
-                    </h4>
-                    <ul class="space-y-3 text-gray-500">
-                        <li><a href="#about" class="hover:text-blue-500 transition-colors">
-                            <span class="lang-en">About Us</span>
-                            <span class="lang-fr">À Propos</span>
-                        </a></li>
-                        <li><a href="#security" class="hover:text-blue-500 transition-colors">
-                            <span class="lang-en">Security</span>
-                            <span class="lang-fr">Sécurité</span>
-                        </a></li>
-                        <li><a href="#apparel" class="hover:text-blue-500 transition-colors">
-                            <span class="lang-en">Apparel</span>
-                            <span class="lang-fr">Vêtements</span>
-                        </a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-6">
-                        <span class="lang-en">Services</span>
-                        <span class="lang-fr">Services</span>
-                    </h4>
-                    <ul class="space-y-3 text-gray-500">
-                        <li>CCTV Installation</li>
-                        <li>Alarm Systems</li>
-                        <li>Custom Printing</li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-6">
-                        <span class="lang-en">Follow Us</span>
-                        <span class="lang-fr">Suivez-Nous</span>
-                    </h4>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 glass-card rounded-2xl flex items-center justify-center hover:bg-blue-600 transition-all">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 glass-card rounded-2xl flex items-center justify-center hover:bg-blue-600 transition-all">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 glass-card rounded-2xl flex items-center justify-center hover:bg-blue-600 transition-all">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </div>
-                </div>
+                <div><div class="text-3xl font-black mb-6"><span class="gradient-text">BIM</span><span class="text-white">Pro</span></div><p class="text-gray-500 text-sm">Integrated multi‑services group</p></div>
+                <div><h4 class="font-bold mb-6 text-[#FFD700]">Quick Links</h4><ul class="space-y-3 text-gray-400"><li><a href="#" class="hover:text-[#B22222]">About</a></li><li><a href="#" class="hover:text-[#B22222]">Security</a></li><li><a href="#" class="hover:text-[#B22222]">Apparel</a></li></ul></div>
+                <div><h4 class="font-bold mb-6 text-[#B22222]">Services</h4><ul class="space-y-3 text-gray-400"><li>CCTV Installation</li><li>Alarm Systems</li><li>Custom Printing</li></ul></div>
+                <div><h4 class="font-bold mb-6 text-[#FFD700]">Follow</h4><div class="flex gap-4"><a href="#" class="w-12 h-12 glass-card rounded-2xl flex items-center justify-center hover:bg-[#B22222] text-[#FFD700]"><i class="fab fa-linkedin-in"></i></a><a href="#" class="w-12 h-12 glass-card rounded-2xl flex items-center justify-center hover:bg-[#B22222] text-[#FFD700]"><i class="fab fa-instagram"></i></a></div></div>
             </div>
-            
-            <div class="mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-sm">
-                <span class="lang-en">© 2024 BIMPro Enterprises. All rights reserved.</span>
-                <span class="lang-fr">© 2024 BIMPro Enterprises. Tous droits réservés.</span>
-            </div>
+            <div class="mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-sm">© 2024 BIMPro multi services group. All rights reserved.</div>
         </div>
     </footer>
 
-    <!-- MAIN JavaScript  AND LOADINFG SCREEN FIX OR REMOVE AND USE OWN IMAGES-->
     <script>
-        // Check if loading screen has been shown in this session
+        // LOADING SCREEN control (same logic)
         if (!sessionStorage.getItem('loadingShown')) {
-            // Show loading screen
             document.getElementById('loadingScreen').style.display = 'flex';
-            
-            // Language Toggle
-            function toggleLang() {
-                document.body.classList.toggle('is-french');
-                localStorage.setItem('pref-lang', document.body.classList.contains('is-french') ? 'fr' : 'en');
-            }
-            
-            if(localStorage.getItem('pref-lang') === 'fr') {
-                document.body.classList.add('is-french');
-            }
-
-            // Custom Cursor
-            const cursor = document.querySelector('.cursor');
-            const follower = document.querySelector('.cursor-follower');
-
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-                follower.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-            });
-
-            // LOADING SCREEN WITH SLOW IMAGE SLIDESHOW
-            const loadingScreen = document.getElementById('loadingScreen');
+            let progress = 0;
             const loadingBar = document.getElementById('loadingBar');
             const loadingPercent = document.getElementById('loadingPercent');
             const slides = document.querySelectorAll('.slideshow-image');
-            
-            // Preload images for smoother transitions
-            const imageUrls = [
-                'https://images.unsplash.com/photo-1557597774-9d273605dfa9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-                'https://images.unsplash.com/photo-1558001373-7b93ee48ffa0?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-                'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-                'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
-                'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?ixlib=rb-4.0.3&auto=format&fit=crop&w=2034&q=80',
-                'https://images.unsplash.com/photo-1584433144859-1fc3ab64a957?ixlib=rb-4.0.3&auto=format&fit=crop&w=2030&q=80'
-            ];
-
-            // Preload all images
-            imageUrls.forEach(src => {
-                const img = new Image();
-                img.src = src;
-            });
-
-            // Start slideshow rotation (slower - 2 seconds per image)
             let currentSlide = 0;
-            
-            // Set first slide as active
-            slides[0].classList.add('active');
-
-            // Rotate slides every 2000ms (2 seconds)
+            slides[0]?.classList.add('active');
             const slideInterval = setInterval(() => {
-                slides[currentSlide].classList.remove('active');
+                slides[currentSlide]?.classList.remove('active');
                 currentSlide = (currentSlide + 1) % slides.length;
-                slides[currentSlide].classList.add('active');
+                slides[currentSlide]?.classList.add('active');
             }, 2000);
-
-            // Slower loading progress (4 seconds total)
-            let progress = 0;
-            const totalTime = 9000; // 4 seconds
-            const interval = 50; // Update every 50ms
+            const totalTime = 9000;
+            const interval = 50;
             const increment = (interval / totalTime) * 100;
-
             const progressInterval = setInterval(() => {
                 progress += increment;
-                
                 if (progress >= 100) {
                     progress = 100;
                     loadingBar.style.width = progress + '%';
                     loadingPercent.textContent = Math.round(progress) + '%';
-                    
                     clearInterval(progressInterval);
                     clearInterval(slideInterval);
-                    
-                    // Hide loading screen after a short delay
                     setTimeout(() => {
-                        loadingScreen.classList.add('hidden');
-                        
-                        // Set sessionStorage to indicate loading has been shown
+                        document.getElementById('loadingScreen').classList.add('hidden');
                         sessionStorage.setItem('loadingShown', 'true');
-                        
-                        // Trigger any entrance animations
                         document.body.style.overflow = 'auto';
                     }, 500);
                 } else {
@@ -1023,176 +542,54 @@
                     loadingPercent.textContent = Math.round(progress) + '%';
                 }
             }, interval);
-
-            // Prevent scrolling while loading
             document.body.style.overflow = 'hidden';
         } else {
-            // Loading screen already shown in this session - hide it immediately
             document.getElementById('loadingScreen').style.display = 'none';
             document.getElementById('loadingScreen').classList.add('hidden');
-            
-            // Language Toggle
-            function toggleLang() {
-                document.body.classList.toggle('is-french');
-                localStorage.setItem('pref-lang', document.body.classList.contains('is-french') ? 'fr' : 'en');
-            }
-            
-            if(localStorage.getItem('pref-lang') === 'fr') {
-                document.body.classList.add('is-french');
-            }
-
-            // Custom Cursor
-            const cursor = document.querySelector('.cursor');
-            const follower = document.querySelector('.cursor-follower');
-
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-                follower.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
-            });
         }
 
-        // Handle navigation clicks to prevent reloading on same page
-        function handleHomeClick(event) {
-            // Check if we're already on index.html
-            const currentPath = window.location.pathname;
-            const isIndex = currentPath.endsWith('index.html') || currentPath.endsWith('/');
-            
-            if (isIndex) {
-                event.preventDefault();
-                // Smooth scroll to top
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-                return false;
-            }
-            // Allow normal navigation to index.html
-            return true;
+        // Language toggle
+        function toggleLang() {
+            document.body.classList.toggle('is-french');
+            localStorage.setItem('pref-lang', document.body.classList.contains('is-french') ? 'fr' : 'en');
         }
+        if(localStorage.getItem('pref-lang') === 'fr') document.body.classList.add('is-french');
 
-        function handleNavClick(event) {
-            // For other pages, allow normal navigation
-            return true;
-        }
+        // Cursor
+        const cursor = document.querySelector('.cursor');
+        const follower = document.querySelector('.cursor-follower');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+            follower.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+        });
 
-        // Counter Animation
+        // Counters
         const counters = document.querySelectorAll('.counter');
-        const speed = 200;
-
         counters.forEach(counter => {
             const animate = () => {
                 const value = +counter.getAttribute('data-target');
                 const data = +counter.innerText;
-                const time = value / speed;
-                
+                const time = value / 200;
                 if(data < value) {
                     counter.innerText = Math.ceil(data + time);
-                    setTimeout(animate, 1);
-                } else {
-                    counter.innerText = value;
-                }
-            }
-            
+                    setTimeout(animate, 15);
+                } else { counter.innerText = value; }
+            };
             const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if(entry.isIntersecting) {
-                        animate();
-                        observer.unobserve(entry.target);
-                    }
-                });
+                entries.forEach(entry => { if(entry.isIntersecting) { animate(); observer.unobserve(entry.target); } });
             });
-            
             observer.observe(counter);
         });
 
-        // Navbar Scroll Effect
+        // Navbar scroll effect
         window.addEventListener('scroll', () => {
             const navbar = document.getElementById('navbar');
-            if(window.scrollY > 100) {
-                navbar.classList.add('glass');
-                navbar.style.padding = '1rem';
-            } else {
-                navbar.classList.remove('glass');
-                navbar.style.padding = '1.5rem 2rem';
-            }
+            if(window.scrollY > 100) navbar.classList.add('glass');
+            else navbar.classList.remove('glass');
         });
 
-        // Smooth Scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+        function handleHomeClick(e) { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
     </script>
-
-    <style>
-        /* Additional animations */
-        @keyframes slideUp {
-            from {
-                transform: translateY(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .animate-slideUp {
-            animation: slideUp 1s forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .animate-fadeIn {
-            animation: fadeIn 1s forwards;
-        }
-
-        /* 3D Cube Animation */
-        .cube-container {
-            width: 200px;
-            height: 200px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            perspective: 1000px;
-        }
-
-        .cube {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            transform-style: preserve-3d;
-            animation: spin 20s infinite linear;
-        }
-
-        .cube-face {
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: rgba(37, 99, 235, 0.1);
-            border: 1px solid rgba(37, 99, 235, 0.2);
-        }
-
-        .front { transform: translateZ(100px); }
-        .back { transform: rotateY(180deg) translateZ(100px); }
-        .right { transform: rotateY(90deg) translateZ(100px); }
-        .left { transform: rotateY(-90deg) translateZ(100px); }
-        .top { transform: rotateX(90deg) translateZ(100px); }
-        .bottom { transform: rotateX(-90deg) translateZ(100px); }
-
-        @keyframes spin {
-            from { transform: rotateX(0) rotateY(0); }
-            to { transform: rotateX(360deg) rotateY(360deg); }
-        }
-    </style>
+    <style>.cube-container { width:200px; height:200px; position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); perspective:1000px; } .cube { width:100%; height:100%; position:relative; transform-style:preserve-3d; animation: spin 20s infinite linear; } .cube-face { position:absolute; width:200px; height:200px; background:rgba(178,34,34,0.1); border:1px solid rgba(255,215,0,0.2); } .front { transform: translateZ(100px); } .back { transform: rotateY(180deg) translateZ(100px); } .right { transform: rotateY(90deg) translateZ(100px); } .left { transform: rotateY(-90deg) translateZ(100px); } .top { transform: rotateX(90deg) translateZ(100px); } .bottom { transform: rotateX(-90deg) translateZ(100px); } @keyframes spin { from { transform: rotateX(0) rotateY(0); } to { transform: rotateX(360deg) rotateY(360deg); } }</style>
 </body>
 </html>

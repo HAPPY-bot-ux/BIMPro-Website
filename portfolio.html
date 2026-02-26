@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | BIMPro Enterprises - Project Showcase</title>
+    <title>Portfolio | BIMPro multi services group - Project Showcase</title>
     
     <!-- Tailwind & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -26,24 +26,37 @@
         }
 
         body {
-            background: #030304;
-            color: #fff;
+            background: #0B0B0B;
+            color: #FAFAFA;
             overflow-x: hidden;
+        }
+
+        /* ===== PROFESSIONAL BLACK/GOLD/RED THEME ===== */
+        :root {
+            --gold: #FFD700;
+            --gold-light: #f5e56b;
+            --deep-red: #B22222;
+            --red-brick: #9e2a2a;
+            --yellow-accent: #eab308;
+            --pure-black: #0B0B0B;
+            --off-white: #f5f5f5;
+        }
+
+        ::selection {
+            background: var(--gold);
+            color: black;
         }
 
         /* Language switching */
         .lang-fr { display: none; }
         .is-french .lang-en { display: none; }
         .is-french .lang-fr { display: block; }
-        .is-french .lang-inline-en { display: none; }
-        .is-french .lang-inline-fr { display: inline; }
-        .lang-inline-fr { display: none; }
 
-        /* Custom cursor */
+        /* Custom cursor – gold/red */
         .cursor {
             width: 20px;
             height: 20px;
-            border: 2px solid #2563eb;
+            border: 2px solid #FFD700;
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
@@ -55,7 +68,7 @@
         .cursor-follower {
             width: 8px;
             height: 8px;
-            background: #2563eb;
+            background: #B22222;
             border-radius: 50%;
             position: fixed;
             pointer-events: none;
@@ -65,44 +78,44 @@
 
         /* Glass morphism */
         .glass {
-            background: rgba(255, 255, 255, 0.02);
+            background: rgba(20, 20, 20, 0.8);
             backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 215, 0, 0.15);
         }
 
         .glass-card {
-            background: linear-gradient(145deg, rgba(255,255,255,0.03) 0%, rgba(255,255,255,0.01) 100%);
+            background: linear-gradient(145deg, rgba(30,30,30,0.8) 0%, rgba(15,15,15,0.95) 100%);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,215,0,0.1);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 10px 30px -15px rgba(0,0,0,0.8);
         }
 
         .glass-card:hover {
-            border-color: #2563eb40;
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 30px 60px -30px #2563eb;
+            border-color: #FFD700;
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 30px 60px -30px #B22222;
         }
 
-        /* Animated gradient */
+        /* gradient text */
         .gradient-text {
-            background: linear-gradient(135deg, #fff 0%, #94a3b8 50%, #2563eb 100%);
+            background: linear-gradient(135deg, #FFD700 0%, #B22222 60%, #f5e56b 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-size: 200% 200%;
-            animation: gradient 8s ease infinite;
+            animation: gradientShift 7s ease infinite;
         }
-
-        @keyframes gradient {
+        @keyframes gradientShift {
             0% { background-position: 0% 50%; }
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
 
-        /* Grid background */
+        /* grid background */
         .grid-bg {
             background-image: 
-                linear-gradient(rgba(37, 99, 235, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(37, 99, 235, 0.03) 1px, transparent 1px);
+                linear-gradient(rgba(255, 215, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 215, 0, 0.03) 1px, transparent 1px);
             background-size: 50px 50px;
         }
 
@@ -129,7 +142,7 @@
         .portfolio-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+            background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(178,34,34,0.2) 50%, transparent 100%);
             opacity: 0;
             transition: opacity 0.4s;
             display: flex;
@@ -157,13 +170,13 @@
         }
 
         .badge-security {
-            background: #2563eb;
-            color: #fff;
+            background: #B22222;
+            color: #FFD700;
         }
 
         .badge-apparel {
-            background: #f59e0b;
-            color: #000;
+            background: #FFD700;
+            color: #B22222;
         }
 
         /* Filter buttons */
@@ -176,70 +189,73 @@
             letter-spacing: 0.1em;
             transition: all 0.3s;
             cursor: pointer;
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(255,255,255,0.08);
+            background: rgba(20,20,20,0.8);
+            border: 1px solid #FFD70040;
+            color: #FFD700;
         }
 
         .filter-btn.active {
-            background: #2563eb;
-            border-color: #2563eb;
+            background: #B22222;
+            border-color: #FFD700;
+            color: #fff;
         }
 
         .filter-btn:hover {
-            background: #2563eb;
-            border-color: #2563eb;
+            background: #B22222;
+            border-color: #FFD700;
+            color: #fff;
         }
 
-        /* Loading screen */
+        /* counter */
+        .counter {
+            font-variant-numeric: tabular-nums;
+        }
+
+        /* floating */
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%,100%{ transform:translateY(0); }
+            50%{ transform:translateY(-20px); }
+        }
+
+        /* stat item */
+        .stat-item {
+            padding: 1rem;
+            border-radius: 1rem;
+            background: rgba(255,215,0,0.03);
+            transition: all 0.3s;
+            border: 1px solid #FFD70020;
+        }
+        .stat-item:hover {
+            background: #B2222220;
+            border-color: #B22222;
+        }
+
+        /* loading screen */
         .loader {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #030304;
-            z-index: 10000;
+            top:0; left:0;
+            width:100%; height:100%;
+            background: #0B0B0B;
+            z-index:10000;
             display: flex;
             justify-content: center;
             align-items: center;
             transition: opacity 1s, visibility 1s;
         }
-
-        .loader.hidden {
-            opacity: 0;
-            visibility: hidden;
-        }
-
-        /* Stats counter */
-        .counter {
-            font-variant-numeric: tabular-nums;
-        }
-
-        /* Floating animation */
-        .float {
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        /* Project stats */
-        .stat-item {
-            padding: 1rem;
-            border-radius: 1rem;
-            background: rgba(255,255,255,0.03);
-            transition: all 0.3s;
-        }
-
-        .stat-item:hover {
-            background: #2563eb20;
+        .loader.hidden { opacity:0; visibility:hidden; }
+        .loader-text {
+            font-size: 8vw; font-weight:900;
+            background: linear-gradient(135deg, #FFD700, #B22222);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
     </style>
 </head>
 <body>
-    
+   
 
     <!-- Custom Cursor -->
     <div class="cursor"></div>
@@ -250,11 +266,11 @@
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 py-6 px-8 flex justify-between items-center" id="navbar">
-        <div class="glass px-8 py-4 rounded-full flex items-center gap-4">
+        <div class="glass px-8 py-4 rounded-full flex items-center gap-4" style="border-color:#FFD70030;">
             <div class="text-2xl font-black tracking-tighter">
                 <span class="gradient-text">BIM</span><span class="text-white">Pro</span>
             </div>
-            <div class="w-px h-8 bg-white/10"></div>
+            <div class="w-px h-8 bg-gold/20"></div>
             <div class="text-xs font-medium text-gray-400">
                 <span class="lang-en">Project Archive</span>
                 <span class="lang-fr">Archive des Projets</span>
@@ -264,41 +280,30 @@
         <div class="hidden lg:flex items-center gap-12">
             <div class="flex gap-8 text-sm font-medium">
                 <a href="index.html" class="nav-link relative group">
-                    <span class="lang-en">Home</span>
-                    <span class="lang-fr">Accueil</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                    <span class="lang-en">Home</span><span class="lang-fr">Accueil</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full transition-all"></span>
                 </a>
                 <a href="about.html" class="nav-link relative group">
-                    <span class="lang-en">About</span>
-                    <span class="lang-fr">À propos</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                    <span class="lang-en">About</span><span class="lang-fr">À propos</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full"></span>
                 </a>
                 <a href="security.html" class="nav-link relative group">
-                    <span class="lang-en">Security</span>
-                    <span class="lang-fr">Sécurité</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
-                </a>
-                <a href="apparel.html" class="nav-link relative group">
-                    <span class="lang-en">Apparel</span>
-                    <span class="lang-fr">Vêtements</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                    <span class="lang-en">Security</span><span class="lang-fr">Sécurité</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full"></span>
                 </a>
                 <a href="portfolio.html" class="nav-link relative group">
-                    <span class="lang-en">Portfolio</span>
-                    <span class="lang-fr">Portfolio</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 w-full"></span>
+                    <span class="lang-en">Portfolio</span><span class="lang-fr">Portfolio</span>
+                    <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-[#FFD700]"></span>
                 </a>
                 <a href="contact.html" class="nav-link relative group">
-                    <span class="lang-en">Contact</span>
-                    <span class="lang-fr">Contact</span>
-                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-600 group-hover:w-full transition-all duration-300"></span>
+                    <span class="lang-en">Contact</span><span class="lang-fr">Contact</span>
+                    <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full"></span>
                 </a>
             </div>
             
-            <button onclick="toggleLang()" class="glass px-6 py-3 rounded-full text-xs font-bold hover:bg-blue-600 hover:border-blue-600 transition-all duration-300 flex items-center gap-2">
-                <i class="fas fa-globe text-blue-500"></i>
-                <span class="lang-en">FR</span>
-                <span class="lang-fr">EN</span>
+            <button onclick="toggleLang()" class="glass px-6 py-3 rounded-full text-xs font-bold hover:bg-[#B22222] transition-all flex items-center gap-2 border border-[#FFD700]/40">
+                <i class="fas fa-globe text-[#FFD700]"></i>
+                <span class="lang-en">FR</span><span class="lang-fr">EN</span>
             </button>
         </div>
     </nav>
@@ -306,12 +311,12 @@
     <!-- Hero Section -->
     <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
         <!-- Floating Elements -->
-        <div class="absolute top-20 left-10 w-72 h-72 bg-blue-600/10 rounded-full blur-3xl float"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-amber-500/5 rounded-full blur-3xl float" style="animation-delay: -3s;"></div>
+        <div class="absolute top-20 left-10 w-72 h-72 bg-[#B22222]/20 rounded-full blur-3xl float"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700]/10 rounded-full blur-3xl float" style="animation-delay:-3s;"></div>
 
         <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
             <div class="mb-8">
-                <span class="text-blue-500 font-mono tracking-[0.5em] text-xs animate-pulse">
+                <span class="text-[#FFD700] font-mono tracking-[0.5em] text-xs animate-pulse">
                     <span class="lang-en">✦ DEPLOYMENT ARCHIVE ✦</span>
                     <span class="lang-fr">✦ ARCHIVE DES RÉALISATIONS ✦</span>
                 </span>
@@ -319,110 +324,72 @@
             
             <h1 class="text-7xl md:text-9xl font-black leading-[0.85] mb-8">
                 <div class="overflow-hidden">
-                    <span class="inline-block gradient-text animate-slideUp">
-                        <span class="lang-en">PROJECT</span>
-                        <span class="lang-fr">NOS</span>
-                    </span>
+                    <span class="inline-block gradient-text animate-slideUp">PROJECT</span>
                 </div>
                 <div class="overflow-hidden">
-                    <span class="inline-block text-white animate-slideUp" style="animation-delay: 0.1s;">
-                        <span class="lang-en">SHOWCASE</span>
-                        <span class="lang-fr">PROJETS</span>
-                    </span>
+                    <span class="inline-block text-white animate-slideUp" style="animation-delay:0.1s;">SHOWCASE</span>
                 </div>
             </h1>
 
-            <p class="text-xl text-gray-400 max-w-2xl mx-auto animate-fadeIn" style="animation-delay: 0.3s;">
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto animate-fadeIn" style="animation-delay:0.3s;">
                 <span class="lang-en">A curated collection of our finest work in security integration and creative branding</span>
-                <span class="lang-fr">Une collection curated de nos meilleurs travaux en intégration de sécurité et branding créatif</span>
+                <span class="lang-fr">Une sélection de nos meilleurs travaux en sécurité et branding créatif</span>
             </p>
         </div>
     </section>
 
-    <!-- Stats Section -->
+    <!-- Stats Section (gold/red) -->
     <section class="py-16 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
                 <div class="stat-item text-center">
-                    <div class="counter text-4xl font-black text-blue-500" data-target="150">0</div>
-                    <div class="text-xs text-gray-500 uppercase tracking-widest mt-2">
-                        <span class="lang-en">Security Projects</span>
-                        <span class="lang-fr">Projets Sécurité</span>
-                    </div>
+                    <div class="counter text-4xl font-black text-[#FFD700]" data-target="150">0</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest mt-2"><span class="lang-en">Security Projects</span><span class="lang-fr">Projets Sécurité</span></div>
                 </div>
                 <div class="stat-item text-center">
-                    <div class="counter text-4xl font-black text-amber-500" data-target="200">0</div>
-                    <div class="text-xs text-gray-500 uppercase tracking-widest mt-2">
-                        <span class="lang-en">Branding Projects</span>
-                        <span class="lang-fr">Projets Branding</span>
-                    </div>
+                    <div class="counter text-4xl font-black text-[#B22222]" data-target="200">0</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest mt-2"><span class="lang-en">Branding Projects</span><span class="lang-fr">Projets Branding</span></div>
                 </div>
                 <div class="stat-item text-center">
-                    <div class="counter text-4xl font-black text-blue-500" data-target="50">0</div>
-                    <div class="text-xs text-gray-500 uppercase tracking-widest mt-2">
-                        <span class="lang-en">Active Clients</span>
-                        <span class="lang-fr">Clients Actifs</span>
-                    </div>
+                    <div class="counter text-4xl font-black text-[#FFD700]" data-target="50">0</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest mt-2"><span class="lang-en">Active Clients</span><span class="lang-fr">Clients Actifs</span></div>
                 </div>
                 <div class="stat-item text-center">
-                    <div class="counter text-4xl font-black text-amber-500" data-target="5">0</div>
-                    <div class="text-xs text-gray-500 uppercase tracking-widest mt-2">
-                        <span class="lang-en">Years Excellence</span>
-                        <span class="lang-fr">Ans d'Excellence</span>
-                    </div>
+                    <div class="counter text-4xl font-black text-[#B22222]" data-target="5">0</div>
+                    <div class="text-xs text-gray-400 uppercase tracking-widest mt-2"><span class="lang-en">Years Excellence</span><span class="lang-fr">Ans d'Excellence</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Filter Section -->
+    <!-- Filter Section (updated theme) -->
     <section class="py-8 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-wrap gap-4 justify-center">
-                <button class="filter-btn active" data-filter="all">
-                    <span class="lang-en">All Projects</span>
-                    <span class="lang-fr">Tous les Projets</span>
-                </button>
-                <button class="filter-btn" data-filter="security">
-                    <span class="lang-en">Security</span>
-                    <span class="lang-fr">Sécurité</span>
-                </button>
-                <button class="filter-btn" data-filter="apparel">
-                    <span class="lang-en">Apparel</span>
-                    <span class="lang-fr">Vêtements</span>
-                </button>
-                <button class="filter-btn" data-filter="branding">
-                    <span class="lang-en">Branding</span>
-                    <span class="lang-fr">Branding</span>
-                </button>
+                <button class="filter-btn active" data-filter="all"><span class="lang-en">All Projects</span><span class="lang-fr">Tous</span></button>
+                <button class="filter-btn" data-filter="security"><span class="lang-en">Security</span><span class="lang-fr">Sécurité</span></button>
+                <button class="filter-btn" data-filter="apparel"><span class="lang-en">Apparel</span><span class="lang-fr">Vêtements</span></button>
+                <button class="filter-btn" data-filter="branding"><span class="lang-en">Branding</span><span class="lang-fr">Branding</span></button>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Grid -->
+    <!-- Portfolio Grid (updated badges/colors) -->
     <section class="py-16 px-6">
         <div class="max-w-7xl mx-auto">
             <!-- Featured Project - Large -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8 portfolio-item" data-category="security">
                 <div class="portfolio-card lg:col-span-2 group">
-                    <!-- Placeholder image - replace with actual project images -->
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-900 to-purple-900 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#B22222] to-[#FFD700] flex items-center justify-center">
                         <i class="fas fa-video text-8xl text-white/20"></i>
                     </div>
                     <span class="category-badge badge-security">Featured Security</span>
                     <div class="portfolio-overlay">
-                        <span class="text-blue-400 text-xs font-bold mb-2">Commercial Security</span>
+                        <span class="text-[#FFD700] text-xs font-bold mb-2">Commercial Security</span>
                         <h3 class="text-3xl font-black mb-3">Grand West Shopping Mall</h3>
                         <p class="text-gray-300 mb-4 max-w-2xl">Complete security overhaul with 128 4K cameras, AI-powered analytics, and centralized control room.</p>
-                        <div class="flex gap-4 text-sm">
-                            <span><i class="fas fa-camera mr-2"></i>128 Cameras</span>
-                            <span><i class="fas fa-microchip mr-2"></i>AI Analytics</span>
-                            <span><i class="fas fa-cloud mr-2"></i>Cloud Storage</span>
-                        </div>
-                        <a href="#" data-lightbox="project-1" class="inline-block mt-4 text-blue-400 hover:text-blue-300">
-                            <span class="lang-en">View Project →</span>
-                            <span class="lang-fr">Voir le Projet →</span>
-                        </a>
+                        <div class="flex gap-4 text-sm"><span><i class="fas fa-camera mr-2 text-[#FFD700]"></i>128 Cameras</span><span><i class="fas fa-microchip mr-2 text-[#FFD700]"></i>AI Analytics</span></div>
+                        <a href="#" data-lightbox="project-1" class="inline-block mt-4 text-[#FFD700] hover:text-[#B22222]">View Project →</a>
                     </div>
                 </div>
             </div>
@@ -431,265 +398,175 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <!-- Security Project 1 -->
                 <div class="portfolio-card portfolio-item" data-category="security">
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-800 to-indigo-900 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#B22222] to-[#9e2a2a] flex items-center justify-center">
                         <i class="fas fa-shield-alt text-6xl text-white/20"></i>
                     </div>
                     <span class="category-badge badge-security">Security</span>
                     <div class="portfolio-overlay">
-                        <span class="text-blue-400 text-xs font-bold mb-2">Corporate Office</span>
+                        <span class="text-[#FFD700] text-xs font-bold mb-2">Corporate Office</span>
                         <h3 class="text-xl font-black mb-2">IP-Link Installation</h3>
-                        <p class="text-gray-300 text-sm mb-3">16-camera 4K network with remote monitoring and motion alerts.</p>
-                        <div class="flex gap-2 text-xs">
-                            <span>16 Cameras</span>
-                            <span>•</span>
-                            <span>4K</span>
-                            <span>•</span>
-                            <span>Remote Access</span>
-                        </div>
+                        <p class="text-gray-300 text-sm mb-3">16-camera 4K network with remote monitoring.</p>
+                        <div class="flex gap-2 text-xs">16 Cameras • 4K • Remote</div>
                     </div>
                 </div>
 
                 <!-- Apparel Project 1 -->
                 <div class="portfolio-card portfolio-item" data-category="apparel">
-                    <div class="absolute inset-0 bg-gradient-to-br from-amber-700 to-orange-800 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#FFD700] to-[#eab308] flex items-center justify-center">
                         <i class="fas fa-tshirt text-6xl text-white/20"></i>
                     </div>
                     <span class="category-badge badge-apparel">Apparel</span>
                     <div class="portfolio-overlay">
-                        <span class="text-amber-400 text-xs font-bold mb-2">Corporate Uniforms</span>
+                        <span class="text-[#B22222] text-xs font-bold mb-2">Corporate Uniforms</span>
                         <h3 class="text-xl font-black mb-2">Summit Logistics Gear</h3>
-                        <p class="text-gray-300 text-sm mb-3">Custom vinyl-press workwear for 50 drivers with embroidered logos.</p>
-                        <div class="flex gap-2 text-xs">
-                            <span>50 Pieces</span>
-                            <span>•</span>
-                            <span>Vinyl Print</span>
-                            <span>•</span>
-                            <span>Embroidery</span>
-                        </div>
+                        <p class="text-gray-300 text-sm mb-3">Custom vinyl-press workwear for 50 drivers.</p>
+                        <div class="flex gap-2 text-xs">50 Pcs • Vinyl • Embroidery</div>
                     </div>
                 </div>
 
                 <!-- Security Project 2 -->
                 <div class="portfolio-card portfolio-item" data-category="security">
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-800 to-cyan-900 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#B22222] to-[#7a1f1f] flex items-center justify-center">
                         <i class="fas fa-bell text-6xl text-white/20"></i>
                     </div>
                     <span class="category-badge badge-security">Security</span>
                     <div class="portfolio-overlay">
-                        <span class="text-blue-400 text-xs font-bold mb-2">Smart Home</span>
+                        <span class="text-[#FFD700] text-xs font-bold mb-2">Smart Home</span>
                         <h3 class="text-xl font-black mb-2">Wireless Alarm Grid</h3>
-                        <p class="text-gray-300 text-sm mb-3">GSM-enabled wireless security with battery backup and solar siren.</p>
-                        <div class="flex gap-2 text-xs">
-                            <span>24/7 Monitoring</span>
-                            <span>•</span>
-                            <span>GSM</span>
-                            <span>•</span>
-                            <span>Solar Backup</span>
-                        </div>
+                        <p class="text-gray-300 text-sm mb-3">GSM-enabled wireless security with battery backup.</p>
+                        <div class="flex gap-2 text-xs">24/7 • GSM • Solar</div>
                     </div>
                 </div>
 
                 <!-- Branding Project 1 -->
                 <div class="portfolio-card portfolio-item" data-category="branding">
-                    <div class="absolute inset-0 bg-gradient-to-br from-purple-800 to-pink-800 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#B22222] to-[#FFD700] flex items-center justify-center">
                         <i class="fas fa-tag text-6xl text-white/20"></i>
                     </div>
                     <span class="category-badge badge-apparel">Branding</span>
                     <div class="portfolio-overlay">
-                        <span class="text-amber-400 text-xs font-bold mb-2">Marketing Assets</span>
+                        <span class="text-[#FFD700] text-xs font-bold mb-2">Marketing Assets</span>
                         <h3 class="text-xl font-black mb-2">Retail Sticker Pack</h3>
-                        <p class="text-gray-300 text-sm mb-3">Weatherproof vinyl decals for retail branding campaign.</p>
-                        <div class="flex gap-2 text-xs">
-                            <span>5000 Units</span>
-                            <span>•</span>
-                            <span>Vinyl</span>
-                            <span>•</span>
-                            <span>Die-cut</span>
-                        </div>
+                        <p class="text-gray-300 text-sm mb-3">Weatherproof vinyl decals for retail branding.</p>
+                        <div class="flex gap-2 text-xs">5000 • Vinyl • Die-cut</div>
                     </div>
                 </div>
 
                 <!-- Security Project 3 -->
                 <div class="portfolio-card portfolio-item" data-category="security">
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-800 to-indigo-900 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#B22222] to-[#5a1a1a] flex items-center justify-center">
                         <i class="fas fa-lock text-6xl text-white/20"></i>
                     </div>
                     <span class="category-badge badge-security">Security</span>
                     <div class="portfolio-overlay">
-                        <span class="text-blue-400 text-xs font-bold mb-2">Access Control</span>
+                        <span class="text-[#FFD700] text-xs font-bold mb-2">Access Control</span>
                         <h3 class="text-xl font-black mb-2">Biometric System</h3>
                         <p class="text-gray-300 text-sm mb-3">Fingerprint and card access for 200 employees.</p>
-                        <div class="flex gap-2 text-xs">
-                            <span>200 Users</span>
-                            <span>•</span>
-                            <span>Biometric</span>
-                            <span>•</span>
-                            <span>RFID</span>
-                        </div>
+                        <div class="flex gap-2 text-xs">200 Users • Biometric • RFID</div>
                     </div>
                 </div>
 
                 <!-- Apparel Project 2 -->
                 <div class="portfolio-card portfolio-item" data-category="apparel">
-                    <div class="absolute inset-0 bg-gradient-to-br from-amber-700 to-yellow-800 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#FFD700] to-[#ca8a04] flex items-center justify-center">
                         <i class="fas fa-hat-cowboy text-6xl text-white/20"></i>
                     </div>
                     <span class="category-badge badge-apparel">Apparel</span>
                     <div class="portfolio-overlay">
-                        <span class="text-amber-400 text-xs font-bold mb-2">Event Merch</span>
+                        <span class="text-[#B22222] text-xs font-bold mb-2">Event Merch</span>
                         <h3 class="text-xl font-black mb-2">Music Festival Collection</h3>
                         <p class="text-gray-300 text-sm mb-3">Custom caps and t-shirts for 2000 attendees.</p>
-                        <div class="flex gap-2 text-xs">
-                            <span>2000 Pcs</span>
-                            <span>•</span>
-                            <span>Screen Print</span>
-                            <span>•</span>
-                            <span>3 Days</span>
-                        </div>
+                        <div class="flex gap-2 text-xs">2000 • Screen Print • 3 Days</div>
                     </div>
                 </div>
 
                 <!-- Branding Project 2 -->
                 <div class="portfolio-card portfolio-item" data-category="branding">
-                    <div class="absolute inset-0 bg-gradient-to-br from-green-800 to-teal-800 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#B22222] to-[#eab308] flex items-center justify-center">
                         <i class="fas fa-sign text-6xl text-white/20"></i>
                     </div>
                     <span class="category-badge badge-apparel">Branding</span>
                     <div class="portfolio-overlay">
-                        <span class="text-amber-400 text-xs font-bold mb-2">Signage</span>
+                        <span class="text-[#FFD700] text-xs font-bold mb-2">Signage</span>
                         <h3 class="text-xl font-black mb-2">Corporate Signage</h3>
                         <p class="text-gray-300 text-sm mb-3">Exterior and interior branding for tech startup.</p>
-                        <div class="flex gap-2 text-xs">
-                            <span>LED</span>
-                            <span>•</span>
-                            <span>Acrylic</span>
-                            <span>•</span>
-                            <span>Frosted</span>
-                        </div>
+                        <div class="flex gap-2 text-xs">LED • Acrylic • Frosted</div>
                     </div>
                 </div>
 
                 <!-- Security Project 4 -->
                 <div class="portfolio-card portfolio-item" data-category="security">
-                    <div class="absolute inset-0 bg-gradient-to-br from-blue-800 to-indigo-900 flex items-center justify-center">
+                    <div class="absolute inset-0 bg-gradient-to-br from-[#B22222] to-[#8b1a1a] flex items-center justify-center">
                         <i class="fas fa-robot text-6xl text-white/20"></i>
                     </div>
                     <span class="category-badge badge-security">Security</span>
                     <div class="portfolio-overlay">
-                        <span class="text-blue-400 text-xs font-bold mb-2">Smart Integration</span>
+                        <span class="text-[#FFD700] text-xs font-bold mb-2">Smart Integration</span>
                         <h3 class="text-xl font-black mb-2">Home Automation</h3>
                         <p class="text-gray-300 text-sm mb-3">Full smart home integration with voice control.</p>
-                        <div class="flex gap-2 text-xs">
-                            <span>Voice Control</span>
-                            <span>•</span>
-                            <span>Zigbee</span>
-                            <span>•</span>
-                            <span>Z-Wave</span>
-                        </div>
+                        <div class="flex gap-2 text-xs">Voice • Zigbee • Z-Wave</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Case Study Section -->
+    <!-- Case Study Section (gold/red) -->
     <section class="py-24 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-blue-500 font-mono tracking-[0.3em] text-xs">
-                    <span class="lang-en">✦ CASE STUDY</span>
-                    <span class="lang-fr">✦ ÉTUDE DE CAS</span>
-                </span>
-                <h2 class="text-5xl md:text-6xl font-black mt-8">
-                    <span class="gradient-text">
-                        <span class="lang-en">Featured Project</span>
-                        <span class="lang-fr">Projet en Vedette</span>
-                    </span>
-                </h2>
+                <span class="text-[#FFD700] font-mono tracking-[0.3em] text-xs">✦ CASE STUDY</span>
+                <h2 class="text-5xl md:text-6xl font-black mt-8"><span class="gradient-text">Featured Project</span></h2>
             </div>
 
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <div class="glass-card p-12 rounded-[3rem]">
-                    <span class="text-blue-500 font-black text-sm mb-4 block">Security Integration</span>
+                    <span class="text-[#FFD700] font-black text-sm mb-4 block">Security Integration</span>
                     <h3 class="text-4xl font-black mb-6">Waterfront Security Upgrade</h3>
                     <p class="text-gray-400 mb-8">Complete security overhaul for the V&A Waterfront, featuring 256 cameras, AI behavior analysis, and centralized command center.</p>
                     
                     <div class="space-y-4">
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-500">Cameras Installed</span>
-                            <span class="text-2xl font-black text-blue-500">256</span>
-                        </div>
-                        <div class="w-full h-1 bg-white/5 rounded-full">
-                            <div class="w-4/5 h-full bg-blue-500 rounded-full"></div>
-                        </div>
-                        
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-500">Coverage Area</span>
-                            <span class="text-2xl font-black text-blue-500">95%</span>
-                        </div>
-                        <div class="w-full h-1 bg-white/5 rounded-full">
-                            <div class="w-[95%] h-full bg-blue-500 rounded-full"></div>
-                        </div>
-                        
-                        <div class="flex justify-between items-center">
-                            <span class="text-gray-500">Response Time</span>
-                            <span class="text-2xl font-black text-blue-500">-60%</span>
-                        </div>
-                        <div class="w-full h-1 bg-white/5 rounded-full">
-                            <div class="w-3/5 h-full bg-green-500 rounded-full"></div>
-                        </div>
+                        <div class="flex justify-between"><span class="text-gray-500">Cameras Installed</span><span class="text-2xl font-black text-[#FFD700]">256</span></div>
+                        <div class="w-full h-1 bg-white/5 rounded-full"><div class="w-4/5 h-full bg-[#FFD700] rounded-full"></div></div>
+                        <div class="flex justify-between"><span class="text-gray-500">Coverage Area</span><span class="text-2xl font-black text-[#FFD700]">95%</span></div>
+                        <div class="w-full h-1 bg-white/5 rounded-full"><div class="w-[95%] h-full bg-[#B22222] rounded-full"></div></div>
+                        <div class="flex justify-between"><span class="text-gray-500">Response Time</span><span class="text-2xl font-black text-[#FFD700]">-60%</span></div>
+                        <div class="w-full h-1 bg-white/5 rounded-full"><div class="w-3/5 h-full bg-green-500 rounded-full"></div></div>
                     </div>
                     
                     <div class="mt-8 flex gap-4">
-                        <div class="text-center flex-1 glass p-4 rounded-xl">
-                            <div class="text-2xl font-black text-blue-500">24/7</div>
-                            <div class="text-xs text-gray-500">Monitoring</div>
-                        </div>
-                        <div class="text-center flex-1 glass p-4 rounded-xl">
-                            <div class="text-2xl font-black text-blue-500">AI</div>
-                            <div class="text-xs text-gray-500">Analytics</div>
-                        </div>
-                        <div class="text-center flex-1 glass p-4 rounded-xl">
-                            <div class="text-2xl font-black text-blue-500">100%</div>
-                            <div class="text-xs text-gray-500">Uptime</div>
-                        </div>
+                        <div class="text-center flex-1 glass p-4 rounded-xl"><div class="text-2xl font-black text-[#FFD700]">24/7</div><div class="text-xs">Monitoring</div></div>
+                        <div class="text-center flex-1 glass p-4 rounded-xl"><div class="text-2xl font-black text-[#B22222]">AI</div><div class="text-xs">Analytics</div></div>
+                        <div class="text-center flex-1 glass p-4 rounded-xl"><div class="text-2xl font-black text-[#FFD700]">100%</div><div class="text-xs">Uptime</div></div>
                     </div>
                 </div>
 
-                <div class="glass-card p-12 rounded-[3rem] bg-gradient-to-br from-blue-600/20 to-purple-600/20">
-                    <div class="aspect-square flex items-center justify-center">
-                        <i class="fas fa-play-circle text-8xl text-blue-500 cursor-pointer hover:scale-110 transition-transform"></i>
-                    </div>
+                <div class="glass-card p-12 rounded-[3rem] bg-gradient-to-br from-[#B22222]/20 to-[#FFD700]/20 flex items-center justify-center">
+                    <i class="fas fa-play-circle text-8xl text-[#FFD700] cursor-pointer hover:scale-110 transition-transform"></i>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- Testimonials (red/gold) -->
     <section class="py-20 relative">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="glass-card p-10 rounded-[3rem]">
-                    <i class="fas fa-quote-right text-4xl text-blue-500 mb-6"></i>
+                    <i class="fas fa-quote-right text-4xl text-[#FFD700] mb-6"></i>
                     <p class="text-xl mb-6">"BIMPro delivered our office security system ahead of schedule. The quality and professionalism exceeded expectations."</p>
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-blue-500 rounded-full"></div>
-                        <div>
-                            <h4 class="font-bold">John Smith</h4>
-                            <p class="text-sm text-gray-500">CEO, TechCorp</p>
-                        </div>
+                        <div class="w-12 h-12 bg-[#B22222] rounded-full"></div>
+                        <div><h4 class="font-bold">John Smith</h4><p class="text-sm text-gray-400">CEO, TechCorp</p></div>
                     </div>
                 </div>
                 
                 <div class="glass-card p-10 rounded-[3rem]">
-                    <i class="fas fa-quote-right text-4xl text-amber-500 mb-6"></i>
+                    <i class="fas fa-quote-right text-4xl text-[#B22222] mb-6"></i>
                     <p class="text-xl mb-6">"The custom apparel for our conference was outstanding. Great attention to detail and fast turnaround."</p>
                     <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 bg-amber-500 rounded-full"></div>
-                        <div>
-                            <h4 class="font-bold">Sarah Johnson</h4>
-                            <p class="text-sm text-gray-500">Event Director</p>
-                        </div>
+                        <div class="w-12 h-12 bg-[#FFD700] rounded-full"></div>
+                        <div><h4 class="font-bold">Sarah Johnson</h4><p class="text-sm text-gray-400">Event Director</p></div>
                     </div>
                 </div>
             </div>
@@ -699,260 +576,98 @@
     <!-- Call to Action -->
     <section class="py-32 relative">
         <div class="max-w-5xl mx-auto text-center px-6">
-            <div class="glass-card p-20 rounded-[5rem] relative overflow-hidden">
-                <div class="absolute inset-0 opacity-10">
-                    <div class="text-9xl font-black text-blue-500">2026</div>
-                </div>
-                
+            <div class="glass-card p-20 rounded-[5rem] relative overflow-hidden border border-[#FFD700]/30">
+                <div class="absolute inset-0 opacity-5 text-9xl font-black text-[#FFD700]">2026</div>
                 <div class="relative">
-                    <h2 class="text-6xl md:text-7xl font-black mb-8">
-                        <span class="gradient-text">
-                            <span class="lang-en">Start Your<br>Project</span>
-                            <span class="lang-fr">Commencez<br>Votre Projet</span>
-                        </span>
-                    </h2>
-                    <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-                        <span class="lang-en">Ready to create something exceptional? Let's bring your vision to life.</span>
-                        <span class="lang-fr">Prêt à créer quelque chose d'exceptionnel ? Donnons vie à votre vision.</span>
-                    </p>
-                    <a href="contact.html" class="inline-block bg-blue-600 px-16 py-6 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-blue-700 transition-all hover:scale-105">
-                        <span class="lang-en">Start a Project</span>
-                        <span class="lang-fr">Démarrer un Projet</span>
-                    </a>
+                    <h2 class="text-6xl md:text-7xl font-black mb-8"><span class="gradient-text">Start Your<br>Project</span></h2>
+                    <p class="text-xl text-gray-400 mb-12">Ready to create something exceptional? Let's bring your vision to life.</p>
+                    <a href="contact.html" class="inline-block bg-[#B22222] px-16 py-6 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-[#9e2a2a] transition-all hover:scale-105 border border-[#FFD700]">Start a Project</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-20 border-t border-white/5">
+    <footer class="py-20 border-t border-[#FFD700]/20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-12">
-                <div>
-                    <div class="text-3xl font-black mb-6">
-                        <span class="gradient-text">BIM</span>Pro
-                    </div>
-                    <p class="text-gray-500 text-sm">
-                        <span class="lang-en">Integrated Security & Branding Solutions</span>
-                        <span class="lang-fr">Solutions Intégrées de Sécurité et Branding</span>
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-6">
-                        <span class="lang-en">Quick Links</span>
-                        <span class="lang-fr">Liens Rapides</span>
-                    </h4>
-                    <ul class="space-y-3 text-gray-500">
-                        <li><a href="#" class="hover:text-blue-500 transition-colors">All Projects</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition-colors">Security</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition-colors">Apparel</a></li>
-                        <li><a href="#" class="hover:text-blue-500 transition-colors">Branding</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-6">
-                        <span class="lang-en">Resources</span>
-                        <span class="lang-fr">Ressources</span>
-                    </h4>
-                    <ul class="space-y-3 text-gray-500">
-                        <li>Case Studies</li>
-                        <li>Testimonials</li>
-                        <li>Gallery</li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-bold mb-6">Connect</h4>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 glass-card rounded-2xl flex items-center justify-center hover:bg-blue-600 transition-all">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 glass-card rounded-2xl flex items-center justify-center hover:bg-blue-600 transition-all">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-12 h-12 glass-card rounded-2xl flex items-center justify-center hover:bg-blue-600 transition-all">
-                            <i class="fab fa-behance"></i>
-                        </a>
-                    </div>
-                </div>
+                <div><div class="text-3xl font-black mb-6"><span class="gradient-text">BIM</span>Pro</div><p class="text-gray-500 text-sm">Integrated Security & Branding Solutions</p></div>
+                <div><h4 class="font-bold mb-6 text-[#FFD700]">Quick Links</h4><ul class="space-y-3 text-gray-400"><li><a href="#" class="hover:text-[#B22222]">All Projects</a></li><li><a href="#" class="hover:text-[#B22222]">Security</a></li><li><a href="#" class="hover:text-[#B22222]">Apparel</a></li></ul></div>
+                <div><h4 class="font-bold mb-6 text-[#B22222]">Resources</h4><ul class="space-y-3 text-gray-400"><li>Case Studies</li><li>Testimonials</li></ul></div>
+                <div><h4 class="font-bold mb-6 text-[#FFD700]">Connect</h4><div class="flex gap-4"><a href="#" class="w-12 h-12 glass-card rounded-2xl flex items-center justify-center hover:bg-[#B22222] text-[#FFD700]"><i class="fab fa-linkedin-in"></i></a><a href="#" class="w-12 h-12 glass-card rounded-2xl flex items-center justify-center hover:bg-[#B22222] text-[#FFD700]"><i class="fab fa-instagram"></i></a></div></div>
             </div>
-            
-            <div class="mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-sm">
-                <span class="lang-en">© 2026 BIMPro Enterprises. Excellence Delivered.</span>
-                <span class="lang-fr">© 2026 BIMPro Enterprises. Excellence Réalisée.</span>
-            </div>
+            <div class="mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-sm">© 2026 BIMPro multi services group. Excellence Delivered.</div>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
     
     <script>
-        // Language Toggle
         function toggleLang() {
             document.body.classList.toggle('is-french');
             localStorage.setItem('pref-lang', document.body.classList.contains('is-french') ? 'fr' : 'en');
         }
-        
-        if(localStorage.getItem('pref-lang') === 'fr') {
-            document.body.classList.add('is-french');
-        }
+        if(localStorage.getItem('pref-lang') === 'fr') document.body.classList.add('is-french');
 
-        // Custom Cursor
-        const cursor = document.querySelector('.cursor');
-        const follower = document.querySelector('.cursor-follower');
-
+        // cursor
+        const cursor = document.querySelector('.cursor'), follower = document.querySelector('.cursor-follower');
         document.addEventListener('mousemove', (e) => {
             cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
             follower.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
         });
 
-        // Loading Screen
-        window.addEventListener('load', () => {
-            setTimeout(() => {
-                document.getElementById('loader').classList.add('hidden');
-            }, 2000);
-        });
+        // loader
+        window.addEventListener('load', () => setTimeout(() => document.getElementById('loader').classList.add('hidden'), 1500));
 
-        // Counter Animation
+        // counters
         const counters = document.querySelectorAll('.counter');
-        const speed = 200;
-
-        counters.forEach(counter => {
+        counters.forEach(c => {
             const animate = () => {
-                const value = +counter.getAttribute('data-target');
-                const data = +counter.innerText;
-                const time = value / speed;
-                
-                if(data < value) {
-                    counter.innerText = Math.ceil(data + time);
-                    setTimeout(animate, 1);
-                } else {
-                    counter.innerText = value;
-                }
-            }
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if(entry.isIntersecting) {
-                        animate();
-                        observer.unobserve(entry.target);
-                    }
-                });
-            });
-            
-            observer.observe(counter);
+                const target = +c.getAttribute('data-target');
+                const current = +c.innerText;
+                if(current < target) { c.innerText = Math.ceil(current + target/200); setTimeout(animate, 15); }
+                else c.innerText = target;
+            };
+            new IntersectionObserver((e) => { if(e[0].isIntersecting) animate(); }).observe(c);
         });
 
-        // Navbar Scroll Effect
+        // navbar scroll
         window.addEventListener('scroll', () => {
-            const navbar = document.getElementById('navbar');
-            if(window.scrollY > 100) {
-                navbar.classList.add('glass');
-                navbar.style.padding = '1rem 2rem';
-            } else {
-                navbar.classList.remove('glass');
-                navbar.style.padding = '1.5rem 2rem';
-            }
+            const nav = document.getElementById('navbar');
+            if(window.scrollY > 100) nav.classList.add('glass');
+            else nav.classList.remove('glass');
         });
 
-        // Filter Functionality
+        // filter
         const filterButtons = document.querySelectorAll('.filter-btn');
         const portfolioItems = document.querySelectorAll('.portfolio-item');
-
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
-                // Update active button
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
-
-                // Filter items
                 const filter = button.dataset.filter;
-                
                 portfolioItems.forEach(item => {
                     if(filter === 'all' || item.dataset.category === filter) {
                         item.style.display = 'block';
-                        setTimeout(() => {
-                            item.style.opacity = '1';
-                            item.style.transform = 'scale(1)';
-                        }, 10);
+                        setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; },10);
                     } else {
-                        item.style.opacity = '0';
-                        item.style.transform = 'scale(0.8)';
-                        setTimeout(() => {
-                            item.style.display = 'none';
-                        }, 300);
+                        item.style.opacity = '0'; item.style.transform = 'scale(0.8)';
+                        setTimeout(() => { item.style.display = 'none'; },300);
                     }
                 });
             });
         });
 
-        // Lightbox configuration
-        lightbox.option({
-            'resizeDuration': 200,
-            'wrapAround': true,
-            'albumLabel': 'Project %1 of %2'
-        });
+        lightbox.option({ 'resizeDuration':200, 'wrapAround':true });
     </script>
 
     <style>
-        /* Additional animations */
-        @keyframes slideUp {
-            from {
-                transform: translateY(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .animate-slideUp {
-            animation: slideUp 1s forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .animate-fadeIn {
-            animation: fadeIn 1s forwards;
-        }
-
-        .portfolio-item {
-            transition: opacity 0.3s, transform 0.3s;
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #030304;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #2563eb20;
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: #2563eb40;
-        }
-
-        /* Selection */
-        ::selection {
-            background: #2563eb30;
-            color: #fff;
-        }
+        .animate-slideUp { animation: slideUp 1s forwards; }
+        @keyframes slideUp { from { transform:translateY(100%); opacity:0; } to { transform:translateY(0); opacity:1; } }
+        .animate-fadeIn { animation: fadeIn 1s forwards; }
+        @keyframes fadeIn { from{ opacity:0; } to{ opacity:1; } }
+        .portfolio-item { transition: opacity 0.3s, transform 0.3s; }
+        ::-webkit-scrollbar { width:8px; } ::-webkit-scrollbar-track { background:#0B0B0B; } ::-webkit-scrollbar-thumb { background:#FFD70020; border-radius:4px; } ::-webkit-scrollbar-thumb:hover { background:#B2222240; }
     </style>
 </body>
 </html>
