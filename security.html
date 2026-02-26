@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Security & Smart Protection | BIMPro multi services group</title>
+    <title>Services | BIMPro multi services group</title>
     
     <!-- Tailwind & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -113,68 +113,59 @@
             background-size: 50px 50px;
         }
 
-        /* radar animation */
-        .radar {
+        /* security pulse */
+        .security-pulse {
             position: relative;
-            width: 300px;
-            height: 300px;
-            border-radius: 50%;
-            border: 2px solid #FFD70040;
             overflow: hidden;
         }
-        .radar::before {
+        .security-pulse::after {
             content: '';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 2px;
-            height: 50%;
-            background: linear-gradient(to top, #B22222, #FFD700, transparent);
-            transform-origin: bottom;
-            animation: radar 4s linear infinite;
-        }
-        @keyframes radar {
-            from { transform: translate(-50%, -50%) rotate(0deg); }
-            to { transform: translate(-50%, -50%) rotate(360deg); }
-        }
-        .radar-dot {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            background: #FFD700;
+            top: 50%; left: 50%;
+            width: 100%; height: 100%;
+            background: radial-gradient(circle, #B2222240 0%, transparent 70%);
+            transform: translate(-50%, -50%) scale(0.8);
+            opacity: 0;
+            transition: all 0.5s;
+            pointer-events: none;
             border-radius: 50%;
-            box-shadow: 0 0 20px #B22222;
-            animation: pulse 2s ease infinite;
         }
-        @keyframes pulse {
-            0%,100% { opacity: 0.5; transform: scale(1); }
-            50% { opacity: 1; transform: scale(1.5); }
+        .security-pulse:hover::after {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.2);
         }
 
-        /* circuit lines */
-        .circuit-line {
-            position: absolute;
-            background: linear-gradient(90deg, transparent, #FFD700, #B22222, transparent);
-            height: 1px;
-            width: 100%;
-            animation: circuit 3s linear infinite;
+        /* creative splash */
+        .creative-splash {
+            position: relative;
+            overflow: hidden;
         }
-        @keyframes circuit {
-            0% { transform: translateX(-100%); opacity: 0; }
-            50% { opacity: 0.8; }
-            100% { transform: translateX(100%); opacity: 0; }
+        .creative-splash::before {
+            content: '';
+            position: absolute;
+            top: 50%; left: 50%;
+            width: 0; height: 0;
+            background: radial-gradient(circle, #FFD70030 0%, transparent 70%);
+            transform: translate(-50%, -50%);
+            transition: width 0.5s, height 0.5s;
+            border-radius: 50%;
+        }
+        .creative-splash:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         /* tech badge */
         .tech-badge {
             background: rgba(178,34,34,0.1);
             border: 1px solid #FFD70040;
-            padding: 0.5rem 1rem;
+            padding: 0.25rem 1rem;
             border-radius: 100px;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             font-weight: 600;
             color: #FFD700;
             transition: all 0.3s;
+            display: inline-block;
         }
         .tech-badge:hover {
             background: #B22222;
@@ -182,45 +173,73 @@
             border-color: #FFD700;
         }
 
+        .apparel-badge {
+            background: rgba(255,215,0,0.1);
+            border: 1px solid #B2222240;
+            color: #B22222;
+        }
+        .apparel-badge:hover {
+            background: #FFD700;
+            color: #0B0B0B;
+            border-color: #B22222;
+        }
+
         /* counter */
         .counter { font-variant-numeric: tabular-nums; }
 
-        /* loading screen */
+        /* loader */
         .loader {
-            position: fixed;
-            top:0; left:0;
-            width:100%; height:100%;
-            background: #0B0B0B;
-            z-index:10000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            position: fixed; top:0; left:0; width:100%; height:100%;
+            background: #0B0B0B; z-index:10000;
+            display: flex; justify-content: center; align-items: center;
             transition: opacity 1s, visibility 1s;
         }
         .loader.hidden { opacity:0; visibility:hidden; }
         .loader-text {
-            font-size: 8vw; font-weight:900;
+            font-size:8vw; font-weight:900;
             background: linear-gradient(135deg, #FFD700, #B22222);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        /* floating */
+        .float { animation: float 6s ease-in-out infinite; }
+        @keyframes float { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-20px); } }
+
+        /* custom scrollbar */
+        ::-webkit-scrollbar { width:8px; }
+        ::-webkit-scrollbar-track { background:#0B0B0B; }
+        ::-webkit-scrollbar-thumb { background:#FFD70020; border-radius:4px; }
+        ::-webkit-scrollbar-thumb:hover { background:#B2222240; }
+
+        /* text outline */
+        .text-outline {
+            -webkit-text-stroke: 1px rgba(255,215,0,0.2);
+            color: transparent;
+            font-size: 15vw;
+            font-weight: 900;
+            line-height: 0.8;
+            white-space: nowrap;
+        }
+
+        /* feature grid for security deep-dive */
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
     </style>
 </head>
 <body>
- 
+   
+
     <!-- Custom Cursor -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
 
-    <!-- Circuit lines background -->
-    <div class="fixed inset-0 pointer-events-none opacity-10">
-        <div class="circuit-line" style="top:20%"></div>
-        <div class="circuit-line" style="top:40%; animation-delay:1s"></div>
-        <div class="circuit-line" style="top:60%; animation-delay:2s"></div>
-        <div class="circuit-line" style="top:80%; animation-delay:3s"></div>
-    </div>
+    <!-- Background Pattern -->
+    <div class="fixed inset-0 grid-bg opacity-20 pointer-events-none"></div>
 
-    <!-- Navigation -->
+    <!-- Navigation (consistent with theme) -->
     <nav class="fixed w-full z-50 py-6 px-8 flex justify-between items-center" id="navbar">
         <div class="glass px-8 py-4 rounded-full flex items-center gap-4" style="border-color:#FFD70030;">
             <div class="text-2xl font-black tracking-tighter">
@@ -228,8 +247,8 @@
             </div>
             <div class="w-px h-8 bg-gold/20"></div>
             <div class="text-xs font-medium text-gray-400">
-                <span class="lang-en">Security Division</span>
-                <span class="lang-fr">Division Sécurité</span>
+                <span class="lang-en">Integrated Services</span>
+                <span class="lang-fr">Services Intégrés</span>
             </div>
         </div>
         
@@ -243,8 +262,8 @@
                     <span class="lang-en">About</span><span class="lang-fr">À propos</span>
                     <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full"></span>
                 </a>
-                <a href="security.html" class="nav-link relative group">
-                    <span class="lang-en">Security</span><span class="lang-fr">Sécurité</span>
+                <a href="services.html" class="nav-link relative group">
+                    <span class="lang-en">Services</span><span class="lang-fr">Services</span>
                     <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-[#FFD700]"></span>
                 </a>
                 <a href="portfolio.html" class="nav-link relative group">
@@ -265,209 +284,272 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 grid-bg"></div>
-        <div class="absolute inset-0" style="background: radial-gradient(circle at 50% 50%, transparent 0%, #0B0B0B 100%);"></div>
-        
-        <!-- floating orbs -->
-        <div class="absolute top-20 left-10 w-72 h-72 bg-[#B22222]/20 rounded-full blur-3xl float"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700]/10 rounded-full blur-3xl float" style="animation-delay:-3s"></div>
-        
-        <!-- Radar animation (larger) -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-20">
-            <div class="radar" style="width:600px; height:600px; border-color:#FFD70020;"></div>
+    <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20">
+        <div class="absolute inset-0 flex items-center justify-center opacity-5">
+            <div class="text-outline">INTEGRATED</div>
         </div>
+        <div class="absolute top-20 left-10 w-72 h-72 bg-[#B22222]/20 rounded-full blur-3xl float"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700]/10 rounded-full blur-3xl float" style="animation-delay:-3s;"></div>
 
         <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
-            <div class="mb-8 overflow-hidden">
-                <span class="inline-block text-[#FFD700] font-mono tracking-[0.5em] text-xs mb-8 animate-pulse">
-                    <span class="lang-en">✦ DIVISION 01 | SECURITY & SMART PROTECTION ✦</span>
-                    <span class="lang-fr">✦ DIVISION 01 | SÉCURITÉ & PROTECTION INTELLIGENTE ✦</span>
-                </span>
-            </div>
-            
-            <h1 class="text-7xl md:text-9xl font-black leading-[0.85] mb-12">
-                <div class="overflow-hidden">
-                    <span class="inline-block gradient-text text-[0.8em] animate-slideUp">PROTECT</span>
-                </div>
-                <div class="overflow-hidden">
-                    <span class="inline-block text-white animate-slideUp" style="animation-delay:0.1s;">WHAT</span>
-                </div>
-                <div class="overflow-hidden">
-                    <span class="inline-block gradient-text animate-slideUp" style="animation-delay:0.2s;">MATTERS</span>
-                </div>
+            <span class="text-[#FFD700] font-mono tracking-[0.5em] text-xs animate-pulse">✦ TWO DIVISIONS · ONE STANDARD ✦</span>
+            <h1 class="text-7xl md:text-8xl font-black leading-[0.9] mt-12 mb-6">
+                <span class="gradient-text">COMPLETE</span><br>
+                <span class="text-white">SOLUTIONS</span>
             </h1>
-
-            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-16 animate-fadeIn" style="animation-delay:0.5s;">
-                <span class="lang-en">Advanced surveillance and alarm systems designed to protect assets, property, and people with cutting-edge technology.</span>
-                <span class="lang-fr">Systèmes de surveillance et d'alarme avancés conçus pour protéger les biens, les propriétés et les personnes.</span>
-            </p>
-
-            <!-- Trust indicators -->
-            <div class="flex flex-wrap gap-8 justify-center animate-fadeIn" style="animation-delay:0.7s;">
-                <div class="flex items-center gap-2"><i class="fas fa-shield-alt text-[#FFD700]"></i><span class="text-sm text-gray-400">ISO 27001 Certified</span></div>
-                <div class="flex items-center gap-2"><i class="fas fa-clock text-[#B22222]"></i><span class="text-sm text-gray-400">24/7 Monitoring</span></div>
-                <div class="flex items-center gap-2"><i class="fas fa-trophy text-[#FFD700]"></i><span class="text-sm text-gray-400">Industry Leaders</span></div>
-            </div>
+            <p class="text-xl text-gray-400 max-w-2xl mx-auto">Engineering safety. Crafting identity. We deliver excellence across every discipline.</p>
         </div>
+    </section>
 
-        <!-- scroll -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
-            <span class="text-xs text-gray-500 uppercase tracking-widest"><span class="lang-en">Explore Solutions</span><span class="lang-fr">Explorer</span></span>
-            <div class="w-5 h-10 border border-[#FFD700]/20 rounded-full flex justify-center">
-                <div class="w-1 h-2 bg-[#B22222] rounded-full mt-2 animate-bounce"></div>
+    <!-- quick stats -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-card p-4 rounded-2xl text-center"><span class="counter text-3xl font-black text-[#FFD700]" data-target="500">0</span><span class="block text-xs">Security Projects</span></div>
+                <div class="glass-card p-4 rounded-2xl text-center"><span class="counter text-3xl font-black text-[#B22222]" data-target="350">0</span><span class="block text-xs">Branding Projects</span></div>
+                <div class="glass-card p-4 rounded-2xl text-center"><span class="counter text-3xl font-black text-[#FFD700]" data-target="50">0</span><span class="block text-xs">Certified Experts</span></div>
+                <div class="glass-card p-4 rounded-2xl text-center"><span class="counter text-3xl font-black text-[#B22222]" data-target="24">0</span><span class="block text-xs">/7 Support</span></div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section (gold/red) -->
+    <!-- ===== SECURITY DIVISION – EXPANDED WITH DEEP INFORMATION ===== -->
     <section class="py-20 relative">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="text-center group"><div class="counter text-6xl font-black text-[#FFD700] mb-2" data-target="500">0</div><div class="text-xs uppercase tracking-widest text-gray-400"><span class="lang-en">Systems Installed</span><span class="lang-fr">Installations</span></div></div>
-                <div class="text-center group"><div class="counter text-6xl font-black text-[#B22222] mb-2" data-target="99.9">0</div><div class="text-xs uppercase tracking-widest text-gray-400">Uptime %</div></div>
-                <div class="text-center group"><div class="counter text-6xl font-black text-[#FFD700] mb-2" data-target="50">0</div><div class="text-xs uppercase tracking-widest text-gray-400"><span class="lang-en">Security Experts</span><span class="lang-fr">Experts</span></div></div>
-                <div class="text-center group"><div class="counter text-6xl font-black text-[#B22222] mb-2" data-target="24">0</div><div class="text-xs uppercase tracking-widest text-gray-400">Hour Response</div></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Main Services Grid (red/gold) -->
-    <section class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <span class="text-[#FFD700] font-mono tracking-[0.3em] text-xs">✦ OUR SOLUTIONS</span>
-                <h2 class="text-5xl md:text-6xl font-black mt-8"><span class="gradient-text">Comprehensive<br>Security Suite</span></h2>
+            <!-- division header -->
+            <div class="flex items-center gap-4 mb-12">
+                <span class="w-16 h-16 bg-[#B22222] rounded-2xl flex items-center justify-center text-3xl"><i class="fas fa-shield-alt text-[#FFD700]"></i></span>
+                <div>
+                    <span class="text-[#FFD700] font-mono text-sm tracking-[0.3em]">DIVISION 01 — SECURITY & SMART PROTECTION</span>
+                    <h2 class="text-4xl md:text-5xl font-black"><span class="gradient-text">Advanced Security Systems</span></h2>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- CCTV -->
-                <div class="glass-card p-10 rounded-3xl group feature-card">
-                    <div class="text-5xl mb-8 text-[#FFD700] group-hover:scale-110 transition-transform"><i class="fas fa-video"></i></div>
-                    <h3 class="text-3xl font-black mb-4 group-hover:text-[#FFD700]"><span class="lang-en">CCTV Systems</span><span class="lang-fr">Systèmes CCTV</span></h3>
-                    <div class="space-y-3 text-gray-400 mb-8">
-                        <p><i class="fas fa-check text-[#B22222] mr-2"></i>HD & 4K</p>
-                        <p><i class="fas fa-check text-[#B22222] mr-2"></i>Night Vision</p>
-                        <p><i class="fas fa-check text-[#B22222] mr-2"></i>Remote Viewing</p>
-                        <p><i class="fas fa-check text-[#B22222] mr-2"></i>AI Motion Detection</p>
+            <!-- introductory text block -->
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-[#FFD700]">
+                    <p class="text-2xl font-black text-[#FFD700] mb-2">500+</p>
+                    <p class="text-sm text-gray-400">installations across residential, commercial & industrial</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-[#B22222]">
+                    <p class="text-2xl font-black text-[#B22222] mb-2">99.9%</p>
+                    <p class="text-sm text-gray-400">uptime — we guarantee reliability</p>
+                </div>
+                <div class="glass-card p-6 rounded-2xl border-l-4 border-[#FFD700]">
+                    <p class="text-2xl font-black text-[#FFD700] mb-2">24/7</p>
+                    <p class="text-sm text-gray-400">professional monitoring & rapid response</p>
+                </div>
+            </div>
+
+            <!-- detailed feature grid – lots of information -->
+            <div class="feature-grid mb-16">
+                <!-- CCTV DEEP DIVE -->
+                <div class="glass-card p-8 rounded-3xl security-pulse group col-span-2 md:col-span-1">
+                    <i class="fas fa-video text-4xl text-[#FFD700] mb-4"></i>
+                    <h3 class="text-2xl font-black mb-3">CCTV & Surveillance</h3>
+                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-[#FFD700] mt-1"></i><span>4K & HD IP cameras with night vision</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-[#FFD700] mt-1"></i><span>AI‑powered motion detection & alerts</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-[#FFD700] mt-1"></i><span>Remote viewing via smartphone / PC</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-[#FFD700] mt-1"></i><span>Cloud & local storage (NVR/DVR)</span></li>
+                        <li class="flex items-start gap-2"><i class="fas fa-check text-[#FFD700] mt-1"></i><span>Facial recognition & license plate capture</span></li>
+                    </ul>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">Hikvision</span>
+                        <span class="tech-badge">Dahua</span>
+                        <span class="tech-badge">Axis</span>
                     </div>
-                    <div class="flex flex-wrap gap-2"><span class="tech-badge">DVR</span><span class="tech-badge">NVR</span><span class="tech-badge">IP</span></div>
                 </div>
 
                 <!-- Wireless Alarms -->
-                <div class="glass-card p-10 rounded-3xl group feature-card border-[#FFD700]/20">
-                    <div class="text-5xl mb-8 text-[#B22222] group-hover:scale-110 transition-transform"><i class="fas fa-bell"></i></div>
-                    <h3 class="text-3xl font-black mb-4 group-hover:text-[#B22222]"><span class="lang-en">Wireless Alarms</span><span class="lang-fr">Alarmes Sans Fil</span></h3>
-                    <div class="space-y-3 text-gray-400 mb-8">
-                        <p><i class="fas fa-check text-[#B22222] mr-2"></i>GSM & Wi‑Fi</p>
-                        <p><i class="fas fa-check text-[#B22222] mr-2"></i>Motion Sensors</p>
-                        <p><i class="fas fa-check text-[#B22222] mr-2"></i>Door/Window</p>
-                        <p><i class="fas fa-check text-[#B22222] mr-2"></i>Battery Backup</p>
-                    </div>
-                    <div class="flex flex-wrap gap-2"><span class="tech-badge">GSM</span><span class="tech-badge">4G</span><span class="tech-badge">Wi‑Fi</span></div>
+                <div class="glass-card p-8 rounded-3xl security-pulse group">
+                    <i class="fas fa-bell text-4xl text-[#FFD700] mb-4"></i>
+                    <h3 class="text-2xl font-black mb-3">Wireless Alarms</h3>
+                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>GSM / 4G / Wi‑Fi connectivity</li>
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Pet‑immune motion sensors</li>
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Door/window contacts & glass break</li>
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Backup battery & solar siren</li>
+                    </ul>
+                </div>
+
+                <!-- Access Control -->
+                <div class="glass-card p-8 rounded-3xl security-pulse group">
+                    <i class="fas fa-lock text-4xl text-[#FFD700] mb-4"></i>
+                    <h3 class="text-2xl font-black mb-3">Access Control</h3>
+                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Biometric (fingerprint / facial)</li>
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>RFID cards & key fobs</li>
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Intercom & video door entry</li>
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Centralised management software</li>
+                    </ul>
                 </div>
 
                 <!-- Smart Integration -->
-                <div class="glass-card p-10 rounded-3xl group feature-card">
-                    <div class="text-5xl mb-8 text-[#FFD700] group-hover:scale-110"><i class="fas fa-microchip"></i></div>
-                    <h3 class="text-3xl font-black mb-4 group-hover:text-[#FFD700]"><span class="lang-en">Smart Integration</span><span class="lang-fr">Intégration</span></h3>
-                    <div class="space-y-3 text-gray-400 mb-8">
-                        <p><i class="fas fa-check text-[#B22222] mr-2"></i>Home Automation</p>
-                        <p><i class="fas fa-check text-[#B22222] mr-2"></i>Access Control</p>
-                        <p><i class="fas fa-check text-[#B22222] mr-2"></i>Mobile App</p>
-                        <p><i class="fas fa-check text-[#B22222] mr-2"></i>Voice Assistant</p>
+                <div class="glass-card p-8 rounded-3xl security-pulse group">
+                    <i class="fas fa-microchip text-4xl text-[#FFD700] mb-4"></i>
+                    <h3 class="text-2xl font-black mb-3">Smart Integration</h3>
+                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Home automation (lights, thermostats)</li>
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Voice control (Alexa, Google Home)</li>
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Zigbee / Z‑Wave compatible</li>
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Custom scenes & scheduling</li>
+                    </ul>
+                </div>
+
+                <!-- Perimeter Protection -->
+                <div class="glass-card p-8 rounded-3xl security-pulse group">
+                    <i class="fas fa-fence text-4xl text-[#FFD700] mb-4"></i>
+                    <h3 class="text-2xl font-black mb-3">Perimeter Protection</h3>
+                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Infrared beams & laser barriers</li>
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Vibration sensors on fences</li>
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Security lighting & sirens</li>
+                    </ul>
+                </div>
+
+                <!-- Fire & Life Safety -->
+                <div class="glass-card p-8 rounded-3xl security-pulse group">
+                    <i class="fas fa-fire-extinguisher text-4xl text-[#FFD700] mb-4"></i>
+                    <h3 class="text-2xl font-black mb-3">Fire & Life Safety</h3>
+                    <ul class="space-y-2 text-sm text-gray-300 mb-4">
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>Smoke & heat detectors</li>
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>CO / gas monitoring</li>
+                        <li><i class="fas fa-check text-[#FFD700] mr-2"></i>24/7 central station connection</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- extra information: monitoring & support -->
+            <div class="glass-card p-10 rounded-3xl border border-[#FFD700]/30 bg-gradient-to-r from-[#B22222]/10 to-transparent">
+                <div class="flex flex-wrap items-center justify-between gap-6">
+                    <div>
+                        <h4 class="text-2xl font-black mb-2">24/7 Professional Monitoring</h4>
+                        <p class="text-gray-400 max-w-2xl">All security systems can be connected to our UL‑listed monitoring center. Police, medical, or fire dispatch within seconds.</p>
                     </div>
-                    <div class="flex flex-wrap gap-2"><span class="tech-badge">IoT</span><span class="tech-badge">Cloud</span><span class="tech-badge">API</span></div>
+                    <div class="flex gap-4">
+                        <div class="text-center"><span class="text-3xl font-black text-[#FFD700]">3s</span><p class="text-xs">response</p></div>
+                        <div class="text-center"><span class="text-3xl font-black text-[#B22222]">100%</span><p class="text-xs">coverage</p></div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Advanced Features (gold/red) -->
-    <section class="py-32 relative">
+    <!-- Divider – appears only after extensive security info -->
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="w-full h-px bg-gradient-to-r from-transparent via-[#FFD700] to-transparent opacity-30 my-8"></div>
+    </div>
+
+    <!-- ===== APPAREL & CREATIVE DIVISION (now appears after deep security) ===== -->
+    <section class="py-20 relative">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
+            <div class="flex items-center gap-4 mb-12">
+                <span class="w-16 h-16 bg-[#FFD700] rounded-2xl flex items-center justify-center text-3xl"><i class="fas fa-paint-brush text-[#B22222]"></i></span>
                 <div>
-                    <span class="text-[#FFD700] font-mono tracking-[0.3em] text-xs">✦ ADVANCED TECHNOLOGY</span>
-                    <h2 class="text-5xl md:text-6xl font-black mt-8 mb-10 leading-tight"><span class="gradient-text">Intelligent<br>Protection</span></h2>
-                    <p class="text-gray-400 text-lg mb-8">AI and machine learning provide proactive security, identifying threats before they materialize.</p>
-                    <div class="space-y-6">
+                    <span class="text-[#B22222] font-mono text-sm tracking-[0.3em]">DIVISION 02 — INK & APPAREL</span>
+                    <h2 class="text-4xl md:text-5xl font-black"><span class="gradient-text">Creative Branding</span></h2>
+                </div>
+            </div>
+
+            <!-- apparel services grid (condensed but still professional) -->
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="glass-card p-8 rounded-3xl creative-splash group">
+                    <i class="fas fa-tshirt text-4xl text-[#FFD700] mb-4"></i>
+                    <h3 class="text-2xl font-black mb-2">T-Shirt Printing</h3>
+                    <p class="text-sm text-gray-400 mb-3">Screen printing, DTG, vinyl, heat press – bulk or sample.</p>
+                    <span class="tech-badge apparel-badge">Screen</span><span class="tech-badge apparel-badge ml-2">DTG</span>
+                </div>
+                <div class="glass-card p-8 rounded-3xl creative-splash group">
+                    <i class="fas fa-user-tie text-4xl text-[#B22222] mb-4"></i>
+                    <h3 class="text-2xl font-black mb-2">Custom Apparel</h3>
+                    <p class="text-sm text-gray-400">Corporate uniforms, sportswear, workwear, caps.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl creative-splash group">
+                    <i class="fas fa-tag text-4xl text-[#FFD700] mb-4"></i>
+                    <h3 class="text-2xl font-black mb-2">Stickers & Labels</h3>
+                    <p class="text-sm text-gray-400">Vinyl, die‑cut, waterproof, custom shapes.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl creative-splash group">
+                    <i class="fas fa-briefcase text-4xl text-[#B22222] mb-4"></i>
+                    <h3 class="text-2xl font-black mb-2">Business Branding</h3>
+                    <p class="text-sm text-gray-400">Stationery, signage, identity packages.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl creative-splash group">
+                    <i class="fas fa-gift text-4xl text-[#FFD700] mb-4"></i>
+                    <h3 class="text-2xl font-black mb-2">Promo Merch</h3>
+                    <p class="text-sm text-gray-400">Caps, bags, pens, mugs for campaigns.</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl creative-splash group">
+                    <i class="fas fa-print text-4xl text-[#B22222] mb-4"></i>
+                    <h3 class="text-2xl font-black mb-2">Large Format</h3>
+                    <p class="text-sm text-gray-400">Banners, posters, vinyl decals.</p>
+                </div>
+            </div>
+
+            <!-- apparel quality note -->
+            <div class="mt-12 glass-card p-6 rounded-3xl inline-block">
+                <p class="text-sm"><span class="text-[#FFD700] font-bold">Pantone® matched</span> · Eco‑solvent inks · 1200dpi · Fast turnaround</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology & Quality (both divisions) -->
+    <section class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div>
+                    <span class="text-[#FFD700] font-mono tracking-[0.3em] text-xs">✦ TECHNOLOGY</span>
+                    <h2 class="text-5xl md:text-6xl font-black mt-8 mb-10 leading-tight"><span class="gradient-text">Precision Across<br>Disciplines</span></h2>
+                    <p class="text-gray-400 text-lg mb-8">We deploy the same rigorous standards whether securing a facility or printing a garment.</p>
+                    <div class="space-y-5">
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 glass-card rounded-xl flex items-center justify-center text-[#FFD700]"><i class="fas fa-brain"></i></div>
-                            <div><h4 class="font-bold mb-2">AI-Powered Analytics</h4><p class="text-sm text-gray-500">Facial recognition, behavior analysis</p></div>
+                            <div class="w-12 h-12 glass rounded-xl flex items-center justify-center text-[#FFD700]"><i class="fas fa-microchip"></i></div>
+                            <div><h4 class="font-bold mb-1">Security Tech</h4><p class="text-sm text-gray-500">Hikvision, Dahua, AI analytics, 4K surveillance</p></div>
                         </div>
                         <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 glass-card rounded-xl flex items-center justify-center text-[#FFD700]"><i class="fas fa-cloud-upload-alt"></i></div>
-                            <div><h4 class="font-bold mb-2">Cloud Storage</h4><p class="text-sm text-gray-500">Secure off‑site backup, 30‑day retention</p></div>
+                            <div class="w-12 h-12 glass rounded-xl flex items-center justify-center text-[#B22222]"><i class="fas fa-palette"></i></div>
+                            <div><h4 class="font-bold mb-1">Print Tech</h4><p class="text-sm text-gray-500">Epson SureColor, Pantone matching, eco‑solvent</p></div>
                         </div>
                     </div>
                 </div>
-                <div class="relative">
-                    <div class="glass-card p-8 rounded-[3rem]">
-                        <div class="aspect-square relative overflow-hidden rounded-[2rem] flex items-center justify-center">
-                            <div class="radar w-64 h-64"></div>
-                            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex gap-2"><div class="w-2 h-2 bg-[#FFD700] rounded-full animate-pulse"></div><span class="text-xs">System Active</span></div>
-                        </div>
-                    </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="glass-card p-8 rounded-3xl text-center"><div class="text-3xl font-black text-[#FFD700] mb-2">1200</div><div class="text-xs">DPI Resolution</div></div>
+                    <div class="glass-card p-8 rounded-3xl text-center"><div class="text-3xl font-black text-[#B22222] mb-2">99.9%</div><div class="text-xs">Uptime</div></div>
+                    <div class="glass-card p-8 rounded-3xl text-center"><div class="text-3xl font-black text-[#FFD700] mb-2">50+</div><div class="text-xs">Fabric Types</div></div>
+                    <div class="glass-card p-8 rounded-3xl text-center"><div class="text-3xl font-black text-[#B22222] mb-2">24/7</div><div class="text-xs">Monitoring</div></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Industries Served -->
-    <section class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <span class="text-[#FFD700] font-mono tracking-[0.3em] text-xs">✦ INDUSTRIES</span>
-                <h2 class="text-5xl md:text-6xl font-black mt-8"><span class="gradient-text">Who We Protect</span></h2>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
-                <div class="glass-card p-8 rounded-3xl text-center group"><i class="fas fa-home text-3xl text-[#FFD700] mb-4 group-hover:scale-110"></i><h4 class="font-bold">Residential</h4></div>
-                <div class="glass-card p-8 rounded-3xl text-center group"><i class="fas fa-store text-3xl text-[#B22222] mb-4 group-hover:scale-110"></i><h4 class="font-bold">Retail</h4></div>
-                <div class="glass-card p-8 rounded-3xl text-center group"><i class="fas fa-building text-3xl text-[#FFD700] mb-4 group-hover:scale-110"></i><h4 class="font-bold">Commercial</h4></div>
-                <div class="glass-card p-8 rounded-3xl text-center group"><i class="fas fa-warehouse text-3xl text-[#B22222] mb-4 group-hover:scale-110"></i><h4 class="font-bold">Industrial</h4></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Installation Process -->
-    <section class="py-32 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <span class="text-[#FFD700] font-mono tracking-[0.3em] text-xs">✦ OUR PROCESS</span>
-                <h2 class="text-5xl md:text-6xl font-black mt-8"><span class="gradient-text">From Assessment<br>to Activation</span></h2>
-            </div>
-            <div class="grid md:grid-cols-4 gap-6">
-                <div class="glass-card p-8 rounded-3xl"><div class="text-6xl font-black text-[#FFD700]/30 mb-4">01</div><h4 class="font-bold mb-2">Site Survey</h4><p class="text-sm text-gray-500">Comprehensive assessment</p></div>
-                <div class="glass-card p-8 rounded-3xl"><div class="text-6xl font-black text-[#B22222]/30 mb-4">02</div><h4 class="font-bold mb-2">System Design</h4><p class="text-sm text-gray-500">Custom architecture</p></div>
-                <div class="glass-card p-8 rounded-3xl"><div class="text-6xl font-black text-[#FFD700]/30 mb-4">03</div><h4 class="font-bold mb-2">Installation</h4><p class="text-sm text-gray-500">Certified technicians</p></div>
-                <div class="glass-card p-8 rounded-3xl"><div class="text-6xl font-black text-[#B22222]/30 mb-4">04</div><h4 class="font-bold mb-2">24/7 Monitoring</h4><p class="text-sm text-gray-500">Continuous protection</p></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partners -->
-    <section class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-6">
+    <!-- Testimonial -->
+    <section class="py-16 px-6">
+        <div class="max-w-6xl mx-auto">
             <div class="glass-card p-16 rounded-[4rem] border border-[#FFD700]/20">
-                <div class="grid md:grid-cols-3 gap-10">
-                    <div class="text-center"><i class="fas fa-camera text-4xl text-[#FFD700] mb-4"></i><h4 class="font-bold">Hikvision</h4><p class="text-xs text-gray-400">Official Partner</p></div>
-                    <div class="text-center"><i class="fas fa-shield-alt text-4xl text-[#B22222] mb-4"></i><h4 class="font-bold">Dahua</h4><p class="text-xs text-gray-400">Certified Installer</p></div>
-                    <div class="text-center"><i class="fas fa-microchip text-4xl text-[#FFD700] mb-4"></i><h4 class="font-bold">Axis Comm.</h4><p class="text-xs text-gray-400">Technology Partner</p></div>
+                <div class="flex gap-8 items-center flex-wrap md:flex-nowrap">
+                    <div class="w-20 h-20 rounded-full bg-[#B22222] flex items-center justify-center text-4xl text-[#FFD700]"><i class="fas fa-quote-right"></i></div>
+                    <div>
+                        <p class="text-2xl font-light mb-4">“BIMPro handled our office security and staff uniforms seamlessly – one partner, two divisions, exceptional quality.”</p>
+                        <p class="font-bold text-[#FFD700]">— James Carter, Operations Director</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="py-32 relative">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <div class="glass-card p-20 rounded-[5rem] relative overflow-hidden border border-[#FFD700]/40">
-                <div class="absolute inset-0 bg-gradient-to-r from-[#B22222]/20 to-transparent"></div>
+    <!-- CTA -->
+    <section class="py-32 px-6">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="glass-card p-20 rounded-[5rem] relative overflow-hidden border border-[#FFD700]/30">
+                <div class="absolute inset-0 opacity-5 text-9xl font-black text-[#FFD700]">BIMPro</div>
                 <div class="relative">
-                    <h2 class="text-5xl md:text-7xl font-black mb-8"><span class="gradient-text">Secure Your<br>Peace of Mind</span></h2>
-                    <p class="text-xl text-gray-400 mb-12">Get a personalized security assessment and quote.</p>
-                    <a href="contact.html" class="inline-block bg-[#B22222] px-16 py-6 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-[#9e2a2a] transition-all hover:scale-105 border border-[#FFD700]">Request Assessment</a>
+                    <h2 class="text-6xl md:text-7xl font-black mb-8"><span class="gradient-text">Secure &<br>Brand</span></h2>
+                    <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">From advanced security to creative apparel – we deliver integrated excellence.</p>
+                    <div class="flex flex-col md:flex-row gap-6 justify-center">
+                        <a href="contact.html" class="inline-block bg-[#B22222] px-12 py-6 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-[#9e2a2a] transition-all border border-[#FFD700]">Request Consultation</a>
+                        <a href="portfolio.html" class="inline-block bg-[#FFD700] text-black px-12 py-6 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-[#eab308] transition-all border border-[#B22222]">View Portfolio</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -477,12 +559,12 @@
     <footer class="py-20 border-t border-[#FFD700]/20">
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-4 gap-12">
-                <div><div class="text-3xl font-black mb-6"><span class="gradient-text">BIM</span>Pro</div><p class="text-gray-500 text-sm">Security & Smart Protection Division</p></div>
-                <div><h4 class="font-bold mb-6 text-[#FFD700]">Services</h4><ul class="space-y-3 text-gray-400"><li>CCTV</li><li>Alarms</li><li>Access Control</li><li>Smart Integration</li></ul></div>
-                <div><h4 class="font-bold mb-6 text-[#B22222]">Support</h4><ul class="space-y-3 text-gray-400"><li>24/7 Emergency</li><li>Maintenance</li><li>Technical Support</li></ul></div>
-                <div><h4 class="font-bold mb-6 text-[#FFD700]">Connect</h4><div class="flex gap-4"><a href="#" class="w-12 h-12 glass-card rounded-2xl flex items-center justify-center hover:bg-[#B22222] text-[#FFD700]"><i class="fab fa-linkedin-in"></i></a><a href="#" class="w-12 h-12 glass-card rounded-2xl flex items-center justify-center hover:bg-[#B22222] text-[#FFD700]"><i class="fab fa-instagram"></i></a></div></div>
+                <div><div class="text-3xl font-black mb-6"><span class="gradient-text">BIM</span>Pro</div><p class="text-gray-500 text-sm">Multi services group</p></div>
+                <div><h4 class="font-bold mb-6 text-[#FFD700]">Security</h4><ul class="space-y-2 text-gray-400"><li>CCTV</li><li>Alarms</li><li>Access Control</li></ul></div>
+                <div><h4 class="font-bold mb-6 text-[#B22222]">Apparel</h4><ul class="space-y-2 text-gray-400"><li>Printing</li><li>Uniforms</li><li>Branding</li></ul></div>
+                <div><h4 class="font-bold mb-6 text-[#FFD700]">Connect</h4><div class="flex gap-3"><a href="#" class="w-10 h-10 glass rounded-xl flex items-center justify-center hover:bg-[#B22222]"><i class="fab fa-linkedin-in text-[#FFD700]"></i></a><a href="#" class="w-10 h-10 glass rounded-xl flex items-center justify-center hover:bg-[#B22222]"><i class="fab fa-instagram text-[#FFD700]"></i></a></div></div>
             </div>
-            <div class="mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-sm">© 2026 BIMPro Security Division. Protecting What Matters.</div>
+            <div class="mt-16 pt-8 border-t border-white/5 text-center text-gray-600 text-sm">© 2026 BIMPro multi services group. All rights reserved.</div>
         </div>
     </footer>
 
@@ -506,31 +588,26 @@
         // counters
         const counters = document.querySelectorAll('.counter');
         counters.forEach(c => {
-            const animate = () => {
-                const target = +c.getAttribute('data-target');
-                const current = +c.innerText;
-                if(current < target) { c.innerText = Math.ceil(current + target/200); setTimeout(animate, 15); }
-                else c.innerText = target;
+            const target = +c.getAttribute('data-target');
+            let current = 0;
+            const update = () => {
+                if (current < target) {
+                    current += Math.ceil(target/50);
+                    if (current > target) current = target;
+                    c.innerText = current;
+                    requestAnimationFrame(update);
+                } else c.innerText = target;
             };
-            new IntersectionObserver((e) => { if(e[0].isIntersecting) { animate(); } }).observe(c);
+            const observer = new IntersectionObserver((e) => { if(e[0].isIntersecting) { update(); observer.unobserve(c); } });
+            observer.observe(c);
         });
 
-        // navbar glass
+        // navbar
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('navbar');
-            if(window.scrollY > 100) nav.classList.add('glass');
+            if(window.scrollY > 80) nav.classList.add('glass');
             else nav.classList.remove('glass');
         });
     </script>
-
-    <style>
-        .animate-slideUp { animation: slideUp 1s forwards; }
-        @keyframes slideUp { from { transform: translateY(100%); opacity:0; } to { transform:translateY(0); opacity:1; } }
-        .animate-fadeIn { animation: fadeIn 1s forwards; }
-        @keyframes fadeIn { from{ opacity:0; } to{ opacity:1; } }
-        .float { animation: float 6s ease-in-out infinite; }
-        @keyframes float { 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-20px); } }
-        ::-webkit-scrollbar { width:8px; } ::-webkit-scrollbar-track { background:#0B0B0B; } ::-webkit-scrollbar-thumb { background:#FFD70020; border-radius:4px; } ::-webkit-scrollbar-thumb:hover { background:#B2222240; }
-    </style>
 </body>
 </html>
