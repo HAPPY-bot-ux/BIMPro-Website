@@ -272,7 +272,7 @@
 <nav class="fixed w-full z-50 py-4 px-6 md:py-6 md:px-8 flex justify-between items-center transition-all duration-500" id="navbar">
     <div class="glass px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center gap-4 border" style="border-color:#FFD70030;">
         <div class="text-xl md:text-2xl font-black tracking-tighter">
-            <span class="gradient-text">BIM</span><span class="text-white">Pro</span>
+            <span class="">BIM</span><span class="text-white">Pro</span>
         </div>
         <div class="hidden sm:block w-px h-6 md:h-8 bg-gold/20"></div>
         <div class="hidden sm:block text-[10px] md:text-xs font-medium text-gray-400">
@@ -371,221 +371,271 @@
 </script>
 
     <!-- Hero Section -->
-    <section class="relative min-h-[40vh] flex items-center justify-center overflow-hidden pt-20">
-        <!-- Floating Elements -->
-        <div class="absolute top-20 left-10 w-72 h-72 bg-[#B22222]/20 rounded-full blur-3xl float"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700]/10 rounded-full blur-3xl float" style="animation-delay: -3s;"></div>
-
-        <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
-            <div class="mb-8">
-                <span class="text-[#FFD700] font-mono tracking-[0.5em] text-xs animate-pulse">
-                    <span class="lang-en">✦ TRANSMISSION PORTAL ✦</span>
-                    <span class="lang-fr">✦ PORTAIL DE TRANSMISSION ✦</span>
-                </span>
-            </div>
-            
-            <h1 class="text-7xl md:text-9xl font-black leading-[0.85] mb-8">
-                <div class="overflow-hidden">
-                    <span class="inline-block gradient-text animate-slideUp">GET IN</span>
-                </div>
-                <div class="overflow-hidden">
-                    <span class="inline-block text-white animate-slideUp" style="animation-delay: 0.1s;">TOUCH</span>
-                </div>
-            </h1>
+ <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20 bg-black">
+    
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 scale-110 blur-3xl opacity-30" 
+             style="background: url('./images/washing\ cameras.jpg'); background-size: cover; background-position: center;">
         </div>
-    </section>
+
+        <div class="absolute inset-0" 
+             style="background: url('./images/washing\ cameras.jpg'); 
+                    background-size: contain; 
+                    background-position: center; 
+                    background-repeat: no-repeat;">
+        </div>
+        
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-black/40 to-black"></div>
+        <div class="absolute inset-0 grid-bg opacity-20"></div>
+    </div>
+
+    <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+        <div class="w-[500px] h-[500px] border border-white/20 rounded-full animate-spin-slow"></div>
+        <div class="absolute w-[400px] h-[400px] border border-[#B22222]/30 rounded-full animate-spin-reverse"></div>
+        <div class="absolute w-full h-[1px] bg-white/10"></div>
+        <div class="absolute w-[1px] h-full bg-white/10"></div>
+    </div>
+
+    <div class="absolute top-20 left-10 w-72 h-72 bg-[#B22222]/20 rounded-full blur-3xl animate-pulse"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700]/10 rounded-full blur-3xl" style="animation-delay: -3s;"></div>
+
+    <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+        <div class="mb-8 overflow-hidden">
+            <span class="inline-block text-[#FFD700] font-mono tracking-[0.5em] text-[10px] md:text-xs animate-pulse uppercase">
+                <span class="lang-en">✦ TRANSMISSION PORTAL ✦</span>
+                <span class="lang-fr">✦ PORTAIL DE TRANSMISSION ✦</span>
+            </span>
+        </div>
+        
+        <h1 class="text-7xl md:text-9xl font-black leading-[0.85] mb-8 tracking-tighter">
+            <div class="overflow-hidden">
+                <span class="inline-block gradient-text animate-slideUp">GET IN</span>
+            </div>
+            <div class="overflow-hidden">
+                <span class="inline-block text-white animate-slideUp" style="animation-delay: 0.1s;">TOUCH</span>
+            </div>
+        </h1>
+
+        <div class="flex items-center justify-center gap-3">
+            <div class="w-12 h-[1px] bg-gradient-to-r from-transparent to-[#B22222]"></div>
+            <p class="text-[9px] font-mono text-zinc-500 uppercase tracking-[0.3em]">Ready for link-up</p>
+            <div class="w-12 h-[1px] bg-gradient-to-l from-transparent to-[#B22222]"></div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Add to your CSS if not already there */
+@keyframes spin-reverse {
+    from { transform: rotate(360deg); }
+    to { transform: rotate(0deg); }
+}
+.animate-spin-reverse {
+    animation: spin-reverse 20s linear infinite;
+}
+</style>
 
     <!-- Contact Section -->
-    <section class="pb-32 px-8 flex flex-col items-center">
-        <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <!-- Contact Info (red/gold theme) -->
-            <div class="lg:col-span-1 space-y-6">
-                <div class="glass p-8 rounded-[2rem] border border-[#FFD700]/20 hover:border-[#B22222] transition-all">
-                    <h4 class="text-[10px] font-black text-[#FFD700] uppercase tracking-[0.3em] mb-6">
-                        <span class="lang-en">HQ Operations</span>
-                        <span class="lang-fr">Opérations Centrales</span>
-                    </h4>
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4 group">
-                            <div class="w-10 h-10 contact-icon rounded-xl flex items-center justify-center text-[#FFD700] group-hover:bg-[#B22222] group-hover:text-white transition-all">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
-                            <div>
-                                <p class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest"><span class="lang-en">Phone / WhatsApp</span><span class="lang-fr">Téléphone</span></p>
-                                <p class="text-sm font-bold italic tracking-tighter mt-1 text-[#FFD700]">+27 69 350 3889</p>
-                            </div>
+<section class="pb-32 px-8 flex flex-col items-center">
+    <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <div class="lg:col-span-1 space-y-6">
+            <div class="glass p-8 rounded-[2rem] border border-[#FFD700]/20 hover:border-[#B22222] transition-all">
+                <h4 class="text-[10px] font-black text-[#FFD700] uppercase tracking-[0.3em] mb-6">
+                    <span class="lang-en">HQ Operations</span>
+                    <span class="lang-fr">Opérations Centrales</span>
+                </h4>
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4 group">
+                        <div class="w-10 h-10 contact-icon rounded-xl flex items-center justify-center text-[#FFD700] group-hover:bg-[#B22222] group-hover:text-white transition-all">
+                            <i class="fas fa-phone-alt"></i>
                         </div>
-                        <div class="flex items-start gap-4 group">
-                            <div class="w-10 h-10 contact-icon rounded-xl flex items-center justify-center text-[#FFD700] group-hover:bg-[#B22222] transition-all">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <p class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">Email</p>
-                                <p class="text-sm font-bold italic tracking-tighter mt-1 text-[#FFD700]">info@bimpro.co.za</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4 group">
-                            <div class="w-10 h-10 contact-icon rounded-xl flex items-center justify-center text-[#FFD700] group-hover:bg-[#B22222] transition-all">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <p class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest"><span class="lang-en">Business Hours</span><span class="lang-fr">Heures</span></p>
-                                <p class="text-sm font-bold italic tracking-tighter mt-1 text-[#FFD700]">MON — FRI: 08:00 - 17:00</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4 group">
-                            <div class="w-10 h-10 contact-icon rounded-xl flex items-center justify-center text-[#FFD700] group-hover:bg-[#B22222] transition-all">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <p class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest"><span class="lang-en">Location</span><span class="lang-fr">Adresse</span></p>
-                                <p class="text-sm font-bold italic tracking-tighter mt-1 text-[#FFD700]">Cape Town, South Africa</p>
-                            </div>
+                        <div>
+                            <p class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">Phone / WhatsApp</p>
+                            <p class="text-sm font-bold italic tracking-tighter mt-1 text-[#FFD700]">+27 73 092 9261</p>
                         </div>
                     </div>
-                </div>
-
-                <!-- Social Links (gold/red) -->
-                <div class="glass p-8 rounded-[2rem] border border-[#FFD700]/20">
-                    <h4 class="text-[10px] font-black text-[#FFD700] uppercase tracking-[0.3em] mb-6">
-                        <span class="lang-en">Connect</span>
-                        <span class="lang-fr">Connexion</span>
-                    </h4>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-12 h-12 social-icon rounded-xl flex items-center justify-center hover:bg-[#B22222] transition-all group border border-[#FFD700]/20"><i class="fab fa-linkedin-in text-[#FFD700] group-hover:text-white"></i></a>
-                        <a href="#" class="w-12 h-12 social-icon rounded-xl flex items-center justify-center hover:bg-[#B22222] transition-all group border border-[#FFD700]/20"><i class="fab fa-instagram text-[#FFD700] group-hover:text-white"></i></a>
-                        <a href="#" class="w-12 h-12 social-icon rounded-xl flex items-center justify-center hover:bg-[#B22222] transition-all group border border-[#FFD700]/20"><i class="fab fa-facebook-f text-[#FFD700] group-hover:text-white"></i></a>
-                        <a href="#" class="w-12 h-12 social-icon rounded-xl flex items-center justify-center hover:bg-[#B22222] transition-all group border border-[#FFD700]/20"><i class="fab fa-whatsapp text-[#FFD700] group-hover:text-white"></i></a>
+                    <div class="flex items-start gap-4 group">
+                        <div class="w-10 h-10 contact-icon rounded-xl flex items-center justify-center text-[#FFD700] group-hover:bg-[#B22222] transition-all">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">Email</p>
+                            <p class="text-sm font-bold italic tracking-tighter mt-1 text-[#FFD700]">info@bimpro.co.za</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 group">
+                        <div class="w-10 h-10 contact-icon rounded-xl flex items-center justify-center text-[#FFD700] group-hover:bg-[#B22222] transition-all">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <p class="text-[9px] font-bold text-zinc-500 uppercase tracking-widest">Location</p>
+                            <p class="text-sm font-bold italic tracking-tighter mt-1 text-[#FFD700]">Cape Town, South Africa</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Multi-Step Form (updated theme) -->
-            <div class="lg:col-span-2 glass p-12 md:p-16 rounded-[3rem] relative overflow-hidden border border-[#FFD700]/20">
-                <!-- Status Indicator -->
-                <div class="absolute top-10 right-10 flex items-center gap-2">
-                    <span class="w-2 h-2 bg-[#FFD700] rounded-full animate-pulse"></span>
-                    <span class="text-[9px] font-bold text-[#FFD700] uppercase tracking-widest">
-                        <span class="lang-en">Uplink Active</span>
-                        <span class="lang-fr">Liaison Active</span>
-                    </span>
-                </div>
-                
-                <h2 class="text-4xl font-black italic uppercase mb-12">
-                    <span class="lang-en">Initialize <span class="text-[#B22222]">Inquiry</span></span>
-                    <span class="lang-fr">Initialiser <span class="text-[#B22222]">Demande</span></span>
-                </h2>
+            <div class="glass p-8 rounded-[2rem] border border-[#FFD700]/20">
+                <h4 class="text-[10px] font-black text-[#FFD700] uppercase tracking-[0.3em] mb-6">Connect</h4>
+                <div class="flex gap-4">
+                  <a href="#" title="Facebook" class="w-12 h-12 rounded-xl flex items-center justify-center border border-[#FFD700]/20 bg-white/5 transition-all duration-300 group hover:bg-[#1877F2] hover:border-[#1877F2] hover:shadow-[0_0_15px_rgba(24,119,242,0.4)]">
+        <i class="fab fa-facebook-f text-[#FFD700] group-hover:text-white transition-colors"></i>
+    </a>
 
-                <!-- Progress Indicator (gold/red) -->
-                <div class="flex items-center justify-between mb-12 px-4">
-                    <div class="flex items-center flex-1">
-                        <div class="progress-step active" id="step1-indicator">1</div>
-                        <div class="progress-line" id="line1"></div>
-                    </div>
-                    <div class="flex items-center flex-1">
-                        <div class="progress-step" id="step2-indicator">2</div>
-                        <div class="progress-line" id="line2"></div>
-                    </div>
-                    <div class="flex items-center flex-1">
-                        <div class="progress-step" id="step3-indicator">3</div>
-                    </div>
-                </div>
+    <a href="#" title="Instagram" class="w-12 h-12 rounded-xl flex items-center justify-center border border-[#FFD700]/20 bg-white/5 transition-all duration-300 group hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] hover:border-transparent hover:shadow-[0_0_15px_rgba(238,42,123,0.4)]">
+        <i class="fab fa-instagram text-[#FFD700] group-hover:text-white transition-colors"></i>
+    </a>
 
-                <!-- Form -->
-                <form id="multiStepForm">
-                    <!-- Step 1 -->
-                    <div class="form-step active" id="step1">
-                        <div class="space-y-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="space-y-2">
-                                    <label class="text-[9px] font-bold text-[#FFD700] uppercase ml-2 tracking-[0.2em]"><span class="lang-en">Full Name *</span><span class="lang-fr">Nom Complet *</span></label>
-                                    <input type="text" required id="fullName" placeholder="JOHN DOE" class="w-full p-5 rounded-2xl text-white font-bold text-xs">
-                                </div>
-                                <div class="space-y-2">
-                                    <label class="text-[9px] font-bold text-[#FFD700] uppercase ml-2 tracking-[0.2em]"><span class="lang-en">Company Name</span><span class="lang-fr">Entreprise</span></label>
-                                    <input type="text" id="company" placeholder="OPTIONAL" class="w-full p-5 rounded-2xl text-white font-bold text-xs">
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="space-y-2">
-                                    <label class="text-[9px] font-bold text-[#FFD700] uppercase ml-2 tracking-[0.2em]">Email *</label>
-                                    <input type="email" required id="email" placeholder="CONTACT@EXAMPLE.COM" class="w-full p-5 rounded-2xl">
-                                </div>
-                                <div class="space-y-2">
-                                    <label class="text-[9px] font-bold text-[#FFD700] uppercase ml-2 tracking-[0.2em]">Phone *</label>
-                                    <input type="tel" required id="phone" placeholder="+27 00 000 0000" class="w-full p-5 rounded-2xl">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div class="form-step" id="step2">
-                        <div class="space-y-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="space-y-2">
-                                    <label class="text-[9px] font-bold text-[#FFD700] uppercase ml-2">Division *</label>
-                                    <select required id="division" class="w-full p-5 rounded-2xl">
-                                        <option value="" disabled selected>SELECT DIVISION</option>
-                                        <option value="security">SECURITY</option>
-                                        <option value="apparel">APPAREL</option>
-                                        <option value="both">BOTH</option>
-                                    </select>
-                                </div>
-                                <div class="space-y-2">
-                                    <label class="text-[9px] font-bold text-[#FFD700] uppercase ml-2">Project Type *</label>
-                                    <select required id="projectType" class="w-full p-5 rounded-2xl">
-                                        <option value="" disabled selected>SELECT TYPE</option>
-                                        <option value="cctv">CCTV</option>
-                                        <option value="alarm">Alarm</option>
-                                        <option value="printing">Printing</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-[9px] font-bold text-[#FFD700] uppercase ml-2">Budget Range</label>
-                                <select id="budget" class="w-full p-5 rounded-2xl">
-                                    <option value="" disabled selected>SELECT BUDGET</option>
-                                    <option value="under-10k">Under R10k</option>
-                                    <option value="10k-50k">R10k-R50k</option>
-                                </select>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Step 3 -->
-                    <div class="form-step" id="step3">
-                        <div class="space-y-6">
-                            <div class="space-y-2">
-                                <label class="text-[9px] font-bold text-[#FFD700] uppercase ml-2">Project Description *</label>
-                                <textarea required id="message" rows="6" placeholder="DESCRIBE YOUR PROJECT..." class="w-full p-6 rounded-[2rem]"></textarea>
-                            </div>
-                            <div class="flex items-center gap-4">
-                                <input type="checkbox" id="newsletter" class="w-5 h-5 bg-white/5 border border-[#FFD700] rounded checked:bg-[#B22222]">
-                                <label class="text-xs text-gray-400">Subscribe to newsletter</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Navigation Buttons -->
-                    <div class="flex gap-4 mt-8">
-                        <button type="button" id="prevBtn" class="flex-1 glass p-5 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-[#B22222] transition-all opacity-50 pointer-events-none border border-[#FFD700]/20">← Previous</button>
-                        <button type="button" id="nextBtn" class="flex-1 bg-[#B22222] text-white p-5 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-[#9e2a2a] transition-all border border-[#FFD700]">Next →</button>
-                        <button type="submit" id="submitBtn" class="flex-1 bg-[#FFD700] text-black p-5 rounded-2xl font-bold text-xs uppercase tracking-widest hover:bg-[#eab308] transition-all hidden border border-[#B22222]">Transmit Message</button>
-                    </div>
-                </form>
-
-                <div class="mt-8 text-center">
-                    <p class="text-[8px] text-[#FFD700] uppercase tracking-widest">
-                        <i class="fas fa-lock mr-2"></i>
-                        <span class="lang-en">All transmissions are encrypted</span>
-                        <span class="lang-fr">Transmissions cryptées</span>
-                    </p>
+    <a href="#" title="TikTok" class="w-12 h-12 rounded-xl flex items-center justify-center border border-[#FFD700]/20 bg-white/5 transition-all duration-300 group hover:bg-black hover:border-[#00f2ea] hover:shadow-[0_0_15px_rgba(255,0,80,0.5)]">
+        <i class="fab fa-tiktok text-[#FFD700] group-hover:text-white transition-colors"></i>
+    </a>
                 </div>
             </div>
         </div>
-    </section>
 
+        <div class="lg:col-span-2 glass p-12 md:p-16 rounded-[3rem] relative overflow-hidden border border-[#FFD700]/20">
+            <div class="absolute top-10 right-10 flex items-center gap-2">
+                <span class="w-2 h-2 bg-[#FFD700] rounded-full animate-pulse"></span>
+                <span class="text-[9px] font-bold text-[#FFD700] uppercase tracking-widest">Uplink Active</span>
+            </div>
+            
+            <h2 class="text-4xl font-black italic uppercase mb-12 text-white">
+                Initialize <span class="text-[#B22222]">Inquiry</span>
+            </h2>
+
+            <div class="flex items-center justify-between mb-12 px-4">
+                <div class="flex items-center flex-1"><div class="step-circle active" id="ind-0">1</div><div class="step-line" id="line-0"></div></div>
+                <div class="flex items-center flex-1"><div class="step-circle" id="ind-1">2</div><div class="step-line" id="line-1"></div></div>
+                <div class="flex items-center"><div class="step-circle" id="ind-2">3</div></div>
+            </div>
+
+            <form id="multiStepForm" class="space-y-8">
+                <div class="form-step active" data-step="0">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <input type="text" required id="fullName" placeholder="FULL NAME *" class="form-input">
+                        <input type="tel" required id="phone" placeholder="PHONE *" class="form-input">
+                        <input type="email" required id="email" placeholder="EMAIL ADDRESS *" class="form-input">
+                        <input type="text" id="suburb" placeholder="AREA / SUBURB" class="form-input">
+                    </div>
+                </div>
+
+                <div class="form-step hidden" data-step="1">
+                    <div class="space-y-6">
+                        <select required id="serviceType" class="form-input bg-[#0a0a0a] text-white">
+                            <option value="" disabled selected class="text-gray-500">SELECT SERVICE *</option>
+                            <option value="cctv">CCTV INSTALLATION</option>
+                            <option value="alarm">ALARM SYSTEM</option>
+                            <option value="security-upgrade">SECURITY UPGRADE</option>
+                            <option value="printing">PRINTING & BRANDING</option>
+                        </select>
+                        <select id="budget" class="form-input bg-[#0a0a0a] text-white">
+                            <option value="" disabled selected>BUDGET RANGE</option>
+                            <option value="under-10k">UNDER R10,000</option>
+                            <option value="10k-50k">R10,000 - R50,000</option>
+                            <option value="plus-50k">R50,000+</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-step hidden" data-step="2">
+                    <div class="space-y-6">
+                        <textarea required id="message" rows="5" placeholder="MESSAGE / PROJECT DETAILS *" class="form-input"></textarea>
+                        <div class="flex items-center gap-4 p-4 bg-white/5 rounded-2xl border border-white/10">
+                            <input type="checkbox" required id="consent" class="w-5 h-5 accent-[#B22222]">
+                            <label for="consent" class="text-[10px] text-gray-400 uppercase tracking-widest">I agree to be contacted regarding my inquiry. *</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex gap-4 pt-4">
+                    <button type="button" id="prevBtn" class="nav-btn opacity-0 pointer-events-none border border-[#FFD700]/20">← Back</button>
+                    <button type="button" id="nextBtn" class="nav-btn bg-[#B22222] text-white border border-[#FFD700]">Next →</button>
+                    <button type="submit" id="submitBtn" class="nav-btn bg-[#FFD700] text-black border border-[#B22222] hidden">Secure Transmission</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
+<div id="toastContainer" class="fixed top-10 left-1/2 -translate-x-1/2 z-[9999] pointer-events-none"></div>
+
+<style>
+    .form-input {
+        width: 100%; p-5 rounded-2xl bg-white/5 border border-white/10 text-white font-bold text-xs focus:border-[#FFD700] outline-none transition-all;
+    }
+    /* Fixed select dropdown style */
+    select.form-input option { background: #111; color: white; padding: 10px; }
+    
+    .nav-btn { flex: 1; padding: 1.25rem; rounded-2xl; font-weight: bold; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; transition: all 0.3s; }
+    
+    .step-circle { width: 32px; height: 32px; border-radius: 50%; border: 2px solid rgba(255, 215, 0, 0.2); display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 900; color: rgba(255, 215, 0, 0.4); background: rgba(0,0,0,0.3); transition: 0.4s; }
+    .step-circle.active { border-color: #FFD700; color: #FFD700; background: rgba(178, 34, 34, 0.2); box-shadow: 0 0 15px rgba(255, 215, 0, 0.2); }
+    .step-line { height: 2px; flex: 1; background: rgba(255, 215, 0, 0.1); margin: 0 10px; }
+    .step-line.active { background: #B22222; }
+
+    /* Toast Animation */
+    .toast-pop { animation: toastSlide 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
+    @keyframes toastSlide {
+        0% { transform: translateY(-100px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
+    }
+</style>
+
+<script>
+    const steps = document.querySelectorAll('.form-step');
+    const nextBtn = document.getElementById('nextBtn');
+    const prevBtn = document.getElementById('prevBtn');
+    const submitBtn = document.getElementById('submitBtn');
+    let currentStep = 0;
+
+    function updateUI() {
+        steps.forEach((s, i) => {
+            s.classList.toggle('active', i === currentStep);
+            s.classList.toggle('hidden', i !== currentStep);
+            document.getElementById(`ind-${i}`)?.classList.toggle('active', i <= currentStep);
+            if(i < steps.length - 1) document.getElementById(`line-${i}`)?.classList.toggle('active', i < currentStep);
+        });
+        prevBtn.style.opacity = currentStep === 0 ? '0' : '1';
+        prevBtn.style.pointerEvents = currentStep === 0 ? 'none' : 'auto';
+        nextBtn.classList.toggle('hidden', currentStep === steps.length - 1);
+        submitBtn.classList.toggle('hidden', currentStep !== steps.length - 1);
+    }
+
+    nextBtn.addEventListener('click', () => {
+        const inputs = steps[currentStep].querySelectorAll('input[required], select[required]');
+        let valid = true;
+        inputs.forEach(i => {
+            if(!i.value) { valid = false; i.classList.add('border-red-600'); }
+            else i.classList.remove('border-red-600');
+        });
+        if(valid) { currentStep++; updateUI(); }
+    });
+
+    prevBtn.addEventListener('click', () => { currentStep--; updateUI(); });
+
+    document.getElementById('multiStepForm').addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        // Create smooth toast
+        const toast = document.createElement('div');
+        toast.className = "toast-pop glass px-8 py-4 rounded-full border border-[#FFD700]/50 shadow-[0_10px_40px_rgba(0,0,0,0.8)] flex items-center gap-4 bg-black/90";
+        toast.innerHTML = `<div class="w-6 h-6 bg-[#B22222] rounded-full flex items-center justify-center"><i class="fas fa-check text-[10px] text-white"></i></div>
+                           <p class="text-[#FFD700] text-[10px] font-bold uppercase tracking-widest">Transmission Successful. Operative Assigned.</p>`;
+        
+        document.getElementById('toastContainer').appendChild(toast);
+        
+        // Reset form and UI
+        setTimeout(() => {
+            toast.style.transition = "opacity 0.8s";
+            toast.style.opacity = "0";
+            setTimeout(() => toast.remove(), 800);
+            currentStep = 0;
+            e.target.reset();
+            updateUI();
+        }, 4000);
+    });
+</script>
     <!-- Map Section -->
     <section class="py-16 px-8">
         <div class="max-w-6xl mx-auto">

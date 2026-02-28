@@ -341,6 +341,7 @@
         }
     </style>
 </head>
+
 <body>
   <div class="loading-screen" id="loadingScreen">
     <div class="slideshow-container">
@@ -368,7 +369,7 @@
 <nav class="fixed w-full z-50 py-4 px-6 md:py-6 md:px-8 flex justify-between items-center transition-all duration-300" id="navbar">
     <div class="glass px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center gap-4 border" style="border-color: rgba(255,215,0,0.25);">
         <div class="text-xl md:text-2xl font-black tracking-tighter">
-            <span class="gradient-text">BIM</span><span class="text-white">Pro</span>
+            <span class="">BIM</span><span class="text-white">Pro</span>
         </div>
         <div class="w-px h-6 md:h-8 bg-gold/20"></div>
         <div class="text-[10px] md:text-xs font-medium text-gold-300" style="color: #FFD700AA;">Est. 2024</div>
@@ -462,8 +463,8 @@
         });
     });
 </script>
-    <!-- HERO SECTION – updated front text to "BIMPro multi services group" with black/gold/red -->
-    <section id="home" class="min-h-screen relative flex items-center justify-center overflow-hidden">
+
+  <section id="home" class="min-h-screen relative flex items-center justify-center overflow-hidden" ">
         <div class="absolute inset-0 grid-bg"></div>
         <!-- floating colored orbs -->
         <div class="absolute top-20 left-10 w-72 h-72 bg-[#B22222] opacity-10 rounded-full blur-3xl float"></div>
@@ -480,33 +481,51 @@
             </div>
             
             <!-- MAIN HEADLINE: exactly "BIMPro multi services group" in gold/black/red styling -->
-            <h1 class="text-7xl md:text-8xl font-black leading-[0.9] mb-12">
+            <h1 class="text-7xl md:text-8xl font-black leading-[0.9] mb-8">
                 <div class="overflow-hidden">
-                    <span class="inline-block text-white animate-slideUp text-[1.2em] font-black tracking-tight" style="color: #FAFAFA;">BIMPro <span class="inline-block text-[#B22222] animate-slideUp text-[0.9em] font-bold" style="animation-delay: 0.1s;">
+                    <span class="inline-block text-white animate-slideUp text-[1.1em] font-black tracking-tight" style="color: #FAFAFA;">BIMPro <span class="inline-block text-[#B22222] animate-slideUp text-[0.9em] font-bold" style="animation-delay: 0.1s;">
         Enterprises
     </span></span>
                 </div>
                 <div class="overflow-hidden mt-2">
-    <span class="inline-block text-[#FFD700] font-bold animate-slideUp text-[0.9em]" style="animation-delay: 0.1s;">
+    <span class="inline-block text-[#FFD700] font-bold animate-slideUp text-[0.6em]" style="animation-delay: 0.1s;">
         Multi-Service Group
     </span>
 </div>
 
-            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-16 animate-fadeIn" style="animation-delay: 0.5s;">
+            <p class="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto mb-10 animate-fadeIn" style="animation-delay: 0.5s;">
                 <span class="lang-en">Security systems · Professional branding · Two specialized divisions</span>
                 <span class="lang-fr">Systèmes de sécurité · Branding pro · Deux divisions spécialisées</span>
             </p>
- 
+            
+            <!-- Button Container - Responsive for mobile -->
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 mt-4 px-4 w-full max-w-2xl mx-auto animate-fadeIn" style="animation-delay: 0.7s;">
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/27693503889?text=Hello%2C%20I'd%20like%20to%20discuss%20your%20services" target="_blank" class="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 bg-[#25D366] text-black font-bold py-5 px-8 rounded-2xl border-2 border-[#FFD700] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#25D366]/30">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    <span class="text-sm uppercase tracking-widest">WhatsApp Chat</span>
+                    <!-- Glow effect -->
+                    <div class="absolute inset-0 rounded-2xl bg-[#25D366] opacity-0 group-hover:opacity-20 blur-xl transition-opacity"></div>
+                </a>
+                
+                <!-- Products Button (linked to security.html) -->
+                <a href="security.html" class="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 bg-[#B22222] text-white font-bold py-5 px-8 rounded-2xl border-2 border-[#FFD700] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#B22222]/30">
+                    <i class="fas fa-shield-alt text-2xl"></i>
+                    <span class="text-sm uppercase tracking-widest">View Products</span>
+                    <!-- Glow effect -->
+                    <div class="absolute inset-0 rounded-2xl bg-[#B22222] opacity-0 group-hover:opacity-20 blur-xl transition-opacity"></div>
+                </a>
+            </div>
         </div>
 
         <!-- bottom tags -->
-        <div class="absolute bottom-10 left-0 right-0 flex justify-center gap-8 text-xs text-[#FFD700]">
+        <div class="absolute bottom-10 left-0 right-0 flex flex-wrap justify-center gap-4 sm:gap-8 text-xs text-[#FFD700] px-4">
             <div class="flex items-center gap-2"><div class="w-1 h-1 bg-[#B22222] rounded-full"></div>CCTV</div>
             <div class="flex items-center gap-2"><div class="w-1 h-1 bg-[#B22222] rounded-full"></div>Alarm Systems</div>
             <div class="flex items-center gap-2"><div class="w-1 h-1 bg-[#B22222] rounded-full"></div>Custom Apparel</div>
         </div>
     </section>
-
+    
     <!-- Stats Section (gold numbers) -->
     <section class="py-32 relative">
         <div class="max-w-7xl mx-auto px-6">
@@ -532,12 +551,40 @@
                         <div class="glass-card p-6 rounded-2xl border-l-4 border-[#B22222]"><div class="text-3xl font-black text-[#FFD700] mb-2">02</div><h4 class="font-bold mb-2">Quality Assurance</h4><p class="text-sm text-gray-400">Rigorous control</p></div>
                     </div>
                 </div>
+               <div class="relative group overflow-hidden rounded-3xl">
+    <div class="absolute inset-0 bg-[#B22222] opacity-20 blur-3xl group-hover:opacity-40 transition-opacity"></div>
+    
+    <div class="relative glass-card p-1 rounded-3xl">
+        <div class="relative aspect-square overflow-hidden rounded-3xl">
+            <img src="./images/security.jpg" 
+                 alt="Excellence" 
+                 class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110">
+            
+            <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-[#B22222]/30 opacity-80 group-hover:opacity-90 transition-opacity"></div>
+
+            <div class="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                <div class="w-12 h-1 bg-[#FFD700] mb-6 rounded-full"></div>
+                
                 <div class="relative">
-                    <div class="absolute inset-0 bg-[#B22222] opacity-20 blur-3xl"></div>
-                    <div class="relative glass-card p-1 rounded-3xl"><div class="aspect-square bg-gradient-to-br from-[#B22222] to-[#FFD700] rounded-3xl flex items-center justify-center"><div class="text-center"><div class="text-8xl font-black mb-4 text-white">15+</div><div class="text-xl font-light text-white">Years of Excellence</div></div></div></div>
+                    <span class="text-8xl font-black text-white drop-shadow-[0_4px_10px_rgba(0,0,0,0.5)]">15+</span>
+                    <span class="absolute -top-2 -right-6 text-[#FFD700] text-4xl">+</span>
+                </div>
+                
+                <div class="mt-2">
+                    <p class="text-xl font-black uppercase tracking-[0.3em] text-white">Years</p>
+                    <p class="text-xs font-bold text-[#FFD700] uppercase tracking-[0.5em] mt-1">Of Excellence</p>
+                </div>
+
+                <div class="absolute bottom-8 left-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 translate-y-4 group-hover:translate-y-0">
+                    <span class="text-[9px] text-white/60 uppercase tracking-widest font-mono">Verified Operations</span>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+            </div>
+        </div>
+        
     </section>
 
     <!-- Two divisions preview (red/gold) -->

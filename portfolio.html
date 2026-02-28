@@ -265,7 +265,7 @@
 <nav class="fixed w-full z-50 py-4 px-6 md:py-6 md:px-8 flex justify-between items-center transition-all duration-500" id="navbar">
     <div class="glass px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center gap-4" style="border-color:#FFD70030;">
         <div class="text-xl md:text-2xl font-black tracking-tighter">
-            <span class="gradient-text">BIM</span><span class="text-white">Pro</span>
+            <span class="">BIM</span><span class="text-white">Pro</span>
         </div>
         <div class="hidden sm:block w-px h-6 md:h-8 bg-gold/20"></div>
         <div class="hidden sm:block text-[10px] md:text-xs font-medium text-gray-400 uppercase tracking-widest">
@@ -364,34 +364,65 @@
 </script>
 
     <!-- Hero Section -->
-    <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20">
-        <!-- Floating Elements -->
-        <div class="absolute top-20 left-10 w-72 h-72 bg-[#B22222]/20 rounded-full blur-3xl float"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700]/10 rounded-full blur-3xl float" style="animation-delay:-3s;"></div>
-
-        <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
-            <div class="mb-8">
-                <span class="text-[#FFD700] font-mono tracking-[0.5em] text-xs animate-pulse">
-                    <span class="lang-en">✦ DEPLOYMENT ARCHIVE ✦</span>
-                    <span class="lang-fr">✦ ARCHIVE DES RÉALISATIONS ✦</span>
-                </span>
-            </div>
-            
-            <h1 class="text-7xl md:text-9xl font-black leading-[0.85] mb-8">
-                <div class="overflow-hidden">
-                    <span class="inline-block gradient-text animate-slideUp">PROJECT</span>
-                </div>
-                <div class="overflow-hidden">
-                    <span class="inline-block text-white animate-slideUp" style="animation-delay:0.1s;">SHOWCASE</span>
-                </div>
-            </h1>
-
-            <p class="text-xl text-gray-400 max-w-2xl mx-auto animate-fadeIn" style="animation-delay:0.3s;">
-                <span class="lang-en">A curated collection of our finest work in security integration and creative branding</span>
-                <span class="lang-fr">Une sélection de nos meilleurs travaux en sécurité et branding créatif</span>
-            </p>
+  <section class="relative min-h-[60vh] flex items-center justify-center overflow-hidden pt-20 bg-black">
+    
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 scale-110 blur-3xl opacity-30" 
+             style="background: url('./images/secuirty2.jpg'); background-size: cover; background-position: center;">
         </div>
-    </section>
+
+        <div class="absolute inset-0" 
+             style="background: url('./images/secuirty2.jpg'); 
+                    background-size: contain; 
+                    background-position: center; 
+                    background-repeat: no-repeat;">
+        </div>
+        
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-black/50 to-black"></div>
+        <div class="absolute inset-0 grid-bg opacity-20"></div>
+    </div>
+
+    <div class="absolute inset-0 pointer-events-none z-10 p-10">
+        <div class="absolute left-10 top-1/2 -translate-y-1/2 h-32 w-[1px] bg-gradient-to-b from-transparent via-[#FFD700] to-transparent opacity-40"></div>
+        <div class="absolute right-10 top-1/2 -translate-y-1/2 space-y-4 opacity-20 hidden md:block">
+            <p class="text-[8px] font-mono text-white tracking-widest rotate-90">REF_ID: 8892-BA</p>
+            <p class="text-[8px] font-mono text-white tracking-widest rotate-90">SEC_LEVEL: ALPHA</p>
+        </div>
+    </div>
+
+    <div class="absolute top-20 left-10 w-72 h-72 bg-[#B22222]/20 rounded-full blur-3xl float"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700]/10 rounded-full blur-3xl float" style="animation-delay:-3s;"></div>
+
+    <div class="relative z-20 text-center px-6 max-w-6xl mx-auto">
+        <div class="mb-8">
+            <span class="text-[#FFD700] font-mono tracking-[0.5em] text-[10px] md:text-xs animate-pulse uppercase">
+                <span class="lang-en">✦ DEPLOYMENT ARCHIVE ✦</span>
+                <span class="lang-fr">✦ ARCHIVE DES RÉALISATIONS ✦</span>
+            </span>
+        </div>
+        
+        <h1 class="text-7xl md:text-9xl font-black leading-[0.85] mb-8 tracking-tighter">
+            <div class="overflow-hidden">
+                <span class="inline-block gradient-text animate-slideUp">PROJECT</span>
+            </div>
+            <div class="overflow-hidden">
+                <span class="inline-block text-white animate-slideUp" style="animation-delay:0.1s;">SHOWCASE</span>
+            </div>
+        </h1>
+
+        <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto animate-fadeIn font-medium leading-relaxed" style="animation-delay:0.3s;">
+            <span class="lang-en">A curated collection of our finest work in security integration and creative branding.</span>
+            <span class="lang-fr">Une sélection de nos meilleurs travaux en sécurité et branding créatif.</span>
+        </p>
+
+        <div class="mt-12 flex items-center justify-center gap-4">
+            <div class="w-24 h-[2px] bg-white/5 rounded-full overflow-hidden">
+                <div class="w-1/2 h-full bg-[#B22222] animate-pulse"></div>
+            </div>
+            <span class="text-[8px] font-mono text-zinc-500 uppercase tracking-widest">Loading Visuals</span>
+        </div>
+    </div>
+</section>
 
     <!-- Stats Section (gold/red) -->
     <section class="py-16 relative">

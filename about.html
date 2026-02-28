@@ -240,7 +240,7 @@
 <nav class="fixed w-full z-50 py-4 px-6 md:py-6 md:px-8 flex justify-between items-center transition-all duration-300" id="navbar">
     <div class="glass px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center gap-4" style="border-color: #FFD70030; background: rgba(0,0,0,0.2); backdrop-filter: blur(10px);">
         <div class="text-xl md:text-2xl font-black tracking-tighter">
-            <span class="gradient-text text-[#FFD700]">BIM</span><span class="text-white">Pro</span>
+            <span class="">BIM</span><span class="text-white">Pro</span>
         </div>
         <div class="w-px h-6 md:h-8 bg-white/20"></div>
         <div class="text-[10px] md:text-xs font-medium text-gray-400">Est. 2024</div>
@@ -333,16 +333,24 @@
         follower.style.transform = `translate(${e.clientX - 12}px, ${e.clientY - 12}px)`;
     });
 </script>
+
     <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 grid-bg"></div>
+   <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image as img tag for better height control -->
+        <div class="absolute inset-0">
+            <img src="./images/installing camera.jpg" alt="Background" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-black/70"></div>
+        </div>
+        
+        <!-- Rest of your content remains exactly the same -->
+        <div class="absolute inset-0 grid-bg z-1"></div>
         
         <!-- floating orbs gold/red -->
-        <div class="absolute top-20 left-10 w-72 h-72 bg-[#B22222]/20 rounded-full blur-3xl float"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700]/10 rounded-full blur-3xl float" style="animation-delay: -3s;"></div>
+        <div class="absolute top-20 left-10 w-72 h-72 bg-[#B22222]/20 rounded-full blur-3xl float z-1"></div>
+        <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700]/10 rounded-full blur-3xl float z-1" style="animation-delay: -3s;"></div>
         
         <!-- 3D Orb -->
-        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px]">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] z-1">
             <div class="absolute inset-0 bg-[#B22222]/10 rounded-full blur-3xl animate-pulse"></div>
             <div class="absolute inset-10 border border-[#FFD700]/20 rounded-full animate-spin-slow"></div>
             <div class="absolute inset-20 border border-[#B22222]/20 rounded-full animate-spin-slower"></div>
@@ -381,7 +389,7 @@
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-10">
             <span class="text-xs text-gray-500 uppercase tracking-widest">Scroll</span>
             <div class="w-5 h-10 border border-[#FFD700]/20 rounded-full flex justify-center">
                 <div class="w-1 h-2 bg-[#B22222] rounded-full mt-2 animate-bounce"></div>

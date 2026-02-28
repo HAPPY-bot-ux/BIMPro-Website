@@ -240,7 +240,7 @@
 <nav class="fixed w-full z-50 py-4 px-6 md:py-6 md:px-8 flex justify-between items-center transition-all duration-300" id="navbar">
     <div class="glass px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center gap-4 border" style="border-color:#FFD70030;">
         <div class="text-xl md:text-2xl font-black tracking-tighter">
-            <span class="gradient-text">BIM</span><span class="text-white">Pro</span>
+            <span class="">BIM</span><span class="text-white">Pro</span>
         </div>
         <div class="hidden sm:block w-px h-6 md:h-8 bg-gold/20"></div>
         <div class="hidden sm:block text-[10px] md:text-xs font-medium text-gray-400">
@@ -260,7 +260,7 @@
                 <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full transition-all"></span>
             </a>
             <a href="services.html" class="nav-link relative group text-white">
-                <span class="lang-en">Services</span><span class="lang-fr hidden">Services</span>
+                <span class="lang-en">Security</span><span class="lang-fr hidden">Sécurité</span>
                 <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-[#FFD700]"></span>
             </a>
             <a href="portfolio.html" class="nav-link relative group text-white">
@@ -337,24 +337,54 @@
         });
     });
 </script>
+
     <!-- Hero Section -->
-    <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20">
-        <div class="absolute inset-0 flex items-center justify-center opacity-5">
-            <div class="text-outline">INTEGRATED</div>
+  <section class="relative min-h-[50vh] flex items-center justify-center overflow-hidden pt-20 bg-black">
+    
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 scale-110 blur-2xl opacity-40" 
+             style="background: url('./images/security4.jpg'); background-size: cover; background-position: center;">
         </div>
-        <div class="absolute top-20 left-10 w-72 h-72 bg-[#B22222]/20 rounded-full blur-3xl float"></div>
-        <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700]/10 rounded-full blur-3xl float" style="animation-delay:-3s;"></div>
 
-        <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
-            <span class="text-[#FFD700] font-mono tracking-[0.5em] text-xs animate-pulse">✦ TWO DIVISIONS · ONE STANDARD ✦</span>
-            <h1 class="text-7xl md:text-8xl font-black leading-[0.9] mt-12 mb-6">
-                <span class="gradient-text">COMPLETE</span><br>
-                <span class="text-white">SOLUTIONS</span>
-            </h1>
-            <p class="text-xl text-gray-400 max-w-2xl mx-auto">Engineering safety. Crafting identity. We deliver excellence across every discipline.</p>
+        <div class="absolute inset-0" 
+             style="background: url('./images/security4.jpg'); 
+                    background-size: contain; 
+                    background-position: center; 
+                    background-repeat: no-repeat;">
         </div>
-    </section>
+        
+        <div class="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/90"></div>
+    </div>
 
+    <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+        <div class="text-[15vw] font-black text-white border-text" style="-webkit-text-stroke: 1px white; color: transparent;">INTEGRATED</div>
+    </div>
+
+    <div class="absolute top-20 left-10 w-72 h-72 bg-[#B22222]/20 rounded-full blur-3xl float"></div>
+    <div class="absolute bottom-20 right-10 w-96 h-96 bg-[#FFD700]/10 rounded-full blur-3xl float" style="animation-delay:-3s;"></div>
+
+    <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
+        <span class="text-[#FFD700] font-mono tracking-[0.5em] text-[10px] md:text-xs animate-pulse uppercase">
+            ✦ TWO DIVISIONS · ONE STANDARD ✦
+        </span>
+        
+        <h1 class="text-6xl md:text-8xl font-black leading-[0.9] mt-8 mb-6">
+            <span class="gradient-text uppercase">Complete</span><br>
+            <span class="text-white uppercase">Solutions</span>
+        </h1>
+        
+        <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed">
+            Engineering safety. Crafting identity. <br class="hidden md:block"> 
+            We deliver excellence across every discipline.
+        </p>
+
+        <div class="mt-8 flex justify-center gap-2">
+            <div class="w-1 h-1 bg-[#B22222] rounded-full"></div>
+            <div class="w-10 h-[1px] bg-[#B22222]/30 self-center"></div>
+            <div class="w-1 h-1 bg-[#B22222] rounded-full"></div>
+        </div>
+    </div>
+</section>
     <!-- quick stats -->
     <section class="py-12">
         <div class="max-w-7xl mx-auto px-6">
@@ -498,57 +528,116 @@
     </div>
 
     <!-- ===== APPAREL & CREATIVE DIVISION (now appears after deep security) ===== -->
-    <section class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex items-center gap-4 mb-12">
-                <span class="w-16 h-16 bg-[#FFD700] rounded-2xl flex items-center justify-center text-3xl"><i class="fas fa-paint-brush text-[#B22222]"></i></span>
-                <div>
-                    <span class="text-[#B22222] font-mono text-sm tracking-[0.3em]">DIVISION 02 — INK & APPAREL</span>
-                    <h2 class="text-4xl md:text-5xl font-black"><span class="gradient-text">Creative Branding</span></h2>
-                </div>
-            </div>
+   <section class="relative py-24 overflow-hidden bg-black">
+    
+    <div class="absolute inset-0 z-0">
+        <div class="absolute inset-0 scale-110 blur-3xl opacity-30" 
+             style="background: url('./images/installing\ camera.jpg'); background-size: cover; background-position: center;">
+        </div>
 
-            <!-- apparel services grid (condensed but still professional) -->
-            <div class="grid md:grid-cols-3 gap-6">
-                <div class="glass-card p-8 rounded-3xl creative-splash group">
-                    <i class="fas fa-tshirt text-4xl text-[#FFD700] mb-4"></i>
-                    <h3 class="text-2xl font-black mb-2">T-Shirt Printing</h3>
-                    <p class="text-sm text-gray-400 mb-3">Screen printing, DTG, vinyl, heat press – bulk or sample.</p>
-                    <span class="tech-badge apparel-badge">Screen</span><span class="tech-badge apparel-badge ml-2">DTG</span>
-                </div>
-                <div class="glass-card p-8 rounded-3xl creative-splash group">
-                    <i class="fas fa-user-tie text-4xl text-[#B22222] mb-4"></i>
-                    <h3 class="text-2xl font-black mb-2">Custom Apparel</h3>
-                    <p class="text-sm text-gray-400">Corporate uniforms, sportswear, workwear, caps.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl creative-splash group">
-                    <i class="fas fa-tag text-4xl text-[#FFD700] mb-4"></i>
-                    <h3 class="text-2xl font-black mb-2">Stickers & Labels</h3>
-                    <p class="text-sm text-gray-400">Vinyl, die‑cut, waterproof, custom shapes.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl creative-splash group">
-                    <i class="fas fa-briefcase text-4xl text-[#B22222] mb-4"></i>
-                    <h3 class="text-2xl font-black mb-2">Business Branding</h3>
-                    <p class="text-sm text-gray-400">Stationery, signage, identity packages.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl creative-splash group">
-                    <i class="fas fa-gift text-4xl text-[#FFD700] mb-4"></i>
-                    <h3 class="text-2xl font-black mb-2">Promo Merch</h3>
-                    <p class="text-sm text-gray-400">Caps, bags, pens, mugs for campaigns.</p>
-                </div>
-                <div class="glass-card p-8 rounded-3xl creative-splash group">
-                    <i class="fas fa-print text-4xl text-[#B22222] mb-4"></i>
-                    <h3 class="text-2xl font-black mb-2">Large Format</h3>
-                    <p class="text-sm text-gray-400">Banners, posters, vinyl decals.</p>
-                </div>
-            </div>
+        <div class="absolute inset-0" 
+             style="background: url('./images/installing\ camera.jpg'); 
+                    background-size: contain; 
+                    background-position: center; 
+                    background-repeat: no-repeat;">
+        </div>
+        
+        <div class="absolute inset-0 bg-gradient-to-b from-black via-black/80 to-black"></div>
+        <div class="absolute inset-0 grid-bg opacity-10"></div>
+    </div>
 
-            <!-- apparel quality note -->
-            <div class="mt-12 glass-card p-6 rounded-3xl inline-block">
-                <p class="text-sm"><span class="text-[#FFD700] font-bold">Pantone® matched</span> · Eco‑solvent inks · 1200dpi · Fast turnaround</p>
+    <div class="absolute inset-0 pointer-events-none z-10 opacity-30">
+        <div class="absolute top-10 right-10 flex gap-1">
+            <div class="w-3 h-3 bg-[#B22222]"></div>
+            <div class="w-3 h-3 bg-[#FFD700]"></div>
+            <div class="w-3 h-3 bg-white"></div>
+            <div class="w-3 h-3 bg-zinc-800"></div>
+        </div>
+        <div class="absolute left-6 top-1/2 -translate-y-1/2 space-y-2">
+            <div class="w-4 h-[1px] bg-white/20"></div>
+            <div class="w-8 h-[1px] bg-[#FFD700]/40"></div>
+            <div class="w-4 h-[1px] bg-white/20"></div>
+        </div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 relative z-20">
+        
+        <div class="flex items-center gap-6 mb-16">
+            <div class="relative">
+                <span class="w-16 h-16 bg-[#FFD700] rounded-2xl flex items-center justify-center text-3xl shadow-[0_0_20px_rgba(255,215,0,0.3)]">
+                    <i class="fas fa-paint-brush text-[#B22222]"></i>
+                </span>
+                <div class="absolute -inset-2 border border-[#FFD700]/20 rounded-2xl animate-pulse"></div>
+            </div>
+            <div>
+                <span class="text-[#FFD700] font-mono text-[10px] tracking-[0.4em] uppercase">DIVISION 02 — INK & APPAREL</span>
+                <h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase text-white">
+                    Creative <span class="gradient-text">Branding</span>
+                </h2>
             </div>
         </div>
-    </section>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <div class="glass-card p-8 rounded-[2rem] border border-white/5 hover:border-[#FFD700]/30 transition-all group relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-4 opacity-10 font-mono text-[8px]">MD_PRNT_V1</div>
+                <i class="fas fa-tshirt text-4xl text-[#FFD700] mb-6 group-hover:scale-110 transition-transform"></i>
+                <h3 class="text-2xl font-black mb-3 text-white">T-Shirt Printing</h3>
+                <p class="text-sm text-zinc-400 leading-relaxed mb-4">Screen printing, DTG, vinyl, and heat press. Precision bulk or sample production.</p>
+                <div class="flex gap-2">
+                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[9px] font-bold text-[#FFD700] uppercase">Screen</span>
+                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[9px] font-bold text-[#FFD700] uppercase">DTG</span>
+                </div>
+            </div>
+
+            <div class="glass-card p-8 rounded-[2rem] border border-white/5 hover:border-[#B22222]/30 transition-all group relative">
+                <i class="fas fa-user-tie text-4xl text-[#B22222] mb-6 group-hover:scale-110 transition-transform"></i>
+                <h3 class="text-2xl font-black mb-3 text-white">Custom Apparel</h3>
+                <p class="text-sm text-zinc-400 leading-relaxed">Corporate uniforms, sportswear, workwear, and headwear tailored to your identity.</p>
+            </div>
+
+            <div class="glass-card p-8 rounded-[2rem] border border-white/5 hover:border-[#FFD700]/30 transition-all group">
+                <i class="fas fa-tag text-4xl text-[#FFD700] mb-6 group-hover:scale-110 transition-transform"></i>
+                <h3 class="text-2xl font-black mb-3 text-white">Stickers & Labels</h3>
+                <p class="text-sm text-zinc-400 leading-relaxed">Vinyl, die-cut, and waterproof solutions. Custom shapes with high-durability finish.</p>
+            </div>
+
+            <div class="glass-card p-8 rounded-[2rem] border border-white/5 hover:border-[#B22222]/30 transition-all group">
+                <i class="fas fa-briefcase text-4xl text-[#B22222] mb-6 group-hover:scale-110 transition-transform"></i>
+                <h3 class="text-2xl font-black mb-3 text-white">Business Branding</h3>
+                <p class="text-sm text-zinc-400 leading-relaxed">Stationery, professional signage, and comprehensive corporate identity packages.</p>
+            </div>
+
+            <div class="glass-card p-8 rounded-[2rem] border border-white/5 hover:border-[#FFD700]/30 transition-all group">
+                <i class="fas fa-gift text-4xl text-[#FFD700] mb-6 group-hover:scale-110 transition-transform"></i>
+                <h3 class="text-2xl font-black mb-3 text-white">Promo Merch</h3>
+                <p class="text-sm text-zinc-400 leading-relaxed">Custom caps, bags, pens, and drinkware designed for high-impact marketing.</p>
+            </div>
+
+            <div class="glass-card p-8 rounded-[2rem] border border-white/5 hover:border-[#B22222]/30 transition-all group">
+                <i class="fas fa-print text-4xl text-[#B22222] mb-6 group-hover:scale-110 transition-transform"></i>
+                <h3 class="text-2xl font-black mb-3 text-white">Large Format</h3>
+                <p class="text-sm text-zinc-400 leading-relaxed">Banners, posters, and heavy-duty vinyl decals for indoor and outdoor use.</p>
+            </div>
+
+        </div>
+
+        <div class="mt-16 flex flex-wrap items-center gap-6 px-8 py-4 bg-white/5 rounded-full border border-white/10 w-fit">
+            <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#FFD700] rounded-full"></div>
+                <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">Pantone® Matched</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#B22222] rounded-full"></div>
+                <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">Eco-Solvent Inks</span>
+            </div>
+            <div class="flex items-center gap-2">
+                <div class="w-1.5 h-1.5 bg-[#FFD700] rounded-full"></div>
+                <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">1200 DPI High-Res</span>
+            </div>
+        </div>
+    </div>
+</section>
 
     <!-- Technology & Quality (both divisions) -->
     <section class="py-24 relative">
