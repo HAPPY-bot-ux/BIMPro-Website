@@ -243,7 +243,7 @@
             <span class="">BIM</span><span class="text-white">Pro</span>
         </div>
         <div class="w-px h-6 md:h-8 bg-white/20"></div>
-        <div class="text-[10px] md:text-xs font-medium text-gray-400">Est. 2025</div>
+        <div class="text-[10px] md:text-xs font-medium text-gold-300" style="color: #FFD700AA;">Est. 2025</div>
     </div>
     
     <div class="hidden lg:flex items-center gap-12">
@@ -420,17 +420,49 @@
     </section>
 
     <!-- Stats Section (gold/red counters) -->
-    <section class="py-20 relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="text-center group"><div class="counter text-6xl font-black text-[#FFD700] mb-2" data-target="4">0</div><div class="text-xs uppercase tracking-widest text-gray-400">Divisions</div></div>
-                <div class="text-center group"><div class="counter text-6xl font-black text-[#B22222] mb-2" data-target="500">0</div><div class="text-xs uppercase tracking-widest text-gray-400">Projects</div></div>
-                <div class="text-center group"><div class="counter text-6xl font-black text-[#FFD700] mb-2" data-target="50">0</div><div class="text-xs uppercase tracking-widest text-gray-400">Experts</div></div>
-                <div class="text-center group"><div class="counter text-6xl font-black text-[#B22222] mb-2" data-target="100">0</div><div class="text-xs uppercase tracking-widest text-gray-400">Clients</div></div>
-            </div>
-        </div>
-    </section>
+    
+<section class="py-24 relative overflow-hidden bg-[#0a0a0a]">
+    <div class="absolute top-0 left-1/4 w-96 h-96 bg-[#B22222] opacity-10 blur-[120px] rounded-full"></div>
+    <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-[#FFD700] opacity-10 blur-[120px] rounded-full"></div>
 
+    <div class="max-w-7xl mx-auto px-6 relative z-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+            
+            <div class="group relative p-8 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-sm transition-all duration-500 hover:bg-white/10 hover:-translate-y-2">
+                <div class="absolute top-0 left-0 w-1 h-0 bg-[#FFD700] transition-all duration-500 group-hover:h-full rounded-l-2xl"></div>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-[#FFD700] mb-4 block font-bold">Scale</span>
+                <h3 class="text-2xl font-black text-white leading-tight uppercase">
+                    Built for <br/> <span class="text-gray-400 group-hover:text-white transition-colors">Growth</span>
+                </h3>
+            </div>
+
+            <div class="group relative p-8 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-sm transition-all duration-500 hover:bg-white/10 hover:-translate-y-2">
+                <div class="absolute top-0 left-0 w-1 h-0 bg-[#B22222] transition-all duration-500 group-hover:h-full rounded-l-2xl"></div>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-[#B22222] mb-4 block font-bold">Process</span>
+                <h3 class="text-2xl font-black text-white leading-tight uppercase">
+                    Structured <br/> <span class="text-gray-400 group-hover:text-white transition-colors">Operations</span>
+                </h3>
+            </div>
+
+            <div class="group relative p-8 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-sm transition-all duration-500 hover:bg-white/10 hover:-translate-y-2">
+                <div class="absolute top-0 left-0 w-1 h-0 bg-[#FFD700] transition-all duration-500 group-hover:h-full rounded-l-2xl"></div>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-[#FFD700] mb-4 block font-bold">Excellence</span>
+                <h3 class="text-2xl font-black text-white leading-tight uppercase">
+                    Quality-Driven <br/> <span class="text-gray-400 group-hover:text-white transition-colors">Work</span>
+                </h3>
+            </div>
+
+            <div class="group relative p-8 rounded-2xl border border-white/5 bg-white/5 backdrop-blur-sm transition-all duration-500 hover:bg-white/10 hover:-translate-y-2">
+                <div class="absolute top-0 left-0 w-1 h-0 bg-[#B22222] transition-all duration-500 group-hover:h-full rounded-l-2xl"></div>
+                <span class="text-[10px] uppercase tracking-[0.3em] text-[#B22222] mb-4 block font-bold">Service</span>
+                <h3 class="text-2xl font-black text-white leading-tight uppercase">
+                    Responsive <br/> <span class="text-gray-400 group-hover:text-white transition-colors">Support</span>
+                </h3>
+            </div>
+
+        </div>
+    </div>
+</section>
     <!-- Identity Section (black/gold/red) -->
     <section class="py-32 relative overflow-hidden">
         <div class="absolute inset-0">
@@ -460,17 +492,36 @@
                     </div>
                 </div>
 
-                <div class="relative">
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="glass-card p-12 rounded-[3rem] group hover:rotate-3 transition-all"><div class="text-7xl font-black text-[#B22222] mb-4">01</div><h3 class="text-xl font-bold mb-2">Integrity</h3><p class="text-sm text-gray-400">Uncompromising</p></div>
-                        <div class="glass-card p-12 rounded-[3rem] group hover:-rotate-3 transition-all mt-12"><div class="text-7xl font-black text-[#FFD700] mb-4">02</div><h3 class="text-xl font-bold mb-2">Precision</h3><p class="text-sm text-gray-400">Meticulous</p></div>
-                        <div class="glass-card p-12 rounded-[3rem] group hover:-rotate-3 transition-all"><div class="text-7xl font-black text-[#B22222] mb-4">03</div><h3 class="text-xl font-bold mb-2">Innovation</h3><p class="text-sm text-gray-400">Forward-thinking</p></div>
-                        <div class="glass-card p-12 rounded-[3rem] group hover:rotate-3 transition-all -mt-12"><div class="text-7xl font-black text-[#FFD700] mb-4">04</div><h3 class="text-xl font-bold mb-2">Reliability</h3><p class="text-sm text-gray-400">Consistent</p></div>
-                    </div>
-                    <!-- Floating Badge -->
-                   
-                    
-                </div>
+                <div class="relative py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        
+        <div class="glass-card p-10 md:p-12 rounded-[3rem] group hover:rotate-3 transition-all duration-500 border border-white/10 bg-white/5 backdrop-blur-md">
+            <div class="text-6xl md:text-7xl font-black text-[#B22222] mb-4 opacity-80 group-hover:opacity-100 transition-opacity">01</div>
+            <h3 class="text-2xl font-bold mb-2 text-white">Integrity</h3>
+            <p class="text-sm text-gray-400 tracking-widest uppercase">Uncompromising</p>
+        </div>
+
+        <div class="glass-card p-10 md:p-12 rounded-[3rem] group hover:-rotate-3 transition-all duration-500 border border-white/10 bg-white/5 backdrop-blur-md md:translate-y-16">
+            <div class="text-6xl md:text-7xl font-black text-[#FFD700] mb-4 opacity-80 group-hover:opacity-100 transition-opacity">02</div>
+            <h3 class="text-2xl font-bold mb-2 text-white">Precision</h3>
+            <p class="text-sm text-gray-400 tracking-widest uppercase">Meticulous</p>
+        </div>
+
+        <div class="glass-card p-10 md:p-12 rounded-[3rem] group hover:-rotate-3 transition-all duration-500 border border-white/10 bg-white/5 backdrop-blur-md">
+            <div class="text-6xl md:text-7xl font-black text-[#B22222] mb-4 opacity-80 group-hover:opacity-100 transition-opacity">03</div>
+            <h3 class="text-2xl font-bold mb-2 text-white">Innovation</h3>
+            <p class="text-sm text-gray-400 tracking-widest uppercase">Forward-thinking</p>
+        </div>
+
+        <div class="glass-card p-10 md:p-12 rounded-[3rem] group hover:rotate-3 transition-all duration-500 border border-white/10 bg-white/5 backdrop-blur-md md:translate-y-16">
+            <div class="text-6xl md:text-7xl font-black text-[#FFD700] mb-4 opacity-80 group-hover:opacity-100 transition-opacity">04</div>
+            <h3 class="text-2xl font-bold mb-2 text-white">Reliability</h3>
+            <p class="text-sm text-gray-400 tracking-widest uppercase">Consistent</p>
+        </div>
+
+    </div>                            
+</div>
+
             </div>
         </div>
     </section>
@@ -623,9 +674,11 @@
                     Trusted by businesses to deliver professional security and branding excellence.
                 </p>
                 
-                <a href="contact.html" 
-                   class="inline-block bg-[#B22222] px-16 py-6 rounded-2xl font-black text-xs uppercase tracking-[0.3em] text-white hover:bg-[#8b1a1a] transition-all hover:scale-105 border border-[#FFD700]/50 shadow-[0_10px_30px_rgba(178,34,34,0.3)]">
-                    Ready
+                <a href="https://wa.me/27697238080?text=Hello%2C%20I'd%20like%20to%20discuss%20your%20services" target="_blank" class="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 bg-[#25D366] text-black font-bold py-5 px-8 rounded-2xl border-2 border-[#FFD700] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#25D366]/30">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    <span class="text-sm uppercase tracking-widest">WhatsApp for a Quote</span>
+                    <!-- Glow effect -->
+                    <div class="absolute inset-0 rounded-2xl bg-[#25D366] opacity-0 group-hover:opacity-20 blur-xl transition-opacity"></div>
                 </a>
             </div>
 
