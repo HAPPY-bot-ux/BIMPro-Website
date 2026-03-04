@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | BIMPro multi services group - Project Showcase</title>
+    <title>Portfolio | BIMPro groupe multi‑services - Réalisations</title>
     
     <!-- Tailwind & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -51,6 +51,9 @@
         .lang-fr { display: none; }
         .is-french .lang-en { display: none; }
         .is-french .lang-fr { display: block; }
+        .is-french .lang-inline-en { display: none; }
+        .is-french .lang-inline-fr { display: inline; }
+        .lang-inline-fr { display: none; }
 
         /* Custom cursor – gold/red */
         .cursor {
@@ -282,15 +285,15 @@
                 <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full"></span>
             </a>
             <a href="security.html" class="nav-link relative group text-white">
-                <span class="lang-en">Services</span><span class="lang-fr hidden">Sécurité</span>
+                <span class="lang-en">Services</span><span class="lang-fr hidden">Services</span>
                 <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full"></span>
             </a>
             <a href="portfolio.html" class="nav-link relative group text-white">
-                <span class="lang-en">Portfolio</span><span class="lang-fr hidden">portefeuille</span>
+                <span class="lang-en">Portfolio</span><span class="lang-fr hidden">Portfolio</span>
                 <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-[#FFD700]"></span>
             </a>
             <a href="contact.html" class="nav-link relative group text-white">
-                <span class="lang-en">Contact</span><span class="lang-fr hidden">le contact</span>
+                <span class="lang-en">Contact</span><span class="lang-fr hidden">Contact</span>
                 <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full"></span>
             </a>
         </div>
@@ -316,9 +319,9 @@
    
     <a href="index.html" class="text-3xl font-black text-white hover:text-[#FFD700]" style="margin-top: 15rem;"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
     <a href="about.html" class="text-3xl font-black text-white hover:text-[#FFD700]"><span class="lang-en">About</span><span class="lang-fr">À propos</span></a>
-    <a href="security.html" class="text-3xl font-black text-white hover:text-[#FFD700]"><span class="lang-en">Security</span><span class="lang-fr">Sécurité</span></a>
-    <a href="portfolio.html" class="text-3xl font-black text-[#FFD700] drop-shadow-[0_0_15px_rgba(255,215,0,0.3)]"><span class="lang-en">Portfolio</span><span class="lang-fr">portefeuille</span></a>
-    <a href="contact.html" class="text-3xl font-black text-white hover:text-[#FFD700]"><span class="lang-en">Contact</span><span class="lang-fr">le contact </span></a>
+    <a href="security.html" class="text-3xl font-black text-white hover:text-[#FFD700]"><span class="lang-en">Services</span><span class="lang-fr">Services</span></a>
+    <a href="portfolio.html" class="text-3xl font-black text-[#FFD700] drop-shadow-[0_0_15px_rgba(255,215,0,0.3)]"><span class="lang-en">Portfolio</span><span class="lang-fr">Portfolio</span></a>
+    <a href="contact.html" class="text-3xl font-black text-white hover:text-[#FFD700]"><span class="lang-en">Contact</span><span class="lang-fr">Contact</span></a>
 
     
     
@@ -336,7 +339,7 @@
         <i class="fab fa-tiktok text-[#FFD700] group-hover:text-white transition-colors"></i>
     </a>
             </div>
-            <div class="mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-sm">© 2026 BIMPro multi services group. Excellence Delivered.</div>
+            <div class="mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-sm">© 2026 BIMPro multi services group. L'excellence livrée.</div>
         </div>
 
 </div>
@@ -422,10 +425,10 @@
         
         <h1 class="text-7xl md:text-9xl font-black leading-[0.85] mb-8 tracking-tighter">
             <div class="overflow-hidden">
-                <span class="inline-block gradient-text animate-slideUp">PROJECT</span>
+                <span class="inline-block gradient-text animate-slideUp"><span class="lang-en">PROJECT</span><span class="lang-fr">NOS</span></span>
             </div>
             <div class="overflow-hidden">
-                <span class="inline-block text-white animate-slideUp" style="animation-delay:0.1s;">SHOWCASE</span>
+                <span class="inline-block text-white animate-slideUp" style="animation-delay:0.1s;"><span class="lang-en">SHOWCASE</span><span class="lang-fr">RÉALISATIONS</span></span>
             </div>
         </h1>
 
@@ -438,7 +441,7 @@
             <div class="w-24 h-[2px] bg-white/5 rounded-full overflow-hidden">
                 <div class="w-1/2 h-full bg-[#B22222] animate-pulse"></div>
             </div>
-            <span class="text-[8px] font-mono text-zinc-500 uppercase tracking-widest">Loading Visuals</span>
+            <span class="text-[8px] font-mono text-zinc-500 uppercase tracking-widest"><span class="lang-en">Loading Visuals</span><span class="lang-fr">Chargement</span></span>
         </div>
     </div>
 </section>
@@ -517,13 +520,13 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-[#B22222] to-[#FFD700] flex items-center justify-center">
                         <i class="fas fa-video text-8xl text-white/20"></i>
                     </div>
-                    <span class="category-badge badge-security">Featured Security</span>
+                    <span class="category-badge badge-security"><span class="lang-en">Featured Security</span><span class="lang-fr">Sécurité à la Une</span></span>
                     <div class="portfolio-overlay">
-                        <span class="text-[#FFD700] text-xs font-bold mb-2">Commercial Security</span>
-                        <h3 class="text-3xl font-black mb-3">Grand West Shopping Mall</h3>
-                        <p class="text-gray-300 mb-4 max-w-2xl">Complete security overhaul with 128 4K cameras, AI-powered analytics, and centralized control room.</p>
-                        <div class="flex gap-4 text-sm"><span><i class="fas fa-camera mr-2 text-[#FFD700]"></i>128 Cameras</span><span><i class="fas fa-microchip mr-2 text-[#FFD700]"></i>AI Analytics</span></div>
-                        <a href="#" data-lightbox="project-1" class="inline-block mt-4 text-[#FFD700] hover:text-[#B22222]">View Project →</a>
+                        <span class="text-[#FFD700] text-xs font-bold mb-2"><span class="lang-en">Commercial Security</span><span class="lang-fr">Sécurité Commerciale</span></span>
+                        <h3 class="text-3xl font-black mb-3"><span class="lang-en">Grand West Shopping Mall</span><span class="lang-fr">Centre Commercial Grand West</span></h3>
+                        <p class="text-gray-300 mb-4 max-w-2xl"><span class="lang-en">Complete security overhaul with 128 4K cameras, AI-powered analytics, and centralized control room.</span><span class="lang-fr">Refonte complète de la sécurité avec 128 caméras 4K, analyses basées sur l'IA et salle de contrôle centralisée.</span></p>
+                        <div class="flex gap-4 text-sm"><span><i class="fas fa-camera mr-2 text-[#FFD700]"></i>128 <span class="lang-en">Cameras</span><span class="lang-fr">Caméras</span></span><span><i class="fas fa-microchip mr-2 text-[#FFD700]"></i><span class="lang-en">AI Analytics</span><span class="lang-fr">Analyse IA</span></span></div>
+                        <a href="#" data-lightbox="project-1" class="inline-block mt-4 text-[#FFD700] hover:text-[#B22222]"><span class="lang-en">View Project →</span><span class="lang-fr">Voir le projet →</span></a>
                     </div>
                 </div>
             </div>
@@ -535,12 +538,12 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-[#B22222] to-[#9e2a2a] flex items-center justify-center">
                         <i class="fas fa-shield-alt text-6xl text-white/20"></i>
                     </div>
-                    <span class="category-badge badge-security">Security</span>
+                    <span class="category-badge badge-security"><span class="lang-en">Security</span><span class="lang-fr">Sécurité</span></span>
                     <div class="portfolio-overlay">
-                        <span class="text-[#FFD700] text-xs font-bold mb-2">Corporate Office</span>
-                        <h3 class="text-xl font-black mb-2">IP-Link Installation</h3>
-                        <p class="text-gray-300 text-sm mb-3">16-camera 4K network with remote monitoring.</p>
-                        <div class="flex gap-2 text-xs">16 Cameras • 4K • Remote</div>
+                        <span class="text-[#FFD700] text-xs font-bold mb-2"><span class="lang-en">Corporate Office</span><span class="lang-fr">Bureau d'entreprise</span></span>
+                        <h3 class="text-xl font-black mb-2"><span class="lang-en">IP-Link Installation</span><span class="lang-fr">Installation IP-Link</span></h3>
+                        <p class="text-gray-300 text-sm mb-3"><span class="lang-en">16-camera 4K network with remote monitoring.</span><span class="lang-fr">Réseau 4K de 16 caméras avec surveillance à distance.</span></p>
+                        <div class="flex gap-2 text-xs">16 <span class="lang-en">Cameras</span><span class="lang-fr">Caméras</span> • 4K • <span class="lang-en">Remote</span><span class="lang-fr">À distance</span></div>
                     </div>
                 </div>
 
@@ -549,12 +552,12 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-[#FFD700] to-[#eab308] flex items-center justify-center">
                         <i class="fas fa-tshirt text-6xl text-white/20"></i>
                     </div>
-                    <span class="category-badge badge-apparel">Apparel</span>
+                    <span class="category-badge badge-apparel"><span class="lang-en">Apparel</span><span class="lang-fr">Vêtements</span></span>
                     <div class="portfolio-overlay">
-                        <span class="text-[#B22222] text-xs font-bold mb-2">Corporate Uniforms</span>
-                        <h3 class="text-xl font-black mb-2">Summit Logistics Gear</h3>
-                        <p class="text-gray-300 text-sm mb-3">Custom vinyl-press workwear for 50 drivers.</p>
-                        <div class="flex gap-2 text-xs">50 Pcs • Vinyl • Embroidery</div>
+                        <span class="text-[#B22222] text-xs font-bold mb-2"><span class="lang-en">Corporate Uniforms</span><span class="lang-fr">Uniformes d'entreprise</span></span>
+                        <h3 class="text-xl font-black mb-2"><span class="lang-en">Summit Logistics Gear</span><span class="lang-fr">Tenues Summit Logistics</span></h3>
+                        <p class="text-gray-300 text-sm mb-3"><span class="lang-en">Custom vinyl-press workwear for 50 drivers.</span><span class="lang-fr">Vêtements de travail personnalisés pour 50 conducteurs.</span></p>
+                        <div class="flex gap-2 text-xs">50 Pcs • Vinyl • <span class="lang-en">Embroidery</span><span class="lang-fr">Broderie</span></div>
                     </div>
                 </div>
 
@@ -563,11 +566,11 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-[#B22222] to-[#7a1f1f] flex items-center justify-center">
                         <i class="fas fa-bell text-6xl text-white/20"></i>
                     </div>
-                    <span class="category-badge badge-security">Security</span>
+                    <span class="category-badge badge-security"><span class="lang-en">Security</span><span class="lang-fr">Sécurité</span></span>
                     <div class="portfolio-overlay">
-                        <span class="text-[#FFD700] text-xs font-bold mb-2">Smart Home</span>
-                        <h3 class="text-xl font-black mb-2">Wireless Alarm Grid</h3>
-                        <p class="text-gray-300 text-sm mb-3">GSM-enabled wireless security with battery backup.</p>
+                        <span class="text-[#FFD700] text-xs font-bold mb-2"><span class="lang-en">Smart Home</span><span class="lang-fr">Maison intelligente</span></span>
+                        <h3 class="text-xl font-black mb-2"><span class="lang-en">Wireless Alarm Grid</span><span class="lang-fr">Réseau d'alarme sans fil</span></h3>
+                        <p class="text-gray-300 text-sm mb-3"><span class="lang-en">GSM-enabled wireless security with battery backup.</span><span class="lang-fr">Sécurité sans fil GSM avec batterie de secours.</span></p>
                         <div class="flex gap-2 text-xs">24/7 • GSM • Solar</div>
                     </div>
                 </div>
@@ -577,11 +580,11 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-[#B22222] to-[#FFD700] flex items-center justify-center">
                         <i class="fas fa-tag text-6xl text-white/20"></i>
                     </div>
-                    <span class="category-badge badge-apparel">Branding</span>
+                    <span class="category-badge badge-apparel"><span class="lang-en">Branding</span><span class="lang-fr">Branding</span></span>
                     <div class="portfolio-overlay">
-                        <span class="text-[#FFD700] text-xs font-bold mb-2">Marketing Assets</span>
-                        <h3 class="text-xl font-black mb-2">Retail Sticker Pack</h3>
-                        <p class="text-gray-300 text-sm mb-3">Weatherproof vinyl decals for retail branding.</p>
+                        <span class="text-[#FFD700] text-xs font-bold mb-2"><span class="lang-en">Marketing Assets</span><span class="lang-fr">Supports marketing</span></span>
+                        <h3 class="text-xl font-black mb-2"><span class="lang-en">Retail Sticker Pack</span><span class="lang-fr">Pack d'autocollants retail</span></h3>
+                        <p class="text-gray-300 text-sm mb-3"><span class="lang-en">Weatherproof vinyl decals for retail branding.</span><span class="lang-fr">Autocollants vinyle résistants aux intempéries.</span></p>
                         <div class="flex gap-2 text-xs">5000 • Vinyl • Die-cut</div>
                     </div>
                 </div>
@@ -591,12 +594,12 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-[#B22222] to-[#5a1a1a] flex items-center justify-center">
                         <i class="fas fa-lock text-6xl text-white/20"></i>
                     </div>
-                    <span class="category-badge badge-security">Security</span>
+                    <span class="category-badge badge-security"><span class="lang-en">Security</span><span class="lang-fr">Sécurité</span></span>
                     <div class="portfolio-overlay">
-                        <span class="text-[#FFD700] text-xs font-bold mb-2">Access Control</span>
-                        <h3 class="text-xl font-black mb-2">Biometric System</h3>
-                        <p class="text-gray-300 text-sm mb-3">Fingerprint and card access for 200 employees.</p>
-                        <div class="flex gap-2 text-xs">200 Users • Biometric • RFID</div>
+                        <span class="text-[#FFD700] text-xs font-bold mb-2"><span class="lang-en">Access Control</span><span class="lang-fr">Contrôle d'accès</span></span>
+                        <h3 class="text-xl font-black mb-2"><span class="lang-en">Biometric System</span><span class="lang-fr">Système biométrique</span></h3>
+                        <p class="text-gray-300 text-sm mb-3"><span class="lang-en">Fingerprint and card access for 200 employees.</span><span class="lang-fr">Accès par empreinte digitale et carte pour 200 employés.</span></p>
+                        <div class="flex gap-2 text-xs">200 <span class="lang-en">Users</span><span class="lang-fr">Utilisateurs</span> • Biometric • RFID</div>
                     </div>
                 </div>
 
@@ -605,12 +608,12 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-[#FFD700] to-[#ca8a04] flex items-center justify-center">
                         <i class="fas fa-hat-cowboy text-6xl text-white/20"></i>
                     </div>
-                    <span class="category-badge badge-apparel">Apparel</span>
+                    <span class="category-badge badge-apparel"><span class="lang-en">Apparel</span><span class="lang-fr">Vêtements</span></span>
                     <div class="portfolio-overlay">
-                        <span class="text-[#B22222] text-xs font-bold mb-2">Event Merch</span>
-                        <h3 class="text-xl font-black mb-2">Music Festival Collection</h3>
-                        <p class="text-gray-300 text-sm mb-3">Custom caps and t-shirts for 2000 attendees.</p>
-                        <div class="flex gap-2 text-xs">2000 • Screen Print • 3 Days</div>
+                        <span class="text-[#B22222] text-xs font-bold mb-2"><span class="lang-en">Event Merch</span><span class="lang-fr">Merchandising événementiel</span></span>
+                        <h3 class="text-xl font-black mb-2"><span class="lang-en">Music Festival Collection</span><span class="lang-fr">Collection festival de musique</span></h3>
+                        <p class="text-gray-300 text-sm mb-3"><span class="lang-en">Custom caps and t-shirts for 2000 attendees.</span><span class="lang-fr">Casquettes et t-shirts personnalisés pour 2000 participants.</span></p>
+                        <div class="flex gap-2 text-xs">2000 • <span class="lang-en">Screen Print</span><span class="lang-fr">Sérigraphie</span> • 3 <span class="lang-en">Days</span><span class="lang-fr">Jours</span></div>
                     </div>
                 </div>
 
@@ -619,11 +622,11 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-[#B22222] to-[#eab308] flex items-center justify-center">
                         <i class="fas fa-sign text-6xl text-white/20"></i>
                     </div>
-                    <span class="category-badge badge-apparel">Branding</span>
+                    <span class="category-badge badge-apparel"><span class="lang-en">Branding</span><span class="lang-fr">Branding</span></span>
                     <div class="portfolio-overlay">
-                        <span class="text-[#FFD700] text-xs font-bold mb-2">Signage</span>
-                        <h3 class="text-xl font-black mb-2">Corporate Signage</h3>
-                        <p class="text-gray-300 text-sm mb-3">Exterior and interior branding for tech startup.</p>
+                        <span class="text-[#FFD700] text-xs font-bold mb-2"><span class="lang-en">Signage</span><span class="lang-fr">Signalétique</span></span>
+                        <h3 class="text-xl font-black mb-2"><span class="lang-en">Corporate Signage</span><span class="lang-fr">Signalétique d'entreprise</span></h3>
+                        <p class="text-gray-300 text-sm mb-3"><span class="lang-en">Exterior and interior branding for tech startup.</span><span class="lang-fr">Branding extérieur et intérieur pour startup tech.</span></p>
                         <div class="flex gap-2 text-xs">LED • Acrylic • Frosted</div>
                     </div>
                 </div>
@@ -633,11 +636,11 @@
                     <div class="absolute inset-0 bg-gradient-to-br from-[#B22222] to-[#8b1a1a] flex items-center justify-center">
                         <i class="fas fa-robot text-6xl text-white/20"></i>
                     </div>
-                    <span class="category-badge badge-security">Security</span>
+                    <span class="category-badge badge-security"><span class="lang-en">Security</span><span class="lang-fr">Sécurité</span></span>
                     <div class="portfolio-overlay">
-                        <span class="text-[#FFD700] text-xs font-bold mb-2">Smart Integration</span>
-                        <h3 class="text-xl font-black mb-2">Home Automation</h3>
-                        <p class="text-gray-300 text-sm mb-3">Full smart home integration with voice control.</p>
+                        <span class="text-[#FFD700] text-xs font-bold mb-2"><span class="lang-en">Smart Integration</span><span class="lang-fr">Intégration intelligente</span></span>
+                        <h3 class="text-xl font-black mb-2"><span class="lang-en">Home Automation</span><span class="lang-fr">Domotique</span></h3>
+                        <p class="text-gray-300 text-sm mb-3"><span class="lang-en">Full smart home integration with voice control.</span><span class="lang-fr">Intégration domotique complète avec commande vocale.</span></p>
                         <div class="flex gap-2 text-xs">Voice • Zigbee • Z-Wave</div>
                     </div>
                 </div>
@@ -649,25 +652,26 @@
     <section class="py-16 md:py-24 relative overflow-hidden">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-12 md:mb-16">
-            <span class="text-[#FFD700] font-mono tracking-[0.3em] text-xs uppercase">✦ Case Study</span>
+            <span class="text-[#FFD700] font-mono tracking-[0.3em] text-xs uppercase">✦ <span class="lang-en">Case Study</span><span class="lang-fr">Étude de cas</span></span>
             <h2 class="text-4xl md:text-6xl font-black mt-6 leading-tight uppercase">
-                <span class="gradient-text">Featured Project</span>
+                <span class="gradient-text"><span class="lang-en">Featured Project</span><span class="lang-fr">Projet à la une</span></span>
             </h2>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-stretch">
             <div class="glass-card p-8 md:p-12 rounded-[2.5rem] border border-white/10 bg-white/5 backdrop-blur-md">
-                <span class="text-[#B22222] font-black text-sm mb-2 block uppercase tracking-widest">Security Deployment</span>
-                <h3 class="text-3xl md:text-4xl font-black mb-6 text-white uppercase">Residential <br class="hidden md:block"/> Security Setup</h3>
+                <span class="text-[#B22222] font-black text-sm mb-2 block uppercase tracking-widest"><span class="lang-en">Security Deployment</span><span class="lang-fr">Déploiement sécurité</span></span>
+                <h3 class="text-3xl md:text-4xl font-black mb-6 text-white uppercase"><span class="lang-en">Residential</span><span class="lang-fr">Résidentiel</span> <br class="hidden md:block"/> <span class="lang-en">Security Setup</span><span class="lang-fr">Configuration sécurité</span></h3>
                 <p class="text-gray-400 mb-10 leading-relaxed max-w-lg">
-                    Installation of HD CCTV system with remote mobile monitoring and structured cable management for a streamlined, secure home environment.
+                    <span class="lang-en">Installation of HD CCTV system with remote mobile monitoring and structured cable management for a streamlined, secure home environment.</span>
+                    <span class="lang-fr">Installation d'un système CCTV HD avec surveillance mobile à distance et gestion structurée des câbles pour un environnement domestique sécurisé et rationalisé.</span>
                 </p>
                 
                 <div class="space-y-6 mb-10">
                     <div>
                         <div class="flex justify-between items-end mb-2">
-                            <span class="text-xs uppercase tracking-widest text-gray-500 font-bold">Cameras Installed</span>
-                            <span class="text-xl font-black text-[#FFD700]">4 Units</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-500 font-bold"><span class="lang-en">Cameras Installed</span><span class="lang-fr">Caméras installées</span></span>
+                            <span class="text-xl font-black text-[#FFD700]">4 <span class="lang-en">Units</span><span class="lang-fr">Unités</span></span>
                         </div>
                         <div class="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
                             <div class="w-full h-full bg-[#FFD700] rounded-full shadow-[0_0_10px_#FFD700]"></div>
@@ -676,8 +680,8 @@
                     
                     <div>
                         <div class="flex justify-between items-end mb-2">
-                            <span class="text-xs uppercase tracking-widest text-gray-500 font-bold">Remote Viewing</span>
-                            <span class="text-xl font-black text-[#B22222]">Enabled</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-500 font-bold"><span class="lang-en">Remote Viewing</span><span class="lang-fr">Visualisation à distance</span></span>
+                            <span class="text-xl font-black text-[#B22222]"><span class="lang-en">Enabled</span><span class="lang-fr">Activé</span></span>
                         </div>
                         <div class="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
                             <div class="w-full h-full bg-[#B22222] rounded-full shadow-[0_0_10px_#B22222]"></div>
@@ -686,8 +690,8 @@
 
                     <div>
                         <div class="flex justify-between items-end mb-2">
-                            <span class="text-xs uppercase tracking-widest text-gray-500 font-bold">Client Training</span>
-                            <span class="text-xl font-black text-[#FFD700]">Provided</span>
+                            <span class="text-xs uppercase tracking-widest text-gray-500 font-bold"><span class="lang-en">Client Training</span><span class="lang-fr">Formation client</span></span>
+                            <span class="text-xl font-black text-[#FFD700]"><span class="lang-en">Provided</span><span class="lang-fr">Fournie</span></span>
                         </div>
                         <div class="w-full h-1.5 bg-white/5 rounded-full overflow-hidden">
                             <div class="w-full h-full bg-[#FFD700] rounded-full shadow-[0_0_10px_#FFD700]"></div>
@@ -698,15 +702,15 @@
                 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     <div class="text-center bg-white/5 border border-white/10 p-4 rounded-2xl group hover:bg-white/10 transition-colors">
                         <i class="fas fa-broom text-[#FFD700] mb-2 block text-sm"></i>
-                        <div class="text-[10px] font-black uppercase tracking-tighter text-white">Clean<br/>Installation</div>
+                        <div class="text-[10px] font-black uppercase tracking-tighter text-white"><span class="lang-en">Clean<br/>Installation</span><span class="lang-fr">Installation<br/>Propre</span></div>
                     </div>
                     <div class="text-center bg-white/5 border border-white/10 p-4 rounded-2xl group hover:bg-white/10 transition-colors">
                         <i class="fas fa-sliders-h text-[#B22222] mb-2 block text-sm"></i>
-                        <div class="text-[10px] font-black uppercase tracking-tighter text-white">Optimized<br/>Config</div>
+                        <div class="text-[10px] font-black uppercase tracking-tighter text-white"><span class="lang-en">Optimized<br/>Config</span><span class="lang-fr">Config<br/>Optimisée</span></div>
                     </div>
                     <div class="text-center bg-white/5 border border-white/10 p-4 rounded-2xl group hover:bg-white/10 transition-colors">
                         <i class="fas fa-sync text-[#FFD700] mb-2 block text-sm"></i>
-                        <div class="text-[10px] font-black uppercase tracking-tighter text-white">Ongoing<br/>Support</div>
+                        <div class="text-[10px] font-black uppercase tracking-tighter text-white"><span class="lang-en">Ongoing<br/>Support</span><span class="lang-fr">Support<br/>Continu</span></div>
                     </div>
                 </div>
             </div>
@@ -718,7 +722,7 @@
                     <div class="w-24 h-24 md:w-32 md:h-32 bg-white/5 backdrop-blur-xl rounded-full flex items-center justify-center border border-white/20 mb-6 group-hover:scale-110 transition-transform duration-500 cursor-pointer shadow-2xl">
                         <i class="fas fa-play text-4xl text-[#FFD700] ml-2"></i>
                     </div>
-                    <p class="text-[#FFD700] font-black text-xs uppercase tracking-[0.4em]">Project Showcase</p>
+                    <p class="text-[#FFD700] font-black text-xs uppercase tracking-[0.4em]"><span class="lang-en">Project Showcase</span><span class="lang-fr">Présentation du projet</span></p>
                 </div>
             </div>
         </div>
@@ -731,7 +735,7 @@
             <div class="grid md:grid-cols-2 gap-6">
                 <div class="glass-card p-10 rounded-[3rem]">
                     <i class="fas fa-quote-right text-4xl text-[#FFD700] mb-6"></i>
-                    <p class="text-xl mb-6">"BIMPro delivered our office security system ahead of schedule. The quality and professionalism exceeded expectations."</p>
+                    <p class="text-xl mb-6"><span class="lang-en">"BIMPro delivered our office security system ahead of schedule. The quality and professionalism exceeded expectations."</span><span class="lang-fr">« BIMPro a livré notre système de sécurité de bureau en avance. La qualité et le professionnalisme ont dépassé les attentes. »</span></p>
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 bg-[#B22222] rounded-full"></div>
                         <div><h4 class="font-bold">John Smith</h4><p class="text-sm text-gray-400">CEO, TechCorp</p></div>
@@ -740,10 +744,10 @@
                 
                 <div class="glass-card p-10 rounded-[3rem]">
                     <i class="fas fa-quote-right text-4xl text-[#B22222] mb-6"></i>
-                    <p class="text-xl mb-6">"The custom apparel for our conference was outstanding. Great attention to detail and fast turnaround."</p>
+                    <p class="text-xl mb-6"><span class="lang-en">"The custom apparel for our conference was outstanding. Great attention to detail and fast turnaround."</span><span class="lang-fr">« Les vêtements personnalisés pour notre conférence étaient exceptionnels. Grande attention aux détails et délais rapides. »</span></p>
                     <div class="flex items-center gap-4">
                         <div class="w-12 h-12 bg-[#FFD700] rounded-full"></div>
-                        <div><h4 class="font-bold">Sarah Johnson</h4><p class="text-sm text-gray-400">Event Director</p></div>
+                        <div><h4 class="font-bold">Sarah Johnson</h4><p class="text-sm text-gray-400"><span class="lang-en">Event Director</span><span class="lang-fr">Directrice d'événement</span></p></div>
                     </div>
                 </div>
             </div>
@@ -760,26 +764,26 @@
             <div class="absolute -top-10 -right-10 opacity-[0.03] text-9xl font-black text-white select-none">2026</div>
             
             <div class="relative z-10">
-                <span class="text-[#FFD700] font-mono tracking-[0.4em] text-xs uppercase mb-6 block">Take the next step</span>
+                <span class="text-[#FFD700] font-mono tracking-[0.4em] text-xs uppercase mb-6 block"><span class="lang-en">Take the next step</span><span class="lang-fr">Passez à l'étape suivante</span></span>
                 
                 <h2 class="text-4xl md:text-7xl font-black mb-8 leading-[1.1] uppercase tracking-tighter">
-                    Ready to <span class="text-[#FFD700]">Secure</span> or <br class="hidden md:block"/> 
-                    <span class="gradient-text">Brand</span> Your Business?
+                    <span class="lang-en">Ready to</span><span class="lang-fr">Prêt à</span> <span class="text-[#FFD700]"><span class="lang-en">Secure</span><span class="lang-fr">Sécuriser</span></span> <span class="lang-en">or</span><span class="lang-fr">ou</span> <br class="hidden md:block"/> 
+                    <span class="gradient-text"><span class="lang-en">Brand</span><span class="lang-fr">Marquer</span></span> <span class="lang-en">Your Business?</span><span class="lang-fr">Votre Entreprise ?</span>
                 </h2>
                 
                 <p class="text-lg md:text-xl text-gray-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-                    Professional security installations and custom branding solutions — <span class="text-white/70">delivered with structured execution.</span>
+                    <span class="lang-en">Professional security installations and custom branding solutions —</span><span class="lang-fr">Installations de sécurité professionnelles et solutions de branding personnalisées —</span> <span class="text-white/70"><span class="lang-en">delivered with structured execution.</span><span class="lang-fr">livrées avec une exécution structurée.</span></span>
                 </p>
                 
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-6">
                     <a href="https://wa.me/27697238080?text=Hello%2C%20I'd%20like%20to%20discuss%20your%20services" target="_blank" class="w-full sm:w-auto group relative inline-flex items-center justify-center gap-3 bg-[#25D366] text-black font-bold py-5 px-8 rounded-2xl border-2 border-[#FFD700] hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-[#25D366]/30">
                     <i class="fab fa-whatsapp text-2xl"></i>
-                    <span class="text-sm uppercase tracking-widest">WhatsApp for a Quote</span>
+                    <span class="text-sm uppercase tracking-widest"><span class="lang-en">WhatsApp for a Quote</span><span class="lang-fr">WhatsApp pour un devis</span></span>
                     <!-- Glow effect -->
                     <div class="absolute inset-0 rounded-2xl bg-[#25D366] opacity-0 group-hover:opacity-20 blur-xl transition-opacity"></div>
                 </a>
                     <a href="security.html" class="w-full sm:w-auto bg-white/5 border border-white/10 px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-white/10 transition-all text-white">
-                        View Our Services
+                        <span class="lang-en">View Our Services</span><span class="lang-fr">Voir nos services</span>
                     </a>
                 </div>
             </div>
@@ -793,7 +797,7 @@
         <div class="grid md:grid-cols-4 gap-12">
             <div>
                 <div class="text-3xl font-black mb-6 text-white  tracking-tighter">BIMPro</div>
-                <p class="text-gray-500 text-sm mb-4 italic">Multi-Service Group • One Standard</p>
+                <p class="text-gray-500 text-sm mb-4 italic"><span class="lang-en">Multi-Service Group • One Standard</span><span class="lang-fr">Groupe multi-services • Un standard</span></p>
                 <div class="text-gray-400 text-xs uppercase tracking-widest leading-relaxed">
                     Cape Town,<br>
                     South Africa
@@ -801,18 +805,18 @@
             </div>
 
             <div>
-                <h4 class="font-bold mb-6 text-[#FFD700] uppercase tracking-widest text-xs">Quick Links</h4>
+                <h4 class="font-bold mb-6 text-[#FFD700] uppercase tracking-widest text-xs"><span class="lang-en">Quick Links</span><span class="lang-fr">Liens rapides</span></h4>
                 <ul class="space-y-3 text-gray-400 text-sm">
-                    <li><a href="index.html" class="hover:text-[#B22222] transition-colors">Home</a></li>
-                    <li><a href="about.html" class="hover:text-[#B22222] transition-colors">About</a></li>
-                    <li><a href="security.html" class="hover:text-[#B22222] transition-colors">Services</a></li>
-                    <li><a href="portfolio.html" class="hover:text-[#B22222] transition-colors">Portfolio</a></li>
-                    <li><a href="contact.html" class="hover:text-[#B22222] transition-colors">Contact Us</a></li>
+                    <li><a href="index.html" class="hover:text-[#B22222] transition-colors"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a></li>
+                    <li><a href="about.html" class="hover:text-[#B22222] transition-colors"><span class="lang-en">About</span><span class="lang-fr">À propos</span></a></li>
+                    <li><a href="security.html" class="hover:text-[#B22222] transition-colors"><span class="lang-en">Services</span><span class="lang-fr">Services</span></a></li>
+                    <li><a href="portfolio.html" class="hover:text-[#B22222] transition-colors"><span class="lang-en">Portfolio</span><span class="lang-fr">Portfolio</span></a></li>
+                    <li><a href="contact.html" class="hover:text-[#B22222] transition-colors"><span class="lang-en">Contact Us</span><span class="lang-fr">Contactez-nous</span></a></li>
                 </ul>
             </div>
 
             <div>
-                <h4 class="font-bold mb-6 text-[#B22222] uppercase tracking-widest text-xs">Contact Us</h4>
+                <h4 class="font-bold mb-6 text-[#B22222] uppercase tracking-widest text-xs"><span class="lang-en">Contact Us</span><span class="lang-fr">Contactez-nous</span></h4>
                 <ul class="space-y-4 text-gray-400 text-sm">
                     <li class="flex items-center gap-3">
                         <i class="fab fa-whatsapp text-[#FFD700]"></i>
@@ -826,7 +830,7 @@
             </div>
 
             <div>
-                <h4 class="font-bold mb-6 text-[#FFD700] uppercase tracking-widest text-xs">Connect</h4>
+                <h4 class="font-bold mb-6 text-[#FFD700] uppercase tracking-widest text-xs"><span class="lang-en">Connect</span><span class="lang-fr">Connectez</span></h4>
                 <div class="flex gap-4">
                     <a href="" title="Facebook" class="w-10 h-10 rounded-lg flex items-center justify-center border border-[#FFD700]/20 bg-white/5 transition-all duration-300 group hover:bg-[#1877F2] hover:border-[#1877F2]">
                         <i class="fab fa-facebook-f text-[#FFD700] group-hover:text-white text-sm"></i>
@@ -843,10 +847,11 @@
 
         <div class="mt-20 pt-8 border-t border-white/5 text-center">
             <p class="text-gray-500 text-[11px] uppercase tracking-[0.2em] mb-2">
-                © 2026 BIMPro Enterprises (Pty) Ltd — Trading as BIMPro
+                © 2026 BIMPro Enterprises (Pty) Ltd — <span class="lang-en">Trading as BIMPro</span><span class="lang-fr">Opérant sous BIMPro</span>
             </p>
             <p class="text-gray-600 text-[9px] uppercase tracking-widest">
-                All Rights Reserved. Professional Security & Branding Solutions.
+                <span class="lang-en">All Rights Reserved. Professional Security & Branding Solutions.</span>
+                <span class="lang-fr">Tous droits réservés. Solutions professionnelles de sécurité et de branding.</span>
             </p>
         </div>
     </div>

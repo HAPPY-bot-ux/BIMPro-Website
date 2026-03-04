@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | BIMPro multi services group</title>
+    <title>Services | BIMPro groupe multi‑services</title>
     
     <!-- Tailwind & Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -49,6 +49,9 @@
         .lang-fr { display: none; }
         .is-french .lang-en { display: none; }
         .is-french .lang-fr { display: block; }
+        .is-french .lang-inline-en { display: none; }
+        .is-french .lang-inline-fr { display: inline; }
+        .lang-inline-fr { display: none; }
 
         /* Custom cursor – gold/red */
         .cursor {
@@ -258,15 +261,15 @@
                 <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full transition-all"></span>
             </a>
             <a href="services.html" class="nav-link relative group text-white">
-                <span class="lang-en">Services</span><span class="lang-fr hidden">Sécurité</span>
+                <span class="lang-en">Services</span><span class="lang-fr hidden">Services</span>
                 <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-[#FFD700]"></span>
             </a>
             <a href="portfolio.html" class="nav-link relative group text-white">
-                <span class="lang-en">Portfolio</span><span class="lang-fr hidden">portefeuille</span>
+                <span class="lang-en">Portfolio</span><span class="lang-fr hidden">Portfolio</span>
                 <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full transition-all"></span>
             </a>
             <a href="contact.html" class="nav-link relative group text-white">
-                <span class="lang-en">Contact</span><span class="lang-fr hidden">le contact</span>
+                <span class="lang-en">Contact</span><span class="lang-fr hidden">Contact</span>
                 <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full transition-all"></span>
             </a>
         </div>
@@ -292,9 +295,9 @@
    
     <a href="index.html" class="text-3xl font-black text-white hover:text-[#FFD700]" style="margin-top: 15rem;"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a>
     <a href="about.html" class="text-3xl font-black text-white hover:text-[#FFD700]"><span class="lang-en">About</span><span class="lang-fr">À propos</span></a>
-    <a href="security.html" class="text-3xl font-black text-[#FFD700] drop-shadow-[0_0_15px_rgba(255,215,0,0.3)]"><span class="lang-en">Security</span><span class="lang-fr">Sécurité</span></a>
-    <a href="portfolio.html" class="text-3xl font-black text-white hover:text-[#FFD700]"><span class="lang-en">Portfolio</span><span class="lang-fr">portefeuille</span></a>
-    <a href="contact.html" class="text-3xl font-black text-white hover:text-[#FFD700]"><span class="lang-en">Contact</span><span class="lang-fr">le contact </span></a>
+    <a href="security.html" class="text-3xl font-black text-[#FFD700] drop-shadow-[0_0_15px_rgba(255,215,0,0.3)]"><span class="lang-en">Services</span><span class="lang-fr">Services</span></a>
+    <a href="portfolio.html" class="text-3xl font-black text-white hover:text-[#FFD700]"><span class="lang-en">Portfolio</span><span class="lang-fr">Portfolio</span></a>
+    <a href="contact.html" class="text-3xl font-black text-white hover:text-[#FFD700]"><span class="lang-en">Contact</span><span class="lang-fr">Contact</span></a>
 
     
     
@@ -312,7 +315,7 @@
         <i class="fab fa-tiktok text-[#FFD700] group-hover:text-white transition-colors"></i>
     </a>
             </div>
-            <div class="mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-sm">© 2026 BIMPro multi services group. Excellence Delivered.</div>
+            <div class="mt-20 pt-8 border-t border-white/5 text-center text-gray-600 text-sm">© 2026 BIMPro multi services group. L'excellence livrée.</div>
         </div>
 
 </div>
@@ -378,7 +381,7 @@
     </div>
 
     <div class="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
-        <div class="text-[15vw] font-black text-white border-text" style="-webkit-text-stroke: 1px white; color: transparent;">INTEGRATED</div>
+        <div class="text-[15vw] font-black text-white border-text" style="-webkit-text-stroke: 1px white; color: transparent;"><span class="lang-en">INTEGRATED</span><span class="lang-fr">INTÉGRÉES</span></div>
     </div>
 
     <div class="absolute top-20 left-10 w-72 h-72 bg-[#B22222]/20 rounded-full blur-3xl float"></div>
@@ -386,16 +389,17 @@
 
     <div class="relative z-10 text-center px-6 max-w-6xl mx-auto">
         <span class="text-[#FFD700] font-mono tracking-[0.5em] text-[10px] md:text-xs animate-pulse uppercase">
-             Multi-Service Group • One Standard
+            <span class="lang-en">Multi-Service Group • One Standard</span><span class="lang-fr">Groupe multi-services • Un standard</span>
         </span>
         
         <h1 class="text-6xl md:text-8xl font-black leading-[0.9] mt-8 mb-6">
-            <span class="gradient-text uppercase">Complete</span><br>
-            <span class="text-white uppercase">Solutions</span>
+            <span class="gradient-text uppercase"><span class="lang-en">Complete</span><span class="lang-fr">Solutions</span></span><br>
+            <span class="text-white uppercase"><span class="lang-en">Solutions</span><span class="lang-fr">Complètes</span></span>
         </h1>
         
         <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto font-medium leading-relaxed">
-            Security, printing, branding, and more - delivered with structured execution.
+            <span class="lang-en">Security, printing, branding, and more - delivered with structured execution.</span>
+            <span class="lang-fr">Sécurité, impression, branding et plus - livrés avec une exécution structurée.</span>
         </p>
 
         <div class="mt-8 flex justify-center gap-2">
@@ -409,83 +413,83 @@
 
 <div class="bimpro-services-container">
 
-    <h2 class="section-header">🔐 Security Solutions by Sector</h2>
+    <h2 class="section-header"><span class="lang-en">🔐 Security Solutions by Sector</span><span class="lang-fr">🔐 Solutions de sécurité par secteur</span></h2>
     <div class="services-grid">
         <div class="service-card">
             <img src="images/residence.jpeg" alt="Home Security">
             <div class="card-body">
-                <h3>🏠 Residential Security</h3>
+                <h3><span class="lang-en">🏠 Residential Security</span><span class="lang-fr">🏠 Sécurité résidentielle</span></h3>
                 <ul>
-                    <li>HD/IP CCTV Systems</li>
-                    <li>Home Alarm Systems</li>
-                    <li>Gate & Access Control</li>
+                    <li><span class="lang-en">HD/IP CCTV Systems</span><span class="lang-fr">Systèmes CCTV HD/IP</span></li>
+                    <li><span class="lang-en">Home Alarm Systems</span><span class="lang-fr">Systèmes d'alarme domestique</span></li>
+                    <li><span class="lang-en">Gate & Access Control</span><span class="lang-fr">Contrôle d'accès & portail</span></li>
                 </ul>
-                <a href="https://wa.me/27697238080" class="wa-button">WhatsApp for a Quote</a>
+                <a href="https://wa.me/27697238080" class="wa-button"><span class="lang-en">WhatsApp for a Quote</span><span class="lang-fr">WhatsApp pour un devis</span></a>
             </div>
         </div>
 
         <div class="service-card">
             <img src="images/hall.jpeg" alt="Church Security">
             <div class="card-body">
-                <h3>⛪ Worship Facilities</h3>
+                <h3><span class="lang-en">⛪ Worship Facilities</span><span class="lang-fr">⛪ Lieux de culte</span></h3>
                 <ul>
-                    <li>Main Hall & Parking CCTV</li>
-                    <li>Zone-based Alarm Setup</li>
-                    <li>Office Access Control</li>
+                    <li><span class="lang-en">Main Hall & Parking CCTV</span><span class="lang-fr">CCTV salle principale & parking</span></li>
+                    <li><span class="lang-en">Zone-based Alarm Setup</span><span class="lang-fr">Alarme par zone</span></li>
+                    <li><span class="lang-en">Office Access Control</span><span class="lang-fr">Contrôle d'accès bureau</span></li>
                 </ul>
-                <a href="https://wa.me/27697238080" class="wa-button">WhatsApp for a Quote</a>
+                <a href="https://wa.me/27697238080" class="wa-button"><span class="lang-en">WhatsApp for a Quote</span><span class="lang-fr">WhatsApp pour un devis</span></a>
             </div>
         </div>
 
         <div class="service-card">
             <img src="images/retail.jpeg" alt="Business Security">
             <div class="card-body">
-                <h3>🏢 Business & Commercial</h3>
+                <h3><span class="lang-en">🏢 Business & Commercial</span><span class="lang-fr">🏢 Entreprise & Commerce</span></h3>
                 <ul>
-                    <li>Retail & Office Surveillance</li>
-                    <li>Warehouse Monitoring</li>
-                    <li>Commercial Alarms</li>
+                    <li><span class="lang-en">Retail & Office Surveillance</span><span class="lang-fr">Surveillance magasin & bureau</span></li>
+                    <li><span class="lang-en">Warehouse Monitoring</span><span class="lang-fr">Surveillance d'entrepôt</span></li>
+                    <li><span class="lang-en">Commercial Alarms</span><span class="lang-fr">Alarmes commerciales</span></li>
                 </ul>
-                <a href="https://wa.me/27697238080" class="wa-button">WhatsApp for a Quote</a>
+                <a href="https://wa.me/27697238080" class="wa-button"><span class="lang-en">WhatsApp for a Quote</span><span class="lang-fr">WhatsApp pour un devis</span></a>
             </div>
         </div>
     </div>
 
-    <h2 class="section-header">🖨️ Print & Branding Solutions</h2>
+    <h2 class="section-header"><span class="lang-en">🖨️ Print & Branding Solutions</span><span class="lang-fr">🖨️ Solutions d'impression & branding</span></h2>
     <div class="services-grid">
         <div class="service-card">
             <img src="images/uniform.jpeg" alt="Uniforms">
             <div class="card-body">
-                <h3>👕 Corporate Apparel</h3>
-                <p>Branded workwear, security uniforms, church uniforms, and custom business apparel.</p>
-                <a href="https://wa.me/27697238080" class="wa-button">Order via WhatsApp</a>
+                <h3><span class="lang-en">👕 Corporate Apparel</span><span class="lang-fr">👕 Vêtements d'entreprise</span></h3>
+                <p><span class="lang-en">Branded workwear, security uniforms, church uniforms, and custom business apparel.</span><span class="lang-fr">Vêtements de travail de marque, uniformes de sécurité, uniformes d'église et vêtements d'entreprise personnalisés.</span></p>
+                <a href="https://wa.me/27697238080" class="wa-button"><span class="lang-en">Order via WhatsApp</span><span class="lang-fr">Commander via WhatsApp</span></a>
             </div>
         </div>
 
         <div class="service-card">
             <img src="images/mugs.jpeg" alt="Gifts">
             <div class="card-body">
-                <h3>🎁 Color-Changing Gifts</h3>
-                <p>Heat-reactive mugs and surprise reveal gifts — perfect for birthdays and announcements.</p>
-                <a href="https://wa.me/27697238080" class="wa-button">Order Now</a>
+                <h3><span class="lang-en">🎁 Color-Changing Gifts</span><span class="lang-fr">🎁 Cadeaux thermochromiques</span></h3>
+                <p><span class="lang-en">Heat-reactive mugs and surprise reveal gifts — perfect for birthdays and announcements.</span><span class="lang-fr">Mugs thermosensibles et cadeaux à révélation surprise — parfaits pour les anniversaires et annonces.</span></p>
+                <a href="https://wa.me/27697238080" class="wa-button"><span class="lang-en">Order Now</span><span class="lang-fr">Commander</span></a>
             </div>
         </div>
 
         <div class="service-card">
             <img src="images/stickers.jpeg" alt="Stickers">
             <div class="card-body">
-                <h3>🚗 Custom Stickers</h3>
-                <p>Vinyl car decals for branding and waterproof, custom-cut product labels.</p>
-                <a href="https://wa.me/27697238080" class="wa-button">Get a Quote</a>
+                <h3><span class="lang-en">🚗 Custom Stickers</span><span class="lang-fr">🚗 Autocollants personnalisés</span></h3>
+                <p><span class="lang-en">Vinyl car decals for branding and waterproof, custom-cut product labels.</span><span class="lang-fr">Décalcomanies vinyle pour voiture et étiquettes de produits imperméables découpées sur mesure.</span></p>
+                <a href="https://wa.me/27697238080" class="wa-button"><span class="lang-en">Get a Quote</span><span class="lang-fr">Demander un devis</span></a>
             </div>
         </div>
     </div>
 
     <div class="location-section">
-        <h3>📍 Based in Cape Town</h3>
-        <p>Serving clients across the Western Cape with professional installations.</p>
-        <p>📦 <strong>Nationwide delivery</strong> available via <span class="paxi-tag">PAXI Courier</span>.</p>
-        <p><em>Collect from your nearest PEP store anywhere in South Africa!</em></p>
+        <h3>📍 <span class="lang-en">Based in Cape Town</span><span class="lang-fr">Basé au Cap</span></h3>
+        <p><span class="lang-en">Serving clients across the Western Cape with professional installations.</span><span class="lang-fr">Au service des clients du Western Cape avec des installations professionnelles.</span></p>
+        <p>📦 <strong><span class="lang-en">Nationwide delivery</span><span class="lang-fr">Livraison nationale</span></strong> <span class="lang-en">available via</span><span class="lang-fr">disponible via</span> <span class="paxi-tag">PAXI Courier</span>.</p>
+        <p><em><span class="lang-en">Collect from your nearest PEP store anywhere in South Africa!</span><span class="lang-fr">Retirez dans votre magasin PEP le plus proche partout en Afrique du Sud !</span></em></p>
     </div>
 
 </div>
@@ -635,22 +639,22 @@
             
             <div class="glass-card p-6 rounded-2xl text-center border border-white/5 hover:border-[#FFD700]/30 transition-colors">
                 <i class="fas fa-layer-group text-[#FFD700] text-xl mb-3 block"></i>
-                <span class="block text-[10px] uppercase font-black tracking-[0.2em] text-white leading-tight">Structured<br>Delivery</span>
+                <span class="block text-[10px] uppercase font-black tracking-[0.2em] text-white leading-tight"><span class="lang-en">Structured<br>Delivery</span><span class="lang-fr">Livraison<br>Structurée</span></span>
             </div>
 
             <div class="glass-card p-6 rounded-2xl text-center border border-white/5 hover:border-[#B22222]/30 transition-colors">
                 <i class="fas fa-check-double text-[#B22222] text-xl mb-3 block"></i>
-                <span class="block text-[10px] uppercase font-black tracking-[0.2em] text-white leading-tight">Quality<br>Standards</span>
+                <span class="block text-[10px] uppercase font-black tracking-[0.2em] text-white leading-tight"><span class="lang-en">Quality<br>Standards</span><span class="lang-fr">Normes de<br>Qualité</span></span>
             </div>
 
             <div class="glass-card p-6 rounded-2xl text-center border border-white/5 hover:border-[#FFD700]/30 transition-colors">
                 <i class="fas fa-comment-alt text-[#FFD700] text-xl mb-3 block"></i>
-                <span class="block text-[10px] uppercase font-black tracking-[0.2em] text-white leading-tight">Clear<br>Communication</span>
+                <span class="block text-[10px] uppercase font-black tracking-[0.2em] text-white leading-tight"><span class="lang-en">Clear<br>Communication</span><span class="lang-fr">Communication<br>Claire</span></span>
             </div>
 
             <div class="glass-card p-6 rounded-2xl text-center border border-white/5 hover:border-[#B22222]/30 transition-colors">
                 <i class="fas fa-headset text-[#B22222] text-xl mb-3 block"></i>
-                <span class="block text-[10px] uppercase font-black tracking-[0.2em] text-white leading-tight">Reliable<br>Support</span>
+                <span class="block text-[10px] uppercase font-black tracking-[0.2em] text-white leading-tight"><span class="lang-en">Reliable<br>Support</span><span class="lang-fr">Support<br>Fiable</span></span>
             </div>
 
         </div>
@@ -666,9 +670,9 @@
                 <i class="fas fa-shield-alt text-[#FFD700]"></i>
             </span>
             <div>
-                <span class="text-[#FFD700] font-mono text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] block mb-1">DIVISION 01 — Services & SMART PROTECTION</span>
+                <span class="text-[#FFD700] font-mono text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] block mb-1"><span class="lang-en">DIVISION 01 — Services & SMART PROTECTION</span><span class="lang-fr">DIVISION 01 — Services & PROTECTION INTELLIGENTE</span></span>
                 <h2 class="text-3xl sm:text-4xl md:text-5xl font-black leading-tight">
-                    <span class="gradient-text">Advanced Security Systems</span>
+                    <span class="gradient-text"><span class="lang-en">Advanced Security Systems</span><span class="lang-fr">Systèmes de sécurité avancés</span></span>
                 </h2>
             </div>
         </div>
@@ -678,30 +682,33 @@
     <div class="glass-card p-8 rounded-2xl border-l-4 border-[#FFD700] bg-white/5 hover:bg-white/10 transition-all duration-300 group">
         <div class="flex items-center gap-4 mb-3">
             <i class="fas fa-tools text-[#FFD700] text-xl opacity-70 group-hover:scale-110 transition-transform"></i>
-            <h4 class="text-xl font-black text-white uppercase tracking-tight">Structured Installation</h4>
+            <h4 class="text-xl font-black text-white uppercase tracking-tight"><span class="lang-en">Structured Installation</span><span class="lang-fr">Installation structurée</span></h4>
         </div>
         <p class="text-sm text-gray-400 leading-relaxed">
-            Clean cabling. Proper positioning. <br class="hidden md:block"/> Professional setup.
+            <span class="lang-en">Clean cabling. Proper positioning. Professional setup.</span>
+            <span class="lang-fr">Câblage propre. Positionnement correct. Installation professionnelle.</span>
         </p>
     </div>
 
     <div class="glass-card p-8 rounded-2xl border-l-4 border-[#B22222] bg-white/5 hover:bg-white/10 transition-all duration-300 group">
         <div class="flex items-center gap-4 mb-3">
             <i class="fas fa-shield-check text-[#B22222] text-xl opacity-70 group-hover:scale-110 transition-transform"></i>
-            <h4 class="text-xl font-black text-white uppercase tracking-tight">Quality Equipment</h4>
+            <h4 class="text-xl font-black text-white uppercase tracking-tight"><span class="lang-en">Quality Equipment</span><span class="lang-fr">Équipement de qualité</span></h4>
         </div>
         <p class="text-sm text-gray-400 leading-relaxed">
-            Reliable brands. Tested systems. <br class="hidden md:block"/> Clear configuration.
+            <span class="lang-en">Reliable brands. Tested systems. Clear configuration.</span>
+            <span class="lang-fr">Marques fiables. Systèmes testés. Configuration claire.</span>
         </p>
     </div>
 
     <div class="glass-card p-8 rounded-2xl border-l-4 border-[#FFD700] bg-white/5 hover:bg-white/10 transition-all duration-300 group">
         <div class="flex items-center gap-4 mb-3">
             <i class="fas fa-headset text-[#FFD700] text-xl opacity-70 group-hover:scale-110 transition-transform"></i>
-            <h4 class="text-xl font-black text-white uppercase tracking-tight">Ongoing Support</h4>
+            <h4 class="text-xl font-black text-white uppercase tracking-tight"><span class="lang-en">Ongoing Support</span><span class="lang-fr">Support continu</span></h4>
         </div>
         <p class="text-sm text-gray-400 leading-relaxed">
-            Setup guidance. System training. <br class="hidden md:block"/> Maintenance options.
+            <span class="lang-en">Setup guidance. System training. Maintenance options.</span>
+            <span class="lang-fr">Conseils d'installation. Formation système. Options de maintenance.</span>
         </p>
     </div>
 
@@ -714,32 +721,33 @@
         
         <div class="w-full lg:w-3/5 text-center lg:text-left">
             <div class="inline-block px-4 py-1 rounded-full bg-[#B22222]/20 border border-[#B22222]/30 text-[#B22222] text-[10px] uppercase tracking-[0.3em] font-bold mb-6">
-                Service Excellence
+                <span class="lang-en">Service Excellence</span><span class="lang-fr">Excellence du service</span>
             </div>
             <h4 class="text-3xl md:text-4xl font-black mb-6 text-white leading-tight uppercase tracking-tighter">
-                Support & <span class="text-[#FFD700]">Maintenance</span>
+                <span class="lang-en">Support &</span><span class="lang-fr">Support &</span> <span class="text-[#FFD700]"><span class="lang-en">Maintenance</span><span class="lang-fr">Maintenance</span></span>
             </h4>
             <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-                We provide professional installation, system configuration, and client training. 
-                <span class="text-white/60">Maintenance and upgrade services available upon request.</span>
+                <span class="lang-en">We provide professional installation, system configuration, and client training.</span>
+                <span class="lang-fr">Nous fournissons une installation professionnelle, la configuration du système et la formation des clients.</span>
+                <span class="text-white/60"> <span class="lang-en">Maintenance and upgrade services available upon request.</span><span class="lang-fr">Services de maintenance et de mise à niveau disponibles sur demande.</span></span>
             </p>
         </div>
 
         <div class="w-full lg:w-2/5 flex items-center justify-around lg:justify-end gap-4 md:gap-12 border-t lg:border-t-0 lg:border-l border-white/10 pt-8 lg:pt-0 lg:pl-12">
             
             <div class="text-center lg:text-right">
-                <p class="text-[10px] uppercase tracking-[0.2em] text-[#FFD700] font-bold mb-3">Fast Response</p>
+                <p class="text-[10px] uppercase tracking-[0.2em] text-[#FFD700] font-bold mb-3"><span class="lang-en">Fast Response</span><span class="lang-fr">Réponse rapide</span></p>
                 <h5 class="text-xl md:text-2xl font-black text-white leading-none uppercase">
-                    WhatsApp<br/>Support
+                    WhatsApp<br/><span class="lang-en">Support</span><span class="lang-fr">Support</span>
                 </h5>
             </div>
 
             <div class="hidden md:block h-12 w-[1px] bg-gradient-to-b from-transparent via-white/20 to-transparent"></div>
 
             <div class="text-center lg:text-right">
-                <p class="text-[10px] uppercase tracking-[0.2em] text-[#B22222] font-bold mb-3">Service Hours</p>
+                <p class="text-[10px] uppercase tracking-[0.2em] text-[#B22222] font-bold mb-3"><span class="lang-en">Service Hours</span><span class="lang-fr">Horaires</span></p>
                 <h5 class="text-xl md:text-2xl font-black text-white leading-none uppercase">
-                    Mon–Sat
+                    <span class="lang-en">Mon–Sat</span><span class="lang-fr">Lun–Sam</span>
                 </h5>
             </div>
 
@@ -798,9 +806,9 @@
                 <div class="absolute -inset-2 border border-[#FFD700]/20 rounded-2xl animate-pulse"></div>
             </div>
             <div>
-                <span class="text-[#FFD700] font-mono text-[10px] tracking-[0.4em] uppercase">DIVISION 02 — Print & Branding Solutions</span>
+                <span class="text-[#FFD700] font-mono text-[10px] tracking-[0.4em] uppercase"><span class="lang-en">DIVISION 02 — Print & Branding Solutions</span><span class="lang-fr">DIVISION 02 — Solutions d'impression & branding</span></span>
                 <h2 class="text-4xl md:text-6xl font-black tracking-tighter uppercase text-white">
-                    Creative <span class="gradient-text">Branding</span>
+                    <span class="lang-en">Creative</span><span class="lang-fr">Branding</span> <span class="gradient-text"><span class="lang-en">Branding</span><span class="lang-fr">Créatif</span></span>
                 </h2>
             </div>
         </div>
@@ -810,8 +818,8 @@
             <div class="glass-card p-8 rounded-[2rem] border border-white/5 hover:border-[#FFD700]/30 transition-all group relative overflow-hidden">
                 <div class="absolute top-0 right-0 p-4 opacity-10 font-mono text-[8px]">MD_PRNT_V1</div>
                 <i class="fas fa-tshirt text-4xl text-[#FFD700] mb-6 group-hover:scale-110 transition-transform"></i>
-                <h3 class="text-2xl font-black mb-3 text-white">T-Shirt Printing</h3>
-                <p class="text-sm text-zinc-400 leading-relaxed mb-4">Screen printing, DTG, vinyl, and heat press. Precision bulk or sample production.</p>
+                <h3 class="text-2xl font-black mb-3 text-white"><span class="lang-en">T-Shirt Printing</span><span class="lang-fr">Impression de T-shirts</span></h3>
+                <p class="text-sm text-zinc-400 leading-relaxed mb-4"><span class="lang-en">Screen printing, DTG, vinyl, and heat press. Precision bulk or sample production.</span><span class="lang-fr">Sérigraphie, DTG, vinyle et presse à chaud. Production de précision en gros ou échantillons.</span></p>
                 <div class="flex gap-2">
                     <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[9px] font-bold text-[#FFD700] uppercase">Screen</span>
                     <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[9px] font-bold text-[#FFD700] uppercase">DTG</span>
@@ -820,32 +828,32 @@
 
             <div class="glass-card p-8 rounded-[2rem] border border-white/5 hover:border-[#B22222]/30 transition-all group relative">
                 <i class="fas fa-user-tie text-4xl text-[#B22222] mb-6 group-hover:scale-110 transition-transform"></i>
-                <h3 class="text-2xl font-black mb-3 text-white">Custom Apparel</h3>
-                <p class="text-sm text-zinc-400 leading-relaxed">Corporate uniforms, sportswear, workwear, and headwear tailored to your identity.</p>
+                <h3 class="text-2xl font-black mb-3 text-white"><span class="lang-en">Custom Apparel</span><span class="lang-fr">Vêtements personnalisés</span></h3>
+                <p class="text-sm text-zinc-400 leading-relaxed"><span class="lang-en">Corporate uniforms, sportswear, workwear, and headwear tailored to your identity.</span><span class="lang-fr">Uniformes d'entreprise, vêtements de sport, vêtements de travail et couvre-chefs adaptés à votre identité.</span></p>
             </div>
 
             <div class="glass-card p-8 rounded-[2rem] border border-white/5 hover:border-[#FFD700]/30 transition-all group">
                 <i class="fas fa-tag text-4xl text-[#FFD700] mb-6 group-hover:scale-110 transition-transform"></i>
-                <h3 class="text-2xl font-black mb-3 text-white">Stickers & Labels</h3>
-                <p class="text-sm text-zinc-400 leading-relaxed">Vinyl, die-cut, and waterproof solutions. Custom shapes with high-durability finish.</p>
+                <h3 class="text-2xl font-black mb-3 text-white"><span class="lang-en">Stickers & Labels</span><span class="lang-fr">Autocollants & étiquettes</span></h3>
+                <p class="text-sm text-zinc-400 leading-relaxed"><span class="lang-en">Vinyl, die-cut, and waterproof solutions. Custom shapes with high-durability finish.</span><span class="lang-fr">Solutions vinyle, découpe et imperméables. Formes personnalisées avec finition haute durabilité.</span></p>
             </div>
 
             <div class="glass-card p-8 rounded-[2rem] border border-white/5 hover:border-[#B22222]/30 transition-all group">
                 <i class="fas fa-briefcase text-4xl text-[#B22222] mb-6 group-hover:scale-110 transition-transform"></i>
-                <h3 class="text-2xl font-black mb-3 text-white">Business Branding</h3>
-                <p class="text-sm text-zinc-400 leading-relaxed">Stationery, professional signage, and comprehensive corporate identity packages.</p>
+                <h3 class="text-2xl font-black mb-3 text-white"><span class="lang-en">Business Branding</span><span class="lang-fr">Branding d'entreprise</span></h3>
+                <p class="text-sm text-zinc-400 leading-relaxed"><span class="lang-en">Stationery, professional signage, and comprehensive corporate identity packages.</span><span class="lang-fr">Papeterie, signalétique professionnelle et packages d'identité corporative complets.</span></p>
             </div>
 
             <div class="glass-card p-8 rounded-[2rem] border border-white/5 hover:border-[#FFD700]/30 transition-all group">
                 <i class="fas fa-gift text-4xl text-[#FFD700] mb-6 group-hover:scale-110 transition-transform"></i>
-                <h3 class="text-2xl font-black mb-3 text-white">Promo Merch</h3>
-                <p class="text-sm text-zinc-400 leading-relaxed">Custom caps, bags, pens, and drinkware designed for high-impact marketing.</p>
+                <h3 class="text-2xl font-black mb-3 text-white"><span class="lang-en">Promo Merch</span><span class="lang-fr">Articles promotionnels</span></h3>
+                <p class="text-sm text-zinc-400 leading-relaxed"><span class="lang-en">Custom caps, bags, pens, and drinkware designed for high-impact marketing.</span><span class="lang-fr">Casquettes, sacs, stylos et gourdes personnalisés conçus pour un marketing percutant.</span></p>
             </div>
 
             <div class="glass-card p-8 rounded-[2rem] border border-white/5 hover:border-[#B22222]/30 transition-all group">
                 <i class="fas fa-print text-4xl text-[#B22222] mb-6 group-hover:scale-110 transition-transform"></i>
-                <h3 class="text-2xl font-black mb-3 text-white">Large Format</h3>
-                <p class="text-sm text-zinc-400 leading-relaxed">Banners, posters, and heavy-duty vinyl decals for indoor and outdoor use.</p>
+                <h3 class="text-2xl font-black mb-3 text-white"><span class="lang-en">Large Format</span><span class="lang-fr">Grand format</span></h3>
+                <p class="text-sm text-zinc-400 leading-relaxed"><span class="lang-en">Banners, posters, and heavy-duty vinyl decals for indoor and outdoor use.</span><span class="lang-fr">Bannières, affiches et décalcomanies vinyle robustes pour usage intérieur et extérieur.</span></p>
             </div>
 
         </div>
@@ -853,15 +861,15 @@
         <div class="mt-16 flex flex-wrap items-center gap-6 px-8 py-4 bg-white/5 rounded-full border border-white/10 w-fit">
             <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 bg-[#FFD700] rounded-full"></div>
-                <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">Pantone® Matched</span>
+                <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest"><span class="lang-en">Pantone® Matched</span><span class="lang-fr">Appariement Pantone®</span></span>
             </div>
             <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 bg-[#B22222] rounded-full"></div>
-                <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">Eco-Solvent Inks</span>
+                <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest"><span class="lang-en">Eco-Solvent Inks</span><span class="lang-fr">Encres éco-solvant</span></span>
             </div>
             <div class="flex items-center gap-2">
                 <div class="w-1.5 h-1.5 bg-[#FFD700] rounded-full"></div>
-                <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">1200 DPI High-Res</span>
+                <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest"><span class="lang-en">1200 DPI High-Res</span><span class="lang-fr">1200 DPI Haute résolution</span></span>
             </div>
         </div>
     </div>
@@ -872,54 +880,54 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <span class="text-[#FFD700] font-mono tracking-[0.3em] text-xs">✦ TECHNOLOGY</span>
-                    <h2 class="text-5xl md:text-6xl font-black mt-8 mb-10 leading-tight"><span class="gradient-text">Precision Across<br>Disciplines</span></h2>
-                    <p class="text-gray-400 text-lg mb-8">We deploy the same rigorous standards whether securing a facility or printing a garment.</p>
+                    <span class="text-[#FFD700] font-mono tracking-[0.3em] text-xs"><span class="lang-en">✦ TECHNOLOGY</span><span class="lang-fr">✦ TECHNOLOGIE</span></span>
+                    <h2 class="text-5xl md:text-6xl font-black mt-8 mb-10 leading-tight"><span class="gradient-text"><span class="lang-en">Precision Across</span><span class="lang-fr">Précision dans</span><br><span class="lang-en">Disciplines</span><span class="lang-fr">toutes les disciplines</span></span></h2>
+                    <p class="text-gray-400 text-lg mb-8"><span class="lang-en">We deploy the same rigorous standards whether securing a facility or printing a garment.</span><span class="lang-fr">Nous appliquons les mêmes normes rigoureuses, que ce soit pour sécuriser un bâtiment ou imprimer un vêtement.</span></p>
                     <div class="space-y-5">
                         <div class="flex items-start gap-4">
                             <div class="w-12 h-12 glass rounded-xl flex items-center justify-center text-[#FFD700]"><i class="fas fa-microchip"></i></div>
-                            <div><h4 class="font-bold mb-1">Security Tech</h4><p class="text-sm text-gray-500">Hikvision, Dahua, AI analytics, 4K surveillance</p></div>
+                            <div><h4 class="font-bold mb-1"><span class="lang-en">Security Tech</span><span class="lang-fr">Tech Sécurité</span></h4><p class="text-sm text-gray-500"><span class="lang-en">Hikvision, Dahua, AI analytics, 4K surveillance</span><span class="lang-fr">Hikvision, Dahua, analyses IA, surveillance 4K</span></p></div>
                         </div>
                         <div class="flex items-start gap-4">
                             <div class="w-12 h-12 glass rounded-xl flex items-center justify-center text-[#B22222]"><i class="fas fa-palette"></i></div>
-                            <div><h4 class="font-bold mb-1">Print Tech</h4><p class="text-sm text-gray-500">Epson SureColor, Pantone matching, eco‑solvent</p></div>
+                            <div><h4 class="font-bold mb-1"><span class="lang-en">Print Tech</span><span class="lang-fr">Tech Impression</span></h4><p class="text-sm text-gray-500"><span class="lang-en">Epson SureColor, Pantone matching, eco‑solvent</span><span class="lang-fr">Epson SureColor, appariement Pantone, éco‑solvant</span></p></div>
                         </div>
                     </div>
                 </div>
                   <div class="grid grid-cols-2 gap-4">
     <div class="glass-card p-6 md:p-8 rounded-3xl text-center border border-white/5 hover:bg-white/10 transition-colors group">
         <div class="text-sm font-black text-[#FFD700] uppercase tracking-[0.2em] mb-2 group-hover:scale-105 transition-transform">
-            Security <br class="sm:hidden"/> Technology
+            <span class="lang-en">Security</span><span class="lang-fr">Sécurité</span> <br class="sm:hidden"/> <span class="lang-en">Technology</span><span class="lang-fr">Technologie</span>
         </div>
         <div class="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest leading-relaxed">
-            IP & smart <br/> configuration
+            <span class="lang-en">IP & smart configuration</span><span class="lang-fr">IP & configuration intelligente</span>
         </div>
     </div>
 
     <div class="glass-card p-6 md:p-8 rounded-3xl text-center border border-white/5 hover:bg-white/10 transition-colors group">
         <div class="text-sm font-black text-[#B22222] uppercase tracking-[0.2em] mb-2 group-hover:scale-105 transition-transform">
-            Print <br class="sm:hidden"/> Precision
+            <span class="lang-en">Print</span><span class="lang-fr">Impression</span> <br class="sm:hidden"/> <span class="lang-en">Precision</span><span class="lang-fr">Précision</span>
         </div>
         <div class="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest leading-relaxed">
-            HTV • Sublimation <br/> Clean finish
+            <span class="lang-en">HTV • Sublimation</span><span class="lang-fr">HTV • Sublimation</span> <br/> <span class="lang-en">Clean finish</span><span class="lang-fr">Finition soignée</span>
         </div>
     </div>
 
     <div class="glass-card p-6 md:p-8 rounded-3xl text-center border border-white/5 hover:bg-white/10 transition-colors group">
         <div class="text-sm font-black text-[#FFD700] uppercase tracking-[0.2em] mb-2 group-hover:scale-105 transition-transform">
-            Quality <br class="sm:hidden"/> Control
+            <span class="lang-en">Quality</span><span class="lang-fr">Contrôle</span> <br class="sm:hidden"/> <span class="lang-en">Control</span><span class="lang-fr">Qualité</span>
         </div>
         <div class="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest leading-relaxed">
-            Tested & <br/> verified setup
+            <span class="lang-en">Tested & verified setup</span><span class="lang-fr">Configuration testée & vérifiée</span>
         </div>
     </div>
 
     <div class="glass-card p-6 md:p-8 rounded-3xl text-center border border-white/5 hover:bg-white/10 transition-colors group">
         <div class="text-sm font-black text-[#B22222] uppercase tracking-[0.2em] mb-2 group-hover:scale-105 transition-transform">
-            Support <br class="sm:hidden"/> Options
+            <span class="lang-en">Support</span><span class="lang-fr">Support</span> <br class="sm:hidden"/> <span class="lang-en">Options</span><span class="lang-fr">Options</span>
         </div>
         <div class="text-[10px] md:text-xs text-gray-400 uppercase tracking-widest leading-relaxed">
-            After-install <br/> assistance
+            <span class="lang-en">After-install assistance</span><span class="lang-fr">Assistance post-installation</span>
         </div>
     </div>
 </div>
@@ -934,8 +942,8 @@
                 <div class="flex gap-8 items-center flex-wrap md:flex-nowrap">
                     <div class="w-20 h-20 rounded-full bg-[#B22222] flex items-center justify-center text-4xl text-[#FFD700]"><i class="fas fa-quote-right"></i></div>
                     <div>
-                        <p class="text-2xl font-light mb-4">“BIMPro handled our office security and staff uniforms seamlessly – one partner, two divisions, exceptional quality.”</p>
-                        <p class="font-bold text-[#FFD700]">— James Carter, Operations Director</p>
+                        <p class="text-2xl font-light mb-4"><span class="lang-en">“BIMPro handled our office security and staff uniforms seamlessly – one partner, two divisions, exceptional quality.”</span><span class="lang-fr">« BIMPro a géré la sécurité de notre bureau et nos uniformes sans effort – un partenaire, deux divisions, une qualité exceptionnelle. »</span></p>
+                        <p class="font-bold text-[#FFD700]">— James Carter, <span class="lang-en">Operations Director</span><span class="lang-fr">Directeur des opérations</span></p>
                     </div>
                 </div>
             </div>
@@ -948,11 +956,11 @@
             <div class="glass-card p-20 rounded-[5rem] relative overflow-hidden border border-[#FFD700]/30">
                 <div class="absolute inset-0 opacity-5 text-9xl font-black text-[#FFD700]">BIMPro</div>
                 <div class="relative">
-                    <h2 class="text-6xl md:text-7xl font-black mb-8"><span class="gradient-text">Secure &<br>Brand</span></h2>
-                    <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">From advanced security to creative apparel – we deliver integrated excellence.</p>
+                    <h2 class="text-6xl md:text-7xl font-black mb-8"><span class="gradient-text"><span class="lang-en">Secure &</span><span class="lang-fr">Sécurisez &</span><br><span class="lang-en">Brand</span><span class="lang-fr">Marquez</span></span></h2>
+                    <p class="text-xl text-gray-400 mb-12 max-w-2xl mx-auto"><span class="lang-en">From advanced security to creative apparel – we deliver integrated excellence.</span><span class="lang-fr">De la sécurité avancée aux vêtements créatifs – nous livrons l'excellence intégrée.</span></p>
                     <div class="flex flex-col md:flex-row gap-6 justify-center">
-                        <a href="contact.html" class="inline-block bg-[#B22222] px-12 py-6 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-[#9e2a2a] transition-all border border-[#FFD700]">Request Consultation</a>
-                        <a href="portfolio.html" class="inline-block bg-[#FFD700] text-black px-12 py-6 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-[#eab308] transition-all border border-[#B22222]">View Portfolio</a>
+                        <a href="contact.html" class="inline-block bg-[#B22222] px-12 py-6 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-[#9e2a2a] transition-all border border-[#FFD700]"><span class="lang-en">Request Consultation</span><span class="lang-fr">Demander une consultation</span></a>
+                        <a href="portfolio.html" class="inline-block bg-[#FFD700] text-black px-12 py-6 rounded-2xl font-black text-sm uppercase tracking-widest hover:bg-[#eab308] transition-all border border-[#B22222]"><span class="lang-en">View Portfolio</span><span class="lang-fr">Voir le portfolio</span></a>
                     </div>
                 </div>
             </div>
@@ -965,7 +973,7 @@
         <div class="grid md:grid-cols-4 gap-12">
             <div>
                 <div class="text-3xl font-black mb-6 text-white  tracking-tighter">BIMPro</div>
-                <p class="text-gray-500 text-sm mb-4 italic">Multi-Service Group • One Standard</p>
+                <p class="text-gray-500 text-sm mb-4 italic"><span class="lang-en">Multi-Service Group • One Standard</span><span class="lang-fr">Groupe multi-services • Un standard</span></p>
                 <div class="text-gray-400 text-xs uppercase tracking-widest leading-relaxed">
                     Cape Town,<br>
                     South Africa
@@ -973,18 +981,18 @@
             </div>
 
             <div>
-                <h4 class="font-bold mb-6 text-[#FFD700] uppercase tracking-widest text-xs">Quick Links</h4>
+                <h4 class="font-bold mb-6 text-[#FFD700] uppercase tracking-widest text-xs"><span class="lang-en">Quick Links</span><span class="lang-fr">Liens rapides</span></h4>
                 <ul class="space-y-3 text-gray-400 text-sm">
-                    <li><a href="index.html" class="hover:text-[#B22222] transition-colors">Home</a></li>
-                    <li><a href="about.html" class="hover:text-[#B22222] transition-colors">About</a></li>
-                    <li><a href="security.html" class="hover:text-[#B22222] transition-colors">Services</a></li>
-                    <li><a href="portfolio.html" class="hover:text-[#B22222] transition-colors">Portfolio</a></li>
-                    <li><a href="contact.html" class="hover:text-[#B22222] transition-colors">Contact Us</a></li>
+                    <li><a href="index.html" class="hover:text-[#B22222] transition-colors"><span class="lang-en">Home</span><span class="lang-fr">Accueil</span></a></li>
+                    <li><a href="about.html" class="hover:text-[#B22222] transition-colors"><span class="lang-en">About</span><span class="lang-fr">À propos</span></a></li>
+                    <li><a href="security.html" class="hover:text-[#B22222] transition-colors"><span class="lang-en">Services</span><span class="lang-fr">Services</span></a></li>
+                    <li><a href="portfolio.html" class="hover:text-[#B22222] transition-colors"><span class="lang-en">Portfolio</span><span class="lang-fr">Portfolio</span></a></li>
+                    <li><a href="contact.html" class="hover:text-[#B22222] transition-colors"><span class="lang-en">Contact Us</span><span class="lang-fr">Contactez-nous</span></a></li>
                 </ul>
             </div>
 
             <div>
-                <h4 class="font-bold mb-6 text-[#B22222] uppercase tracking-widest text-xs">Contact Us</h4>
+                <h4 class="font-bold mb-6 text-[#B22222] uppercase tracking-widest text-xs"><span class="lang-en">Contact Us</span><span class="lang-fr">Contactez-nous</span></h4>
                 <ul class="space-y-4 text-gray-400 text-sm">
                     <li class="flex items-center gap-3">
                         <i class="fab fa-whatsapp text-[#FFD700]"></i>
@@ -998,7 +1006,7 @@
             </div>
 
             <div>
-                <h4 class="font-bold mb-6 text-[#FFD700] uppercase tracking-widest text-xs">Connect</h4>
+                <h4 class="font-bold mb-6 text-[#FFD700] uppercase tracking-widest text-xs"><span class="lang-en">Connect</span><span class="lang-fr">Connectez</span></h4>
                 <div class="flex gap-4">
                     <a href="https://www.facebook.com/BIMProEnterprises" title="Facebook" class="w-10 h-10 rounded-lg flex items-center justify-center border border-[#FFD700]/20 bg-white/5 transition-all duration-300 group hover:bg-[#1877F2] hover:border-[#1877F2]">
                         <i class="fab fa-facebook-f text-[#FFD700] group-hover:text-white text-sm"></i>
@@ -1015,10 +1023,11 @@
 
         <div class="mt-20 pt-8 border-t border-white/5 text-center">
             <p class="text-gray-500 text-[11px] uppercase tracking-[0.2em] mb-2">
-                © 2026 BIMPro Enterprises (Pty) Ltd — Trading as BIMPro
+                © 2026 BIMPro Enterprises (Pty) Ltd — <span class="lang-en">Trading as BIMPro</span><span class="lang-fr">Opérant sous BIMPro</span>
             </p>
             <p class="text-gray-600 text-[9px] uppercase tracking-widest">
-                All Rights Reserved. Professional Security & Branding Solutions.
+                <span class="lang-en">All Rights Reserved. Professional Security & Branding Solutions.</span>
+                <span class="lang-fr">Tous droits réservés. Solutions professionnelles de sécurité et de branding.</span>
             </p>
         </div>
     </div>
