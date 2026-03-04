@@ -269,40 +269,40 @@
     </div>
 </div>
 
-<nav class="fixed w-full z-50 py-4 px-6 md:py-6 md:px-8 flex justify-between items-center transition-all duration-500" id="navbar">
-   <div class="glass px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center gap-4" style="border-color: #FFD70030; background: rgba(0,0,0,0.2); backdrop-filter: blur(10px);">
+<nav class="fixed w-full z-50 py-4 px-6 md:py-6 md:px-8 flex justify-between items-center transition-all duration-300" id="navbar">
+    <div class="glass px-6 py-3 md:px-8 md:py-4 rounded-full flex items-center gap-4 border" style="border-color: rgba(255,215,0,0.25); background: rgba(0,0,0,0.2); backdrop-filter: blur(10px);">
         <div class="text-xl md:text-2xl font-black tracking-tighter">
-            <span class="">BIM</span><span class="text-white">Pro</span>
+            <span class="text-gold-400" style="color: #FFD700;">BIM</span><span class="text-white">Pro</span>
         </div>
         <div class="w-px h-6 md:h-8 bg-white/20"></div>
-        <div class="text-[10px] md:text-xs font-medium text-gold-300" style="color: #FFD700AA;">Est. 2025</div>
+        <div class="text-[10px] md:text-xs font-medium" style="color: #FFD700AA;">Est. 2025</div>
     </div>
     
     <div class="hidden lg:flex items-center gap-12">
         <div class="flex gap-8 text-sm font-medium">
             <a href="index.html" class="nav-link relative group text-white">
-                <span class="lang-en">Home</span><span class="lang-fr hidden">Accueil</span>
-                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full transition-all"></span>
+                <span class="lang-en">Home</span><span class="lang-fr">Accueil</span>
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full transition-all duration-300"></span>
             </a>
             <a href="about.html" class="nav-link relative group text-white">
-                <span class="lang-en">About</span><span class="lang-fr hidden">À propos</span>
-                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full"></span>
+                <span class="lang-en">About</span><span class="lang-fr">À propos</span>
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full transition-all duration-300"></span>
             </a>
             <a href="security.html" class="nav-link relative group text-white">
-                <span class="lang-en">Services</span><span class="lang-fr hidden">Sécurité</span>
-                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full"></span>
-            </a>
+                <span class="lang-en">Services</span><span class="lang-fr">Services</span>
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full transition-all duration-300"></span>
+            </a>                
             <a href="portfolio.html" class="nav-link relative group text-white">
-                <span class="lang-en">Portfolio</span><span class="lang-fr hidden">portefeuille</span>
-                <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-[#FFD700]"></span>
+                <span class="lang-en">Portfolio</span><span class="lang-fr">Portfolio</span>
+                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full transition-all duration-300"></span>
             </a>
             <a href="contact.html" class="nav-link relative group text-white">
-                <span class="lang-en">Contact</span><span class="lang-fr hidden">le contact</span>
-                <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#B22222] group-hover:w-full"></span>
+                <span class="lang-en">Contact</span><span class="lang-fr">Contact</span>
+                <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-[#FFD700]"></span>
             </a>
         </div>
         
-          <button onclick="toggleLang()" class="glass px-6 py-3 rounded-full text-xs font-bold hover:bg-[#B22222] transition-all duration-300 flex items-center gap-2 border border-gold/30" style="color: #FFD700;">
+        <button onclick="toggleLang()" class="glass px-6 py-3 rounded-full text-xs font-bold hover:bg-[#B22222] transition-all duration-300 flex items-center gap-2 border border-gold/30" style="color: #FFD700;">
             <i class="fas fa-globe text-[#FFD700]"></i>
             <span class="lang-en">FR | EN</span><span class="lang-fr">EN | FR</span>
         </button>
@@ -310,7 +310,7 @@
 
     <div class="flex lg:hidden items-center gap-3">
         <button onclick="toggleLang()" class="glass w-10 h-10 rounded-full flex items-center justify-center border border-gold/30 text-[#FFD700] text-xs font-bold active:scale-90 transition-transform">
-            <span class="lang-en">FR | EN</span><span class="lang-fr">EN | FR</span>
+            <span class="lang-en">FR</span><span class="lang-fr">EN</span>
         </button>
         <button id="menuBtn" class="glass w-10 h-10 rounded-full flex items-center justify-center border border-gold/30 text-[#FFD700] active:scale-90 transition-transform">
             <i class="fas fa-bars" id="menuIcon"></i>
